@@ -71,27 +71,23 @@ ALTER TABLE _tmpl_InMemoryMatchPair ENGINE=MEMORY;
 CREATE TABLE _tmpl_InMemoryId LIKE _tmpl_Id;
 ALTER TABLE _tmpl_InMemoryId ENGINE=MEMORY;
 
--- Populate the Object table for the run
--- Todo: need to check if this is needed in DC3
--- INSERT INTO Object SELECT * FROM DC2.Object;
-
 -- Create tables that accumulate data from per-visit tables
-CREATE TABLE MopsPreds LIKE _tmpl_mops_Prediction;
-ALTER TABLE MopsPreds
+CREATE TABLE _mops_Prediction LIKE _tmpl_mops_Prediction;
+ALTER TABLE _mops_Prediction
     ADD COLUMN visitId INTEGER NOT NULL, 
     ADD INDEX  idx_visitId (visitId);
 
-CREATE TABLE DiaSourceToObjectMatches LIKE _tmpl_MatchPair;
-ALTER TABLE DiaSourceToObjectMatches
+CREATE TABLE _ap_DIASourceToObjectMatches LIKE _tmpl_MatchPair;
+ALTER TABLE _ap_DIASourceToObjectMatches
     ADD COLUMN visitId INTEGER NOT NULL,
     ADD INDEX  idx_visitId (visitId);
 
-CREATE TABLE MopsPredToDiaSourceMatches LIKE _tmpl_MatchPair;
-ALTER TABLE MopsPredToDiaSourceMatches
+CREATE TABLE _ap_PredToDIASourceMatches LIKE _tmpl_MatchPair;
+ALTER TABLE _ap_PredToDIASourceMatches
     ADD COLUMN visitId INTEGER NOT NULL, 
     ADD INDEX  idx_visitId (visitId);
 
-CREATE TABLE NewObjectIdPairs LIKE _tmpl_IdPair;
-ALTER TABLE NewObjectIdPairs
+CREATE TABLE _ap_DIASourceToNewObject LIKE _tmpl_IdPair;
+ALTER TABLE _ap_DIASourceToNewObject
     ADD COLUMN visitId INTEGER NOT NULL, 
     ADD INDEX  idx_visitId (visitId);

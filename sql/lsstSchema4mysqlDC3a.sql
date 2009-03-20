@@ -8,7 +8,45 @@
 -- for copyright information.
 
 
-CREATE TABLE AAA_Version_3_0_21 (version CHAR);
+CREATE TABLE AAA_Version_3_0_22 (version CHAR);
+
+CREATE TABLE Science_Amp_Exposure
+(
+	scienceAmpExposureId BIGINT NOT NULL,
+	scienceCCDExposureId BIGINT NOT NULL,
+	rawAmpExposureId BIGINT NULL,
+	ampId INTEGER NULL,
+	filterId INTEGER NULL,
+	equinox FLOAT(0) NULL,
+	url VARCHAR(255) NULL,
+	ctype1 VARCHAR(20) NULL,
+	ctype2 VARCHAR(20) NULL,
+	crpix1 FLOAT(0) NULL,
+	crpix2 FLOAT(0) NULL,
+	crval1 DOUBLE NULL,
+	crval2 DOUBLE NULL,
+	cd1_1 DOUBLE NULL,
+	cd2_1 DOUBLE NULL,
+	cd1_2 DOUBLE NULL,
+	cd2_2 DOUBLE NULL,
+	dateObs TIMESTAMP NULL DEFAULT 0,
+	expTime FLOAT(0) NULL,
+	ccdSize VARCHAR(50) NULL,
+	photoFlam FLOAT(0) NULL,
+	photoZP FLOAT(0) NULL,
+	nCombine INTEGER NULL DEFAULT 1,
+	taiMjd DOUBLE NULL,
+	bixX INTEGER NULL,
+	binY INTEGER NULL,
+	readNoise DOUBLE NULL,
+	saturationLimit BIGINT NULL,
+	dataSection VARCHAR(24) NULL,
+	gain DOUBLE NULL,
+	PRIMARY KEY (scienceAmpExposureId),
+	KEY (rawAmpExposureId),
+	KEY (scienceCCDExposureId)
+) ;
+
 
 CREATE TABLE mops_TrackletsToDIASource
 (
@@ -104,44 +142,6 @@ CREATE TABLE _mops_EonQueue
 	PRIMARY KEY (movingObjectId),
 	KEY (movingObjectId),
 	INDEX idx__mopsEonQueue_eventId (eventId ASC)
-) ;
-
-
-CREATE TABLE Science_Amp_Exposure
-(
-	scienceAmpExposureId BIGINT NOT NULL,
-	scienceCCDExposureId BIGINT NOT NULL,
-	rawAmpExposureId BIGINT NULL,
-	ampId INTEGER NULL,
-	filterId INTEGER NULL,
-	equinox FLOAT(0) NULL,
-	url VARCHAR(255) NULL,
-	ctype1 VARCHAR(20) NULL,
-	ctype2 VARCHAR(20) NULL,
-	crpix1 FLOAT(0) NULL,
-	crpix2 FLOAT(0) NULL,
-	crval1 DOUBLE NULL,
-	crval2 DOUBLE NULL,
-	cd1_1 DOUBLE NULL,
-	cd2_1 DOUBLE NULL,
-	cd1_2 DOUBLE NULL,
-	cd2_2 DOUBLE NULL,
-	dateObs TIMESTAMP NULL DEFAULT 0,
-	expTime FLOAT(0) NULL,
-	ccdSize VARCHAR(50) NULL,
-	photoFlam FLOAT(0) NULL,
-	photoZP FLOAT(0) NULL,
-	nCombine INTEGER NULL DEFAULT 1,
-	taiMjd DOUBLE NULL,
-	bixX INTEGER NULL,
-	binY INTEGER NULL,
-	readNoise DOUBLE NULL,
-	saturationLimit BIGINT NULL,
-	dataSection VARCHAR(24) NULL,
-	gain DOUBLE NULL,
-	PRIMARY KEY (scienceAmpExposureId),
-	KEY (rawAmpExposureId),
-	KEY (scienceCCDExposureId)
 ) ;
 
 
@@ -688,6 +688,79 @@ CREATE TABLE MovingObject
 ) ;
 
 
+CREATE TABLE _tmpl_WCSSource
+(
+	sourceId BIGINT NOT NULL,
+	ampExposureId BIGINT NULL,
+	filterId TINYINT NOT NULL,
+	objectId BIGINT NULL,
+	movingObjectId BIGINT NULL,
+	procHistoryId INTEGER NOT NULL,
+	ra DOUBLE NOT NULL,
+	raErrForDetection FLOAT(0) NULL,
+	raErrForWcs FLOAT(0) NOT NULL,
+	decl DOUBLE NOT NULL,
+	declErrForDetection FLOAT(0) NULL,
+	declErrForWcs FLOAT(0) NOT NULL,
+	xFlux DOUBLE NULL,
+	xFluxErr FLOAT(0) NULL,
+	yFlux DOUBLE NULL,
+	yFluxErr FLOAT(0) NULL,
+	raFlux DOUBLE NULL,
+	raFluxErr FLOAT(0) NULL,
+	declFlux DOUBLE NULL,
+	declFluxErr FLOAT(0) NULL,
+	xPeak DOUBLE NULL,
+	yPeak DOUBLE NULL,
+	raPeak DOUBLE NULL,
+	declPeak DOUBLE NULL,
+	xAstrom DOUBLE NULL,
+	xAstromErr FLOAT(0) NULL,
+	yAstrom DOUBLE NULL,
+	yAstromErr FLOAT(0) NULL,
+	raAstrom DOUBLE NULL,
+	raAstromErr FLOAT(0) NULL,
+	declAstrom DOUBLE NULL,
+	declAstromErr FLOAT(0) NULL,
+	taiMidPoint DOUBLE NOT NULL,
+	taiRange FLOAT(0) NULL,
+	psfFlux DOUBLE NOT NULL,
+	psfFluxErr FLOAT(0) NOT NULL,
+	apFlux DOUBLE NOT NULL,
+	apFluxErr FLOAT(0) NOT NULL,
+	modelFlux DOUBLE NOT NULL,
+	modelFluxErr FLOAT(0) NOT NULL,
+	petroFlux DOUBLE NULL,
+	petroFluxErr FLOAT(0) NULL,
+	instFlux DOUBLE NOT NULL,
+	instFluxErr FLOAT(0) NOT NULL,
+	nonGrayCorrFlux DOUBLE NULL,
+	nonGrayCorrFluxErr FLOAT(0) NULL,
+	atmCorrFlux DOUBLE NULL,
+	atmCorrFluxErr FLOAT(0) NULL,
+	apDia FLOAT(0) NULL,
+	Ixx FLOAT(0) NULL,
+	IxxErr FLOAT(0) NULL,
+	Iyy FLOAT(0) NULL,
+	IyyErr FLOAT(0) NULL,
+	Ixy FLOAT(0) NULL,
+	IxyErr FLOAT(0) NULL,
+	snr FLOAT(0) NOT NULL,
+	chi2 FLOAT(0) NOT NULL,
+	sky FLOAT(0) NULL,
+	skyErr FLOAT(0) NULL,
+	flagForAssociation SMALLINT NULL,
+	flagForDetection SMALLINT NULL,
+	flagForWcs SMALLINT NULL,
+	PRIMARY KEY (sourceId),
+	KEY (ampExposureId),
+	KEY (filterId),
+	KEY (movingObjectId),
+	KEY (objectId),
+	KEY (procHistoryId)
+) TYPE=MyISAM;
+
+
 CREATE TABLE Science_FPA_Exposure
 (
 	scienceFPAExposureId BIGINT NOT NULL,
@@ -874,17 +947,17 @@ CREATE TABLE prv_Filter
 
 
 
-ALTER TABLE _mops_MoidQueue ADD CONSTRAINT FK__mops_MoidQueue_MovingObject 
-	FOREIGN KEY (movingObjectId) REFERENCES MovingObject (movingObjectId);
-
-ALTER TABLE _mops_EonQueue ADD CONSTRAINT FK__mopsEonQueue_MovingObject 
-	FOREIGN KEY (movingObjectId) REFERENCES MovingObject (movingObjectId);
-
 ALTER TABLE Science_Amp_Exposure ADD CONSTRAINT FK_Science_Amp_Exposure_Raw_Amp_Exposure 
 	FOREIGN KEY (rawAmpExposureId) REFERENCES Raw_Amp_Exposure (rawAmpExposureId);
 
 ALTER TABLE Science_Amp_Exposure ADD CONSTRAINT FK_Science_Amp_Exposure_Science_CCD_Exposure 
 	FOREIGN KEY (scienceCCDExposureId) REFERENCES Science_CCD_Exposure (scienceCCDExposureId);
+
+ALTER TABLE _mops_MoidQueue ADD CONSTRAINT FK__mops_MoidQueue_MovingObject 
+	FOREIGN KEY (movingObjectId) REFERENCES MovingObject (movingObjectId);
+
+ALTER TABLE _mops_EonQueue ADD CONSTRAINT FK__mopsEonQueue_MovingObject 
+	FOREIGN KEY (movingObjectId) REFERENCES MovingObject (movingObjectId);
 
 ALTER TABLE Raw_Amp_Exposure ADD CONSTRAINT FK_Raw_Amp_Exposure_Raw_CCD_Exposure 
 	FOREIGN KEY (rawCCDExposureId) REFERENCES Raw_CCD_Exposure (rawCCDExposureId);

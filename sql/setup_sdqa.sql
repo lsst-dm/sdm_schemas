@@ -41,6 +41,9 @@ VALUES ('nGoodPix', 'counts', 'f',    'Number of good pixels.')
       ,('phot.psf.spatialLowOrdFlag', 'flag', 'f',    'Flag if forced to lower spatial order in PSF fit.')
       ,('ip.isr.numSaturatedPixels', 'counts', 'f',    'Number of saturated pixels.')
       ,('ip.isr.numCosmicRayPixels', 'counts', 'f',    'Number of cosmic-ray pixels.')
+      ,('ip.diffim.residuals', 'sigma', 't',    'Residuals.')
+      ,('ip.diffim.kernelSum', 'dimensionless', 't',    'Kernel sum.')
+      ,('ip.diffim.d_residuals', 'sigma', 't',    'Per-footprint residuals.')
 ;
 
 
@@ -83,6 +86,9 @@ SELECT addSdqaThresholdRecord('phot.psf.spatialFitChi2', 3   , 0.1) INTO @x;
 SELECT addSdqaThresholdRecord('phot.psf.spatialLowOrdFlag', \N   , \N) INTO @x;
 SELECT addSdqaThresholdRecord('ip.isr.numSaturatedPixels', 10000, \N) INTO @x;
 SELECT addSdqaThresholdRecord('ip.isr.numCosmicRayPixels', 1000, \N) INTO @x;
+SELECT addSdqaThresholdRecord('ip.diffim.residuals', 0.1, -0.1) INTO @x;
+SELECT addSdqaThresholdRecord('ip.diffim.kernelSum', 3, -3) INTO @x;
+SELECT addSdqaThresholdRecord('ip.diffim.d_residuals', 0.1, -0.1) INTO @x;
 
 
 

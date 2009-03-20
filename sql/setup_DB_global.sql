@@ -100,6 +100,24 @@ BEGIN
 END
 //
 
+CREATE FUNCTION setRunDeleted (
+   in_runDbName VARCHAR(64) ) RETURNS INT
+BEGIN
+   DECLARE n INT;
+
+   SELECT COUNT(*) INTO n
+   FROM   RunInfo
+   WHERE  dbName = in_runDbName;
+   IF n <> 1 THEN RETURN -1; END IF;
+
+   UPDATE RunInfo 
+   SET delDate = NOW()
+   WHERE dbName = in_runDbName;
+
+   RETURN 0;
+END
+//
+
 
 DELIMITER ;
 
