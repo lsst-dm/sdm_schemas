@@ -8,7 +8,7 @@ import lsst.SConsUtils as scons
 dependencies = ["python", "mysqlclient", "mysqlpython", "boost", "utils", "pex_exceptions", "daf_base", "pex_logging", "pex_policy"]
 
 env = scons.makeEnv("cat",
-                    r"$HeadURL: svn+ssh://svn.lsstcorp.org/DMS/cat/base/trunk/SConstruct $",
+                    r"$HeadURL$",
                     [["python"],
                      ["mysqlclient"],
 		     ["mysqlpython"],
