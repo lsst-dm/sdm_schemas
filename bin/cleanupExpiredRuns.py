@@ -25,12 +25,12 @@ if not options.f:
 
 
 
-class CleanupExpiredRuns(MySQLBase):
+class CleanupExpiredRuns:
 
     def __init__(self, dbHost, dbPort, gDb,
                  rootU, rootP, 
                  dFirstNotice, dFinalNotice):
-        MySQLBase.__init__(self, dbHost, dbPort)
+        self.dbBase = MySQLBase(dbHost, dbPort)
         if gDb == "":
             raise RuntimeError("Invalid (empty) global db name")
         if dcVer == "":
@@ -126,24 +126,24 @@ Subject: %s
 
     def run(self):
         # Connect to database
-        self.connect(self.rootU, self.rootP, self.globalDbName)
+        self.dbBase.connect(self.rootU, self.rootP, self.globalDbName)
 
         # check available disk space and remember it for reporting
-        dataDirSpaceAvailBefore = self.getDataDirSpaceAvail()
+        dataDirSpaceAvailBefore = self.dbBase.getDataDirSpaceAvail()
 
         # Find expired runs, delete them and record this
-        dbNames = self.execCommandN(self.cmdGetExpiredRuns)
+        dbNames = self.dbBase.execCommandN(self.cmdGetExpiredRuns)
         for dbN in dbNames:
             print "  --> Deleting ", dbN[0], " <--"
-            self.execCommand0("DROP DATABASE IF EXISTS %s" % dbN[0])
-            self.execCommand0(
+            self.dbBase.execCommand0("DROP DATABASE IF EXISTS %s" % dbN[0])
+            self.dbBase.execCommand0(
              "UPDATE RunInfo SET delDate=%s WHERE dbName='%s'" % (now, dbN[0]))
 
         # re-check disk space
-        dataDirSpaceAvailAfter = self.getDataDirSpaceAvail()
+        dataDirSpaceAvailAfter = self.dbBase.getDataDirSpaceAvail()
 
         # Prepare final notices
-        rows = self.execCommandN(self.cmdGetRunsFinalNotice)
+        rows = self.dbBase.execCommandN(self.cmdGetRunsFinalNotice)
         runIds = ""
 
         finalN = ""
@@ -162,10 +162,10 @@ Subject: %s
   SET    finalNotifDate=%s
   WHERE  runInfoId IN (%s)
 """ % (now, runIds[:-1])
-            self.execCommand0(cmd)
+            self.dbBase.execCommand0(cmd)
 
         # Prepare first notices
-        rows = self.execCommandN(self.cmdGetRunsFirstNotice)
+        rows = self.dbBase.execCommandN(self.cmdGetRunsFirstNotice)
         firstN = ""
         if len(rows) > 0:
             firstN = ""
@@ -182,13 +182,13 @@ Subject: %s
   SET    firstNotifDate=%s
   WHERE  runInfoId IN (%s)
 """ % (now, runIds[:-1])
-            self.execCommand0(cmd)
+            self.dbBase.execCommand0(cmd)
 
             # Send the email with the notices
             self.emailNotices(firstN, finalN)
 
             # Disconnect from database
-            self.disconnect()
+            self.dbBase.disconnect()
             return
 
 

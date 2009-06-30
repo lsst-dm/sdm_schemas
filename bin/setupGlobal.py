@@ -23,9 +23,9 @@ one will be used: $CAT_DIR/policy/defaultProdCatPolicy.paf
 """
 
 
-class SetupGlobal(MySQLBase):
+class SetupGlobal:
     def __init__(self, dbHostName, portNo, globalDbName, dcVersion, dcDb):
-        MySQLBase.__init__(self, dbHostName, portNo)
+        self.dbBase = MySQLBase(dbHostName, portNo)
 
         if globalDbName == "":
             raise RuntimeError("Invalid (empty) global db name")
@@ -55,26 +55,27 @@ class SetupGlobal(MySQLBase):
         setupGlobal creates and per-data-challenge database,
         and optionally (if it does not exist) the Global database. 
         """
-        self.connect(self.dbSUName, self.dbSUPwd)
+        self.dbBase.connect(self.dbSUName, self.dbSUPwd)
         # create & configure Global database (if doesn't exist)
-        if self.dbExists(self.globalDbName):
+        if self.dbBase.dbExists(self.globalDbName):
             print "'%s' exists." % self.globalDbName
         else:
             self.__setupOnce__(self.globalDbName, 'setup_DB_global.sql')
             print "Setup '%s' succeeded." % self.globalDbName
             
         # create and configure per-data-challange database (if doesn't exist)
-        if self.dbExists(self.dcDbName):
+        if self.dbBase.dbExists(self.dcDbName):
             print "'%s' exists." % self.dcDbName
         else:
             self.__setupOnce__(self.dcDbName, 'setup_DB_dataChallenge.sql')
             # also load the regular per-run schema
             fN = "lsstSchema4mysql%s.sql" % self.dcVersion
             p = os.path.join(self.sqlDir, fN)
-            self.loadSqlScript(p, self.dbSUName, self.dbSUPwd, self.dcDbName)
+            self.dbBase.loadSqlScript(p, self.dbSUName, 
+                                      self.dbSUPwd, self.dcDbName)
             print "Setup '%s' succeeded." % self.dcDbName
 
-        self.disconnect()
+        self.dbBase.disconnect()
 
     def __setupOnce__(self, dbName, setupScript):
         # Verify that the setupScript exist
@@ -82,9 +83,10 @@ class SetupGlobal(MySQLBase):
         if not os.path.exists(setupPath):
             raise RuntimeError("Can't find schema file '%s'" % setupPath)
         # Create database
-        self.createDb(dbName)
+        self.dbBase.createDb(dbName)
         # Configure database
-        self.loadSqlScript(setupPath, self.dbSUName, self.dbSUPwd, dbName)
+        self.dbBase.loadSqlScript(setupPath, self.dbSUName, 
+                                  self.dbSUPwd, dbName)
 
 
 parser = optparse.OptionParser(usage)

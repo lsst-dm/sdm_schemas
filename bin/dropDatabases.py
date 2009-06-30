@@ -23,9 +23,10 @@ one will be used: $CAT_DIR/policy/defaultProdCatPolicy.paf
 """
 
 
-class DropDatabases(MySQLBase):
-    def __init__(self, dbUName, dbHostName, portNo, globalDbName, dcVersion, dcDb):
-        MySQLBase.__init__(self, dbHostName, portNo)
+class DropDatabases:
+    def __init__(self, dbUName, dbHostName, portNo, 
+                 globalDbName, dcVersion, dcDb):
+        self.dbBase = MySQLBase(dbHostName, portNo)
 
         if globalDbName == "":
             raise RuntimeError("Invalid (empty) global db name")
@@ -51,7 +52,7 @@ class DropDatabases(MySQLBase):
         self.dbUPwd = getpass.getpass("MySQL password for user '%s': " % dbUName)
 
     def run(self, pattern):
-        self.connect(self.dbUName, self.dbUPwd, self.globalDbName)
+        self.dbBase.connect(self.dbUName, self.dbUPwd, self.globalDbName)
 
         if pattern:
             pattern = '%s_%%%s%%' % (self.dbUName, pattern)
@@ -64,12 +65,12 @@ class DropDatabases(MySQLBase):
   WHERE  dbName LIKE '%s'
      AND delDate IS NULL
 """ % pattern
-        dbs = self.execCommandN(cmd)
+        dbs = self.dbBase.execCommandN(cmd)
         for dbN in dbs:
             print 'Deleting %s' % dbN
-            self.dropDb(dbN)
-            self.execCommand0("SELECT setRunDeleted('%s')" % dbN)
-        self.disconnect()
+            self.dbBase.dropDb(dbN)
+            self.dbBase.execCommand0("SELECT setRunDeleted('%s')" % dbN)
+        self.dbBase.disconnect()
 
 
 parser = optparse.OptionParser(usage)

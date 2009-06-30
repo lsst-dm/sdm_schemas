@@ -6,13 +6,13 @@ import subprocess
 import sys
 
 
-class DbSetup(MySQLBase):
+class DbSetup:
     """
     This file contains a set of utilities to manage per-user databases
     """
 
     def __init__(self, dbHostName, portNo, userName, userPwd):
-        MySQLBase.__init__(self, dbHostName, portNo)
+        self.dbBase = MySQLBase(dbHostName, portNo)
 
         if self.userName == "":
             raise RuntimeError("Invalid (empty) userName")
@@ -39,20 +39,20 @@ class DbSetup(MySQLBase):
                 raise RuntimeError("Can't find file '%s'" % f)
 
         # (re-)create database
-        self.connect(self.userName, self.userPwd)
-        if self.dbExists(self.userDb):
-            self.dropDb(self.userDb)
-        self.createDb(self.userDb)
-        self.disconnect()
+        self.dbBase.connect(self.userName, self.userPwd)
+        if self.dbBase.dbExists(self.userDb):
+            self.dbBase.dropDb(self.userDb)
+        self.dbBase.createDb(self.userDb)
+        self.dbBase.disconnect()
 
         # load the scripts
         for f in dbScripts:
-            self.loadSqlScript(f, self.userName, self.userPwd, self.userDb)
+            self.dbBase.loadSqlScript(f, self.userName, 
+                                      self.userPwd, self.userDb)
 
 
     def dropUserDb(self):
-        self.connect(self.userName, self.userPwd)
-        if self.dbExists(self.userDb):
-            self.dropDb(self.userDb)
-        self.disconnect()
-
+        self.dbBase.connect(self.userName, self.userPwd)
+        if self.dbBase.dbExists(self.userDb):
+            self.dbBase.dropDb(self.userDb)
+        self.dbBase.disconnect()
