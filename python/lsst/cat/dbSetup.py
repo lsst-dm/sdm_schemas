@@ -11,13 +11,14 @@ class DbSetup:
     This file contains a set of utilities to manage per-user databases
     """
 
-    def __init__(self, dbHostName, portNo, userName, userPwd):
+    def __init__(self, dbHostName, portNo, userName, userPwd, dcVer):
         self.dbBase = MySQLBase(dbHostName, portNo)
 
-        if self.userName == "":
+        if userName == "":
             raise RuntimeError("Invalid (empty) userName")
         self.userName = userName
         self.userPwd = userPwd
+        self.dcVer = dcVer
         self.sqlDir = os.path.join(os.environ["CAT_DIR"], "sql")
         if not os.path.exists(self.sqlDir):
             raise RuntimeError("Directory '%s' not found" % self.sqlDir)
@@ -32,7 +33,8 @@ class DbSetup:
         """
 
         # prepare list of sql scripts to load and verify they exist
-        dbScripts = [os.path.join(self.sqlDir, "lsstSchema4mysql.sql"),
+        fN = "lsstSchema4mysql%s.sql" % self.dcVer
+        dbScripts = [os.path.join(self.sqlDir, fN),
                      os.path.join(self.sqlDir, "setup_storedFunctions.sql")]
         for f in dbScripts:
             if not os.path.exists(f):
