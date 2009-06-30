@@ -40,7 +40,7 @@ dbSUPwd = getpass.getpass()
 
 def destroyOne(x, dbName):
     if x.dbExists(dbName):
-        x.execCommand0("DROP DATABASE IF EXISTS " + dbName)
+        x.dropDb(dbName)
         print "Destroyed '%s'." % dbName
     else:
         print "Db '%s' does not exist." % dbName
