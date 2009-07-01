@@ -40,6 +40,8 @@ class DropDatabases:
             raise RuntimeError("Invalid (empty) dc db name")
         self.dcDbName = dcDb
 
+        self.dbUName = dbUName
+
         # Pull in sqlDir from CAT_DIR
         self.sqlDir = os.getenv('CAT_DIR')
         if not self.sqlDir:
@@ -48,12 +50,18 @@ class DropDatabases:
         if not os.path.exists(self.sqlDir):
             raise RuntimeError("Directory '%s' not found" % self.sqlDir)
 
-        self.dbUName = dbUName
-        self.dbUPwd = getpass.getpass("MySQL password for user '%s': " % dbUName)
+        if DbAuth.available(dbHostName, portNo):
+            rootU = DbAuth.username(dbHostName, portNo)
+            rootP = DbAuth.password(dbHostName, portNo)
+        else:
+            print "Authorization unavailable for %s:%s" % (dbHostName, portNo)
+            self.authenticationU = raw_input("Enter mysql account name (%s or superuser account name: " % dbUName)
+            self.authenticationP = getpass.getpass()
 
     def run(self, pattern):
-        self.dbBase.connect(self.dbUName, self.dbUPwd, self.globalDbName)
-
+        self.dbBase.connect(self.authenticationU, 
+                            self.authenticationP, 
+                            self.globalDbName)
         if pattern:
             pattern = '%s_%%%s%%' % (self.dbUName, pattern)
         else:

@@ -2,6 +2,7 @@
 
 from lsst.cat.MySQLBase import MySQLBase
 from lsst.cat.policyReader import PolicyReader
+from lsst.daf.persistence import DbAuth
 
 import getpass
 import optparse
@@ -34,9 +35,13 @@ print """
    and the '%s' database - think twice before proceeding!
 """ % (globalDbName, dcDbName)
 
-
-dbSUName = raw_input("Enter mysql superuser account name: ")
-dbSUPwd = getpass.getpass()
+if DbAuth.available(serverHost, serverPort):
+    dbSUName = DbAuth.username(serverHost, serverPrt)
+    dbSUPwd = DbAuth.password(serverHost, serverPort)
+else:
+    print "Authorization unavailable for %s:%s" % (serverHost, serverPort)
+    dbSUName = raw_input("Enter mysql superuser account name: ")
+    dbSUPwd = getpass.getpass()
 
 def destroyOne(x, dbName):
     if x.dbExists(dbName):

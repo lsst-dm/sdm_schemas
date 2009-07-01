@@ -2,6 +2,7 @@
 
 from lsst.cat.MySQLBase import MySQLBase
 from lsst.cat.policyReader import PolicyReader
+from lsst.daf.persistence import DbAuth
 
 import getpass
 import optparse
@@ -47,8 +48,13 @@ class SetupGlobal:
         if not os.path.exists(self.sqlDir):
             raise RuntimeError("Directory '%s' not found" % self.sqlDir)
 
-        self.dbSUName = raw_input("Enter mysql superuser account name: ")
-        self.dbSUPwd = getpass.getpass()
+        if DbAuth.available(dbHostName, portNo):
+            self.dbSUName = DbAuth.username(dbHostName, portNo)
+            self.dbSUPwd = DbAuth.password(dbHostName, portNo)
+        else:
+            print "Authorization unavailable for %s:%s" % (dbHostName, portNo)
+            self.dbSUName = raw_input("Enter mysql superuser account name: ")
+            self.dbSUPwd = getpass.getpass()
 
     def run(self):
         """

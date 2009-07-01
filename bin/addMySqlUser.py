@@ -2,6 +2,7 @@
 
 from lsst.cat.MySQLBase import MySQLBase
 from lsst.cat.policyReader import PolicyReader
+from lsst.daf.persistence import DbAuth
 
 import getpass
 import optparse
@@ -51,15 +52,21 @@ r = PolicyReader(options.f)
 (serverHost, serverPort) = r.readAuthInfo()
 (globalDbName, dcVersion, dcDb, dummy1, dummy2) = r.readGlobalSetup()
 
-rootU = raw_input("Enter mysql superuser account name: ")
-rootP = getpass.getpass()
+if DbAuth.available(serverHost, serverPort):
+    rootU = DbAuth.username(serverHost, serverPort)
+    rootP = DbAuth.password(serverHost, serverPort)
+else:
+    print "Authorization unavailable for %s:%s" % \
+          (serverHost, serverPort)
+    rootU = raw_input("Enter mysql superuser account name: ")
+    rootP = getpass.getpass()
 
 admin = MySQLBase(serverHost, serverPort)
 admin.connect(rootU, rootP, globalDbName)
 
 toStr = "TO `%s`@`%s`" % (userName, clientHost)
 if admin.userExists(userName, clientHost):
-    print 'This account already exists, upgrading priviledges. User password will not change.'
+    print 'This account already exists, upgrading privileges. User password will not change.'
 else:
     toStr += " IDENTIFIED BY '%s'" % userPass
 

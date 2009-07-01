@@ -2,6 +2,7 @@
 
 from lsst.cat.MySQLBase import MySQLBase
 from lsst.cat.policyReader import PolicyReader
+from lsst.daf.persistence import DbAuth
 
 import getpass
 import optparse
@@ -209,9 +210,13 @@ print """\n\n
   *** Executing cleanupExpiredRun, now=%s, globalDB=%s
 """ % (now, gDb)
 
-# TODO: fetch mysql root user/password from file
-rootU = raw_input("Enter mysql superuser account name: ")
-rootP = getpass.getpass()
+if DbAuth.available(host, port):
+    rootU = DbAuth.username(host, port)
+    rootP = DbAuth.password(host, port)
+else:
+    print "Authorization unavailable for %s:%s" % (host, port)
+    rootU = raw_input("Enter mysql superuser account name: ")
+    rootP = getpass.getpass()
 
 xx = CleanupExpiredRuns(host, port, gDb, rootU, rootP, 
                         dFirstNotice, dFinalNotice)
