@@ -32,12 +32,16 @@ r = PolicyReader(options.f)
 print """
    ** WARNING **
    You are attempting to destroy the '%s' database 
-   and the '%s' database - think twice before proceeding!
+   and the '%s' database.
 """ % (globalDbName, dcDbName)
+rrr = raw_input("Press 'y' to proceed, any other character to abort... ")
+if ( rrr != 'y' ):
+    print 'Aborted'
+    exit(0)
 
-if DbAuth.available(serverHost, serverPort):
-    dbSUName = DbAuth.username(serverHost, serverPrt)
-    dbSUPwd = DbAuth.password(serverHost, serverPort)
+if DbAuth.available(serverHost, str(serverPort)):
+    dbSUName = DbAuth.username(serverHost, str(serverPort))
+    dbSUPwd = DbAuth.password(serverHost, str(serverPort))
 else:
     print "Authorization unavailable for %s:%s" % (serverHost, serverPort)
     dbSUName = raw_input("Enter mysql superuser account name: ")

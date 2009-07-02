@@ -2,6 +2,7 @@
 
 from lsst.cat.MySQLBase import MySQLBase
 from lsst.cat.policyReader import PolicyReader
+from lsst.daf.persistence import DbAuth
 
 import getpass
 import optparse
@@ -50,9 +51,9 @@ class DropDatabases:
         if not os.path.exists(self.sqlDir):
             raise RuntimeError("Directory '%s' not found" % self.sqlDir)
 
-        if DbAuth.available(dbHostName, portNo):
-            rootU = DbAuth.username(dbHostName, portNo)
-            rootP = DbAuth.password(dbHostName, portNo)
+        if DbAuth.available(dbHostName, str(portNo)):
+            self.authenticationU = DbAuth.username(dbHostName, str(portNo))
+            self.authenticationP = DbAuth.password(dbHostName, str(portNo))
         else:
             print "Authorization unavailable for %s:%s" % (dbHostName, portNo)
             self.authenticationU = raw_input("Enter mysql account name (%s or superuser account name: " % dbUName)

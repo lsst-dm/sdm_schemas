@@ -48,9 +48,9 @@ class SetupGlobal:
         if not os.path.exists(self.sqlDir):
             raise RuntimeError("Directory '%s' not found" % self.sqlDir)
 
-        if DbAuth.available(dbHostName, portNo):
-            self.dbSUName = DbAuth.username(dbHostName, portNo)
-            self.dbSUPwd = DbAuth.password(dbHostName, portNo)
+        if DbAuth.available(dbHostName, str(portNo)):
+            self.dbSUName = DbAuth.username(dbHostName, str(portNo))
+            self.dbSUPwd = DbAuth.password(dbHostName, str(portNo))
         else:
             print "Authorization unavailable for %s:%s" % (dbHostName, portNo)
             self.dbSUName = raw_input("Enter mysql superuser account name: ")

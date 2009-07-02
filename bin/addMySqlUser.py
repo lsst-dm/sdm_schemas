@@ -52,9 +52,9 @@ r = PolicyReader(options.f)
 (serverHost, serverPort) = r.readAuthInfo()
 (globalDbName, dcVersion, dcDb, dummy1, dummy2) = r.readGlobalSetup()
 
-if DbAuth.available(serverHost, serverPort):
-    rootU = DbAuth.username(serverHost, serverPort)
-    rootP = DbAuth.password(serverHost, serverPort)
+if DbAuth.available(serverHost, str(serverPort)):
+    rootU = DbAuth.username(serverHost, str(serverPort))
+    rootP = DbAuth.password(serverHost, str(serverPort))
 else:
     print "Authorization unavailable for %s:%s" % \
           (serverHost, serverPort)

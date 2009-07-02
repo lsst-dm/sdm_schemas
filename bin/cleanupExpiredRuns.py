@@ -210,9 +210,9 @@ print """\n\n
   *** Executing cleanupExpiredRun, now=%s, globalDB=%s
 """ % (now, gDb)
 
-if DbAuth.available(host, port):
-    rootU = DbAuth.username(host, port)
-    rootP = DbAuth.password(host, port)
+if DbAuth.available(host, str(port)):
+    rootU = DbAuth.username(host, str(port))
+    rootP = DbAuth.password(host, str(port))
 else:
     print "Authorization unavailable for %s:%s" % (host, port)
     rootU = raw_input("Enter mysql superuser account name: ")
