@@ -49,8 +49,8 @@ VALUES ('nGoodPix', 'counts', 'f',    'Number of good pixels.')
       ,( 'overscanMean', 'ADU', 't', 'Mean of overscan pixels, computed from Good pixels.')
       ,( 'overscanStdDev', 'ADU', 't', 'Standard deviation of overscan pixels, computed from Good pixels.')
       ,( 'overscanMedian', 'ADU', 't', 'Median of overscan pixels, computed from Good pixels; used as robust estimate of CCD bias level.')
-      ,( 'imageClippedMean4Sigma3Passes', 'e-', 't', 'Clipped mean of image at 4 sigma with 3 iterations, computed from Good pixels.')
-      ,( 'imageStdDev', 'e-', 't', 'Standard devation of image, computed from Good pixels.')
+      ,( 'imageClipMean4Sig3Pass', 'e-', 't', 'Clipped mean of image at 4 sigma with 3 iterations, computed from Good pixels.')
+      ,( 'imageSigma', 'e-', 't', 'Standard devation of image, computed from Good pixels.')
       ,( 'imageMedian', 'e-', 't', 'Median of image, computed from Good pixels.')
       ,( 'imageMin', 'e-', 't', 'Minimum of image, computed from Good pixels.')
       ,( 'imageMax', 'e-', 't', 'Maximum of image, computed from Good pixels.')
@@ -101,6 +101,18 @@ SELECT addSdqaThresholdRecord('ip.isr.numCosmicRayPixels', 1000, \N) INTO @x;
 SELECT addSdqaThresholdRecord('ip.diffim.residuals', 0.1, -0.1) INTO @x;
 SELECT addSdqaThresholdRecord('ip.diffim.kernelSum', 3, -3) INTO @x;
 SELECT addSdqaThresholdRecord('ip.diffim.d_residuals', 0.1, -0.1) INTO @x;
+SELECT addSdqaThresholdRecord('nBadCalibPix', \N, \N) INTO @x;
+SELECT addSdqaThresholdRecord('nSaturatePix', \N, \N) INTO @x;
+SELECT addSdqaThresholdRecord('overscanMean', \N, \N) INTO @x;
+SELECT addSdqaThresholdRecord('overscanStdDev', \N, \N) INTO @x;
+SELECT addSdqaThresholdRecord('overscanMedian', \N, \N) INTO @x;
+SELECT addSdqaThresholdRecord('imageClipMean4Sig3Pass', \N, \N) INTO @x;
+SELECT addSdqaThresholdRecord('imageSigma', \N, \N) INTO @x;
+SELECT addSdqaThresholdRecord('imageMedian', \N, \N) INTO @x;
+SELECT addSdqaThresholdRecord('imageMin', \N, \N) INTO @x;
+SELECT addSdqaThresholdRecord('imageMax', \N, \N) INTO @x;
+SELECT addSdqaThresholdRecord('imageGradientX', \N, \N) INTO @x;
+SELECT addSdqaThresholdRecord('imageGradientY', \N, \N) INTO @x;
 
 
 
