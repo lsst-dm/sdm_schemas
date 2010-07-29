@@ -49,6 +49,8 @@ VALUES ('nGoodPix', 'counts', 'f',    'Number of good pixels.')
       ,( 'overscanMean', 'ADU', 't', 'Mean of overscan pixels, computed from Good pixels.')
       ,( 'overscanStdDev', 'ADU', 't', 'Standard deviation of overscan pixels, computed from Good pixels.')
       ,( 'overscanMedian', 'ADU', 't', 'Median of overscan pixels, computed from Good pixels; used as robust estimate of CCD bias level.')
+      ,( 'overscanMin', 'ADU', 't', 'Min of overscan pixels, computed from Good pixels.')
+      ,( 'overscanMax', 'ADU', 't', 'Max of overscan pixels, computed from Good pixels.')
       ,( 'imageClipMean4Sig3Pass', 'e-', 't', 'Clipped mean of image at 4 sigma with 3 iterations, computed from Good pixels.')
       ,( 'imageSigma', 'e-', 't', 'Standard devation of image, computed from Good pixels.')
       ,( 'imageMedian', 'e-', 't', 'Median of image, computed from Good pixels.')
@@ -106,6 +108,8 @@ SELECT addSdqaThresholdRecord('nSaturatePix', \N, \N) INTO @x;
 SELECT addSdqaThresholdRecord('overscanMean', \N, \N) INTO @x;
 SELECT addSdqaThresholdRecord('overscanStdDev', \N, \N) INTO @x;
 SELECT addSdqaThresholdRecord('overscanMedian', \N, \N) INTO @x;
+SELECT addSdqaThresholdRecord('overscanMin', \N, \N) INTO @x;
+SELECT addSdqaThresholdRecord('overscanMax', \N, \N) INTO @x;
 SELECT addSdqaThresholdRecord('imageClipMean4Sig3Pass', \N, \N) INTO @x;
 SELECT addSdqaThresholdRecord('imageSigma', \N, \N) INTO @x;
 SELECT addSdqaThresholdRecord('imageMedian', \N, \N) INTO @x;
