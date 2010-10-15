@@ -1,0 +1,116 @@
+Details for table AlgRun
+Simple fields (# of each):
+  bigint	4
+  datetime	1
+  float	7
+  mediumtext	6
+  smallint	1
+  text	3
+User-set width fields (sizes of each):
+  varchar	[50, 50, 255, 255, 50, 50, 50, 255, 255, 255]
+
+Details for table APO2_5mWCS
+Simple fields (# of each):
+  bigint	1
+  double	25
+User-set width fields (sizes of each):
+  char	[1]
+
+Details for table DaophotPSFModel
+Simple fields (# of each):
+  bigint	1
+  mediumtext	1
+User-set width fields (sizes of each):
+
+Details for table DophotPSFModel
+Simple fields (# of each):
+  bigint	1
+  float	3
+User-set width fields (sizes of each):
+
+Details for table Image
+Simple fields (# of each):
+  bigint	5
+  double	6
+  float	4
+  mediumint	7
+  tinyint	4
+User-set width fields (sizes of each):
+  varchar	[255, 50, 50, 50, 255, 255, 255, 255, 255, 255, 255, 255, 255, 50]
+
+Details for table MSO50inWCS
+Simple fields (# of each):
+  bigint	1
+  double	10
+  float	1
+User-set width fields (sizes of each):
+  varchar	[5, 50, 5, 50, 50]
+
+Details for table NOAO4mWCS
+Simple fields (# of each):
+  bigint	1
+  double	10
+  float	1
+User-set width fields (sizes of each):
+  varchar	[5, 50, 5, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255]
+
+Details for table Object
+Simple fields (# of each):
+  bigint	6
+  double	5
+  float	22
+  integer	1
+  tinyint	2
+User-set width fields (sizes of each):
+  varchar	[50, 50, 50]
+
+Details for table PhotoPSFModel
+Simple fields (# of each):
+  bigint	1
+  float	22
+  integer	14
+User-set width fields (sizes of each):
+  varchar	[50, 50, 50, 0]
+
+Details for table PipelineRun
+Simple fields (# of each):
+  bigint	1
+  datetime	1
+User-set width fields (sizes of each):
+  varchar	[50, 50, 255, 255]
+
+Details for table TangentWCS
+Simple fields (# of each):
+  bigint	1
+  double	10
+  float	1
+User-set width fields (sizes of each):
+  varchar	[5, 50, 5, 255, 255]
+
+Details for table TieClusterToObject
+Simple fields (# of each):
+  bigint	2
+User-set width fields (sizes of each):
+
+Details for table TieImageToAlgRun
+Simple fields (# of each):
+  bigint	5
+  float	1
+User-set width fields (sizes of each):
+  varchar	[50]
+
+Summary
+Table	FixedBytes	FixedCols	MinVarBytes	MaxVarBytes	VarCols
+AlgRun	66	13	34	100861463	19
+APO2_5mWCS	209	27	0	0	0
+DaophotPSFModel	8	1	3	16777219	1
+DophotPSFModel	20	4	0	0	0
+Image	129	26	14	2764	14
+MSO50inWCS	92	12	5	165	5
+NOAO4mWCS	92	12	16	3391	16
+Object	182	36	3	153	3
+PhotoPSFModel	152	37	3	153	4
+PipelineRun	12	2	4	614	4
+TangentWCS	92	12	5	575	5
+TieClusterToObject	16	2	0	0	0
+TieImageToAlgRun	44	6	1	51	1

@@ -1,0 +1,11 @@
+Details for table AlgRun
+Simple fields (# of each):
+User-set width fields (sizes of each):
+  binary	[6]
+  char	[5]
+  decimal	[(34, 33)]
+  numeric	[(5, 4)]
+
+Summary
+Table	FixedBytes	FixedCols	MinVarBytes	MaxVarBytes	VarCols
+AlgRun	30	4	0	0	0

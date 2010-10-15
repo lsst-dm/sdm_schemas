@@ -1,0 +1,13 @@
+setupRequired(python >= 2.5)
+setupRequired(mysqlclient >= 5.0.45+1)
+setupRequired(mysqlpython >= 1.2.2)
+setupRequired(boost >= 1.37.0)
+setupRequired(pex_logging >= 3.2.1)
+setupRequired(pex_policy >= 3.2.1)
+setupRequired(daf_base >= 3.2.7)
+setupRequired(daf_persistence >= 3.3.7)
+setupRequired(utils >= 3.4.1)
+setupRequired(pex_exceptions >= 3.2.1)
+
+envAppend(PATH, ${PRODUCT_DIR}/bin)
+envAppend(PYTHONPATH, ${PRODUCT_DIR}/python)
