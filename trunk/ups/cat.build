@@ -1,0 +1,3 @@
+svn co @SVNROOT@/DMS/cat/tags/@VERSION@ @PRODUCT@-@VERSION@ &&
+cd @PRODUCT@-@VERSION@ &&
+setup -r . &&

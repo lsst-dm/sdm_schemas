@@ -1,0 +1,21 @@
+
+# to prepare production for a new data challange:
+
+1) change the policy files in cat/policy
+2) run cat/bin/setupGlobal -f [appropriate policy from cat/policy/]
+3) run bin/grantDCAccess.py
+
+=========================================================
+
+# standalone installation (DC3b db in the example below), 
+# useful for testing
+
+cd $CAT_DIR
+mysql -e 'create database GlobalDB'
+mysql -e 'create database DC3b_DB'
+mysql -D DC3b_DB < sql/lsstSchema4mysqlDC3b.sql
+mysql -D DBGlobal < sql/setup_DB_global.sql
+mysql -D DC3b_DB < sql/setup_storedFunctions.sql
+mysql -D DC3b_DB < sql/setup_perRunTables.sql
+mysql -D DC3b_DB < sql/setup_sdqa.sql
+mysql -D DC3b_DB < sql/setup_DB_dataChallenge.sql
