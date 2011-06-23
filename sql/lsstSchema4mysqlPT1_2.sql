@@ -246,6 +246,8 @@ CREATE TABLE SimRefObject
     decl DOUBLE NOT NULL,
         -- <descr>ICRS Dec. of object.</descr>
         -- <unit>deg</unit>
+    htmId20 BIGINT NOT NULL,
+        -- <descr>Level 20 HTM ID of (ra, decl)</descr>
     gLat DOUBLE NULL,
         -- <descr>Galactic latitude of star. NULL for galaxies.</descr>
         -- <unit>deg</unit>
@@ -305,7 +307,8 @@ CREATE TABLE SimRefObject
     yCov SMALLINT NOT NULL,
         -- <descr>Number of y-band science CCDs containing reference object.</descr>
     PRIMARY KEY (refObjectId),
-    KEY IDX_decl (decl ASC)
+    KEY IDX_decl (decl ASC),
+    KEY IDX_htmId20 (htmId20 ASC)
 ) ENGINE=MyISAM;
 
 
@@ -440,7 +443,11 @@ CREATE TABLE Raw_Amp_Exposure
     filterName CHAR(3) NOT NULL,
         -- <descr>Filter name, pulled in from the Filter table.</descr>
     ra DOUBLE NOT NULL,
+        -- <descr>ICRS R.A. of amp center.</descr>
+        -- <unit>deg</unit>
     decl DOUBLE NOT NULL,
+        -- <descr>ICRS Dec. of amp center.</descr>
+        -- <unit>deg</unit>
     equinox FLOAT NOT NULL,
     raDeSys VARCHAR(20) NOT NULL,
     ctype1 VARCHAR(20) NOT NULL,
@@ -468,6 +475,8 @@ CREATE TABLE Raw_Amp_Exposure
     airmass FLOAT NOT NULL,
     darkTime FLOAT NOT NULL,
     zd FLOAT NULL,
+    poly BINARY(120) NOT NULL,
+        -- <descr>binary representation of the 4-corner polygon for the amp.</descr>
     PRIMARY KEY (rawAmpExposureId)
 ) ENGINE=MyISAM;
 
@@ -516,6 +525,21 @@ CREATE TABLE Raw_Amp_To_Snap_Ccd_Exposure
 ) ENGINE=MyISAM;
 
 
+CREATE TABLE Raw_Amp_Exposure_To_Htm11
+    -- <descr>Stores a mapping between raw amplifier exposures and the IDs of 
+    -- spatially overlapping level-11 HTM triangles.</descr>
+(
+    rawAmpExposureId BIGINT NOT NULL,
+        -- <descr>Pointer to Raw_Amp_Exposure.</descr>
+    htmId11 INTEGER NOT NULL,
+        -- <descr>ID for Level 11 HTM triangle overlapping raw amp exposure.
+        -- For each amp exposure, there will be one row for every overlapping
+        -- triangle.</descr>
+    PRIMARY KEY (htmId11, rawAmpExposureId),
+    KEY IDX_rawAmpExposureId (rawAmpExposureId ASC)
+) ENGINE=MyISAM;
+
+
 CREATE TABLE Science_Ccd_Exposure
 (
     scienceCcdExposureId BIGINT NOT NULL,
@@ -535,7 +559,11 @@ CREATE TABLE Science_Ccd_Exposure
     filterName CHAR(3) NOT NULL,
         -- <descr>Filter name, pulled in from the Filter table.</descr>
     ra DOUBLE NOT NULL,
+        -- <descr>ICRS R.A. of CCD center.</descr>
+        -- <unit>deg</unit>
     decl DOUBLE NOT NULL,
+        -- <descr>ICRS Dec. of CCD center.</descr>
+        -- <unit>deg</unit>
     equinox FLOAT NOT NULL,
         -- <descr>Equinox of World Coordinate System.</descr>
     raDeSys VARCHAR(20) NOT NULL,
@@ -588,6 +616,8 @@ CREATE TABLE Science_Ccd_Exposure
     fluxMag0 FLOAT NOT NULL,
     fluxMag0Sigma FLOAT NOT NULL,
     fwhm DOUBLE NOT NULL,
+    poly BINARY(120) NOT NULL,
+        -- <descr>binary representation of the 4-corner polygon for the ccd.</descr>
     PRIMARY KEY (scienceCcdExposureId)
 ) ENGINE=MyISAM;
 
@@ -623,6 +653,21 @@ CREATE TABLE Snap_Ccd_To_Science_Ccd_Exposure
 ) ENGINE=MyISAM;
 
 
+CREATE TABLE Science_Ccd_Exposure_To_Htm10
+    -- <descr>Stores a mapping between science CCD exposures and the IDs of 
+    -- spatially overlapping level-10 HTM triangles.</descr>
+(
+    scienceCcdExposureId BIGINT NOT NULL,
+        -- <descr>Pointer to Science_Ccd_Exposure.</descr>
+    htmId10 INTEGER NOT NULL,
+        -- <descr>ID for Level 10 HTM triangle overlapping science CCD exposure.
+        -- For each CCD exposure, there will be one row for every overlapping
+        -- triangle.</descr>
+    PRIMARY KEY (htmId10, scienceCcdExposureId),
+    KEY IDX_scienceCcdExposureId (scienceCcdExposureId ASC)
+) ENGINE=MyISAM;
+
+
 CREATE TABLE Visit
     -- <descr>Defines a single Visit. 1 row per LSST visit.</descr>
 (
@@ -649,9 +694,10 @@ CREATE TABLE Object
     ra_PS DOUBLE NOT NULL,
         -- <descr>RA of mean source cluster position. Computed from the
         -- normalized sum of the unit vector positions of all sources belonging
-        -- to an object; for sources that are close together this is equivalent
-        -- to minimizing the sum of the square angular separations between the
-        -- source positions and the object position.</descr>
+        -- to an object, where unit vectors are computed from the Source ra
+        -- and decl column values. For sources that are close together this is
+        -- equivalent to minimizing the sum of the square angular separations
+        -- between the source positions and the object position.</descr>
         -- <unit>deg</unit>
     ra_PS_Sigma FLOAT NULL,
         -- <descr>Uncertainty of ra_PS (standard deviation).</descr>
@@ -659,9 +705,10 @@ CREATE TABLE Object
     decl_PS DOUBLE NOT NULL,
         -- <descr>Dec of mean source cluster position. Computed from the
         -- normalized sum of the unit vector positions of all sources belonging
-        -- to an object; for sources that are close together this is equivalent
-        -- to minimizing the sum of the square angular separations between the
-        -- source positions and the object position.</descr>
+        -- to an object, where unit vectors are computed from the Source ra
+        -- and decl column  values. For sources that are close together this is
+        -- equivalent to minimizing the sum of the square angular separations
+        -- between the source positions and the object position.</descr>
         -- <unit>deg</unit>
     decl_PS_Sigma FLOAT NULL,
         -- <descr>Uncertainty of decl_PS (standard deviation).</descr>
@@ -669,23 +716,23 @@ CREATE TABLE Object
     radecl_PS_Cov FLOAT NULL,
         -- <descr>Covariance of ra_PS and decl_PS.</descr>
         -- <unit>deg^2</unit>
+    htmId20 BIGINT NOT NULL,
+        -- <descr>Level 20 HTM ID of (ra_PS, decl_PS)</descr>
     ra_SG DOUBLE NULL,
         -- <descr>Inverse variance weighted mean source cluster position RA.
-        -- Note that PT1.2 contains no small galaxy model code - this position
-        -- is computed using the same point source model source positions as
-        -- ra_PS, decl_PS.</descr>
+        -- This position is computed using the same source positions (Source
+        -- ra and decl column values) as ra_PS, decl_PS.</descr>
         -- <unit>deg</unit>
     ra_SG_Sigma FLOAT NULL,
         -- <descr>Uncertainty of ra_SG (standard deviation).</descr>
         -- <unit>deg</unit>
     decl_SG DOUBLE NULL,
         -- <descr>Inverse variance weighted mean source cluster position Dec.
-        -- Note that PT1.2 contains no small galaxy model code - this position
-        -- is computed using the same point source model source positions as
-        -- ra_PS, decl_PS.</descr>
+        -- This position is computed using the same source positions (Source
+        -- ra and decl column values) as ra_PS, decl_PS.</descr>
         -- <unit>deg</unit>
     decl_SG_Sigma FLOAT NULL,
-        -- <descr>Uncertain of decl_SG (standard deviation).</descr>
+        -- <descr>Uncertainty of decl_SG (standard deviation).</descr>
         -- <unit>deg</unit>
     radecl_SG_Cov FLOAT NULL,
         -- <descr>Covariance of ra_SG and decl_SG.</descr>
@@ -728,7 +775,7 @@ CREATE TABLE Object
         -- filter for size, ellipticity and Sersic index parameters.</descr>
     extendedness SMALLINT NULL,
         -- <descr>Not set for PT1.2. Probability that this object is an extended
-        -- object. Valid range: 0-10,000 (divide by 100 to get the actuall
+        -- object. Valid range: 0-10,000 (divide by 100 to get the actual
         -- probability in the range 0-100% with 2 digit precision).</descr>
     varProb FLOAT NULL,
         -- <descr>Not set for PT1.2. Probability that this object is variable.
@@ -742,6 +789,10 @@ CREATE TABLE Object
         -- <descr>The latest time when this object was observed (taiMidPoint of
         -- the last Source).</descr>
         -- <unit>mjd</unit>
+    meanObsTime DOUBLE NULL,
+        -- <descr>The mean of the observation times (taiMidPoint) of the
+        -- sources associated with this object.</descr>
+        -- <unit>mjd</unit>
     flags INTEGER NULL,
         -- <descr>Always 0 in PT1.2.</descr>
     uNumObs INTEGER NULL,
@@ -749,7 +800,7 @@ CREATE TABLE Object
     uExtendedness SMALLINT NULL,
         -- <descr>Not set for PT1.2. Probability that this object is an extended
         -- object for u filter. Valid range: 0-10,000 (divide by 100 to get the 
-        -- actuall probability in the range 0-100% with 2 digit precision).
+        -- actual probability in the range 0-100% with 2 digit precision).
         -- </descr>
     uVarProb FLOAT NULL,
         -- <descr>Not set for PT1.2. Probability that this object is variable
@@ -792,18 +843,24 @@ CREATE TABLE Object
         -- belonging to this object.</descr>
         -- <unit>erg/s/cm^2/Hz</unit>
     uFlux_PS_Sigma FLOAT NULL,
-        -- <descr>Uncertain of uFlux_PS (standard deviation).</descr>
+        -- <descr>Uncertainty of uFlux_PS (standard deviation).</descr>
         -- <unit>erg/s/cm^2/Hz</unit>
-    uFlux_SG FLOAT NULL,
-        -- <descr>Not set for PT1.2. Flux for Small Galaxy model for u filter.
-        -- </descr>
-    uFlux_SG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of uFlux_SG.</descr>
-    uFlux_CSG FLOAT NULL,
-        -- <descr>Not set for PT1.2. Flux for Canonical Small Galaxy model for u
-        -- filter.</descr>
-    uFlux_CSG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of uFlux_CSG.</descr>
+    uFlux_ESG FLOAT NULL,
+        -- <descr>Inverse variance weighted mean AB flux of u-band sources
+        -- belonging to this object. Fluxes of individual sources estimated
+        -- using an Experimental Small Galaxy model.</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
+    uFlux_ESG_Sigma FLOAT NULL,
+        -- <descr>Uncertainty of uFlux_ESG (standard deviation).</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
+    uFlux_Gaussian FLOAT NULL,
+        -- <descr>Inverse variance weighted mean AB flux of u-band sources
+        -- belonging to this object. Fluxes of individual sources estimated
+        -- using an elliptical Gaussian model.</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
+    uFlux_Gaussian_Sigma FLOAT NULL,
+        -- <descr>Uncertainty of uFlux_Gaussian (standard deviation).</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
     uTimescale FLOAT NULL,
         -- <descr>Not set for PT1.2. Characteristic timescale of flux variations
         -- for u filter.</descr>
@@ -822,39 +879,44 @@ CREATE TABLE Object
     uSersicN_SG_Sigma FLOAT NULL,
         -- <descr>Not set for PT1.2. Uncertainty of uSersicN_SG.</descr>
     uE1_SG FLOAT NULL,
-        -- <descr>Unweighted mean u-band ellipticity of source cluster in a
-        -- tangent plane centered on (ra_PS, decl_PS) and with the standard N,E
-        -- basis. Note that PT1.2 contains no small galaxy model code -
-        -- ellipticities are derived from source adaptive second moments (Ixx,
-        -- Iyy, Ixy).</descr>
+        -- <descr>Inverse variance weighted mean u-band ellipticity of source
+        -- cluster in a tangent plane centered on (ra_PS, decl_PS) and with
+        -- the standard N,E basis. Ellipticities are derived from source
+        -- adaptive second moments (Ixx, Iyy, Ixy).</descr>
     uE1_SG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of uE1_SG.</descr>
+        -- <descr>Uncertainty of uE1_SG.</descr>
     uE2_SG FLOAT NULL,
-        -- <descr>Unweighted mean u-band ellipticity of source cluster in a
-        -- tangent plane centered on (ra_PS, decl_PS) and with the standard N,E
-        -- basis. Note that PT1.2 contains no small galaxy model code -
-        -- ellipticities are derived from source adaptive second moments (Ixx,
-        -- Iyy, Ixy).</descr>
+        -- <descr>Inverse variance weighted mean u-band ellipticity of source
+        -- cluster in a tangent plane centered on (ra_PS, decl_PS) and with
+        -- the standard N,E basis. Ellipticities are derived from source
+        -- adaptive second moments (Ixx, Iyy, Ixy).</descr>
     uE2_SG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of uE2_SG.</descr>
+        -- <descr>Uncertainty of uE2_SG.</descr>
     uRadius_SG FLOAT NULL,
-        -- <descr>Unweighted mean u-band radius of source cluster. Note that
-        -- PT1.2 contains no small galaxy model code - radii are derived from
-        -- source adaptive second moments (Ixx, Iyy, Ixy).</descr>
+        -- <descr>Inverse variance weighted mean u-band radius of source
+        -- cluster. Radii are derived from source adaptive second moments
+        -- (Ixx, Iyy, Ixy).</descr>
         -- <unit>arcsec</unit>
     uRadius_SG_Sigma FLOAT NULL,
         -- <descr>Uncertainty of uRadius_SG (standard deviation).</descr>
         -- <unit>arcsec</unit>
     uFlags INTEGER NULL,
         -- <descr>Encodes the number of u-band sources used to determine mean
-        -- flux/ellipticity. Equal to N_flux_samples +
-        -- N_ellipticity_samples*4096.</descr>
+        -- fluxes/ellipticity:
+        -- <ul>
+        -- <li>bits 0-7: number of PSF flux samples</li>
+        -- <li>bits 8-15: number of ESG (Experimental Small Galaxy)
+        --     model flux samples</li>
+        -- <li>bits 16-23: number of elliptical Gaussian model flux samples</li>
+        -- <li>bits 24-31: number of adaptive second moment samples;
+        --     ellipticities are derived from moments</li>
+        -- </ul></descr>
     gNumObs INTEGER NULL,
         -- <descr>Number of g-band sources associated with this object.</descr>
     gExtendedness SMALLINT NULL,
         -- <descr>Not set for PT1.2. Probability that this object is an extended
         -- object for g filter. Valid range: 0-10,000 (divide by 100 to get the 
-        -- actuall probability in the range 0-100% with 2 digit precision).
+        -- actual probability in the range 0-100% with 2 digit precision).
         -- </descr>
     gVarProb FLOAT NULL,
         -- <descr>Not set for PT1.2. Probability that this object is variable
@@ -899,16 +961,22 @@ CREATE TABLE Object
     gFlux_PS_Sigma FLOAT NULL,
         -- <descr>Uncertainty of gFlux_PS (standard deviation).</descr>
         -- <unit>erg/s/cm^2/Hz</unit>
-    gFlux_SG FLOAT NULL,
-        -- <descr>Not set for PT1.2. Flux for Small Galaxy model for g filter.
-        -- </descr>
-    gFlux_SG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of gFlux_SG.</descr>
-    gFlux_CSG FLOAT NULL,
-        -- <descr>Not set for PT1.2. Flux for Canonical Small Galaxy model for g
-        -- filter.</descr>
-    gFlux_CSG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of gFlux_CSG.</descr>
+    gFlux_ESG FLOAT NULL,
+        -- <descr>Inverse variance weighted mean AB flux of g-band sources
+        -- belonging to this object. Fluxes of individual sources estimated
+        -- using an Experimental Small Galaxy model.</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
+    gFlux_ESG_Sigma FLOAT NULL,
+        -- <descr>Uncertainty of gFlux_ESG (standard deviation).</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
+    gFlux_Gaussian FLOAT NULL,
+        -- <descr>Inverse variance weighted mean AB flux of g-band sources
+        -- belonging to this object. Fluxes of individual sources estimated
+        -- using an elliptical Gaussian model.</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
+    gFlux_Gaussian_Sigma FLOAT NULL,
+        -- <descr>Uncertainty of gFlux_Gaussian (standard deviation).</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
     gTimescale FLOAT NULL,
         -- <descr>Not set for PT1.2. Characteristic timescale of flux variations
         -- for g filter.</descr>
@@ -927,39 +995,44 @@ CREATE TABLE Object
     gSersicN_SG_Sigma FLOAT NULL,
         -- <descr>Not set for PT1.2. Uncertainty of gSersicN_SG.</descr>
     gE1_SG FLOAT NULL,
-        -- <descr>Unweighted mean g-band ellipticity of source cluster in a
-        -- tangent plane centered on (ra_PS, decl_PS) and with the standard N,E
-        -- basis. Note that PT1.2 contains no small galaxy model code -
-        -- ellipticities are derived from source adaptive second moments (Ixx,
-        -- Iyy, Ixy).</descr>
+        -- <descr>Inverse variance weighted mean g-band ellipticity of source
+        -- cluster in a tangent plane centered on (ra_PS, decl_PS) and with
+        -- the standard N,E basis. Ellipticities are derived from source
+        -- adaptive second moments (Ixx, Iyy, Ixy).</descr>
     gE1_SG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of gE1_SG.</descr>
+        -- <descr>Uncertainty of gE1_SG.</descr>
     gE2_SG FLOAT NULL,
-        -- <descr>Unweighted mean g-band ellipticity of source cluster in a
-        -- tangent plane centered on (ra_PS, decl_PS) and with the standard N,E
-        -- basis. Note that PT1.2 contains no small galaxy model code -
-        -- ellipticities are derived from source adaptive second moments (Ixx,
-        -- Iyy, Ixy).</descr>
+        -- <descr>Inverse variance weighted mean g-band ellipticity of source
+        -- cluster in a tangent plane centered on (ra_PS, decl_PS) and with
+        -- the standard N,E basis. Ellipticities are derived from source
+        -- adaptive second moments (Ixx, Iyy, Ixy).</descr>
     gE2_SG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of gE2_SG.</descr>
+        -- <descr>Uncertainty of gE2_SG.</descr>
     gRadius_SG FLOAT NULL,
-        -- <descr>Unweighted mean g-band radius of source cluster. Note that
-        -- PT1.2 contains no small galaxy model code - radii are derived from
-        -- source adaptive second moments (Ixx, Iyy, Ixy).</descr>
+        -- <descr>Inverse variance weighted mean g-band radius of source
+        -- cluster. Radii are derived from source adaptive second moments
+        -- (Ixx, Iyy, Ixy).</descr>
         -- <unit>arcsec</unit>
     gRadius_SG_Sigma FLOAT NULL,
         -- <descr>Uncertainty of gRadius_SG (standard deviation).</descr>
         -- <unit>arcsec</unit>
     gFlags INTEGER NULL,
         -- <descr>Encodes the number of g-band sources used to determine mean
-        -- flux/ellipticity. Equal to N_flux_samples +
-        -- N_ellipticity_samples*4096.</descr>
+        -- fluxes/ellipticity:
+        -- <ul>
+        -- <li>bits 0-7: number of PSF flux samples</li>
+        -- <li>bits 8-15: number of ESG (Experimental Small Galaxy)
+        --     model flux samples</li>
+        -- <li>bits 16-23: number of elliptical Gaussian model flux samples</li>
+        -- <li>bits 24-31: number of adaptive second moment samples;
+        --     ellipticities are derived from moments</li>
+        -- </ul></descr>
     rNumObs INTEGER NULL,
         -- <descr>Number of r-band sources associated with this object.</descr>
     rExtendedness SMALLINT NULL,
         -- <descr>Not set for PT1.2. Probability that this object is an extended
         -- object for r filter. Valid range: 0-10,000 (divide by 100 to get the 
-        -- actuall probability in the range 0-100% with 2 digit precision).
+        -- actual probability in the range 0-100% with 2 digit precision).
         -- </descr>
     rVarProb FLOAT NULL,
         -- <descr>Not set for PT1.2. Probability that this object is variable
@@ -1004,16 +1077,22 @@ CREATE TABLE Object
     rFlux_PS_Sigma FLOAT NULL,
         -- <descr>Uncertainty of rFlux_PS (standard deviation).</descr>
         -- <unit>erg/s/cm^2/Hz</unit>
-    rFlux_SG FLOAT NULL,
-        -- <descr>Not set for PT1.2. Flux for Small Galaxy model for r filter.
-        -- </descr>
-    rFlux_SG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of rFlux_SG.</descr>
-    rFlux_CSG FLOAT NULL,
-        -- <descr>Not set for PT1.2. Flux for Canonical Small Galaxy model for r
-        -- filter.</descr>
-    rFlux_CSG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of rFlux_CSG.</descr>
+    rFlux_ESG FLOAT NULL,
+        -- <descr>Inverse variance weighted mean AB flux of r-band sources
+        -- belonging to this object. Fluxes of individual sources estimated
+        -- using an Experimental Small Galaxy model.</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
+    rFlux_ESG_Sigma FLOAT NULL,
+        -- <descr>Uncertainty of rFlux_ESG (standard deviation).</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
+    rFlux_Gaussian FLOAT NULL,
+        -- <descr>Inverse variance weighted mean AB flux of r-band sources
+        -- belonging to this object. Fluxes of individual sources estimated
+        -- using an elliptical Gaussian model.</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
+    rFlux_Gaussian_Sigma FLOAT NULL,
+        -- <descr>Uncertainty of rFlux_Gaussian (standard deviation).</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
     rTimescale FLOAT NULL,
         -- <descr>Not set for PT1.2. Characteristic timescale of flux variations
         -- for r filter.</descr>
@@ -1032,39 +1111,44 @@ CREATE TABLE Object
     rSersicN_SG_Sigma FLOAT NULL,
         -- <descr>Not set for PT1.2. Uncertainty of rSersicN_SG.</descr>
     rE1_SG FLOAT NULL,
-        -- <descr>Unweighted mean r-band ellipticity of source cluster in a
-        -- tangent plane centered on (ra_PS, decl_PS) and with the standard N,E
-        -- basis. Note that PT1.2 contains no small galaxy model code -
-        -- ellipticities are derived from source adaptive second moments (Ixx,
-        -- Iyy, Ixy).</descr>
+        -- <descr>Inverse variance weighted mean r-band ellipticity of source
+        -- cluster in a tangent plane centered on (ra_PS, decl_PS) and with
+        -- the standard N,E basis. Ellipticities are derived from source
+        -- adaptive second moments (Ixx, Iyy, Ixy).</descr>
     rE1_SG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of rE1_SG.</descr>
+        -- <descr>Uncertainty of rE1_SG.</descr>
     rE2_SG FLOAT NULL,
-        -- <descr>Unweighted mean r-band ellipticity of source cluster in a
-        -- tangent plane centered on (ra_PS, decl_PS) and with the standard N,E
-        -- basis. Note that PT1.2 contains no small galaxy model code -
-        -- ellipticities are derived from source adaptive second moments (Ixx,
-        -- Iyy, Ixy).</descr>
+        -- <descr>Inverse variance weighted mean r-band ellipticity of source
+        -- cluster in a tangent plane centered on (ra_PS, decl_PS) and with
+        -- the standard N,E basis. Ellipticities are derived from source
+        -- adaptive second moments (Ixx, Iyy, Ixy).</descr>
     rE2_SG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of rE2_SG.</descr>
+        -- <descr>Uncertainty of rE2_SG.</descr>
     rRadius_SG FLOAT NULL,
-        -- <descr>Unweighted mean r-band radius of source cluster. Note that
-        -- PT1.2 contains no small galaxy model code - radii are derived from
-        -- source adaptive second moments (Ixx, Iyy, Ixy).</descr>
+        -- <descr>Inverse variance weighted mean r-band radius of source
+        -- cluster. Radii are derived from source adaptive second moments
+        -- (Ixx, Iyy, Ixy).</descr>
         -- <unit>arcsec</unit>
     rRadius_SG_Sigma FLOAT NULL,
         -- <descr>Uncertainty of rRadius_SG (standard deviation).</descr>
         -- <unit>arcsec</unit>
     rFlags INTEGER NULL,
         -- <descr>Encodes the number of r-band sources used to determine mean
-        -- flux/ellipticity. Equal to N_flux_samples +
-        -- N_ellipticity_samples*4096.</descr>
+        -- fluxes/ellipticity:
+        -- <ul>
+        -- <li>bits 0-7: number of PSF flux samples</li>
+        -- <li>bits 8-15: number of ESG (Experimental Small Galaxy)
+        --     model flux samples</li>
+        -- <li>bits 16-23: number of elliptical Gaussian model flux samples</li>
+        -- <li>bits 24-31: number of adaptive second moment samples;
+        --     ellipticities are derived from moments</li>
+        -- </ul></descr>
     iNumObs INTEGER NULL,
         -- <descr>Number of i-band sources associated with this object.</descr>
     iExtendedness SMALLINT NULL,
         -- <descr>Not set for PT1.2. Probability that this object is an extended
         -- object for i filter. Valid range: 0-10,000 (divide by 100 to get the 
-        -- actuall probability in the range 0-100% with 2 digit precision).
+        -- actual probability in the range 0-100% with 2 digit precision).
         -- </descr>
     iVarProb FLOAT NULL,
         -- <descr>Not set for PT1.2. Probability that this object is variable
@@ -1109,16 +1193,22 @@ CREATE TABLE Object
     iFlux_PS_Sigma FLOAT NULL,
         -- <descr>Uncertainty of iFlux_PS (standard deviation).</descr>
         -- <unit>erg/s/cm^2/Hz</unit>
-    iFlux_SG FLOAT NULL,
-        -- <descr>Not set for PT1.2. Flux for Small Galaxy model for i filter.
-        -- </descr>
-    iFlux_SG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of iFlux_SG.</descr>
-    iFlux_CSG FLOAT NULL,
-        -- <descr>Not set for PT1.2. Flux for Canonical Small Galaxy model for i
-        -- filter.</descr>
-    iFlux_CSG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of iFlux_CSG.</descr>
+    iFlux_ESG FLOAT NULL,
+        -- <descr>Inverse variance weighted mean AB flux of i-band sources
+        -- belonging to this object. Fluxes of individual sources estimated
+        -- using an Experimental Small Galaxy model.</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
+    iFlux_ESG_Sigma FLOAT NULL,
+        -- <descr>Uncertainty of iFlux_ESG (standard deviation).</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
+    iFlux_Gaussian FLOAT NULL,
+        -- <descr>Inverse variance weighted mean AB flux of i-band sources
+        -- belonging to this object. Fluxes of individual sources estimated
+        -- using an elliptical Gaussian model.</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
+    iFlux_Gaussian_Sigma FLOAT NULL,
+        -- <descr>Uncertainty of iFlux_Gaussian (standard deviation).</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
     iTimescale FLOAT NULL,
         -- <descr>Not set for PT1.2. Characteristic timescale of flux variations
         -- for i filter.</descr>
@@ -1137,39 +1227,44 @@ CREATE TABLE Object
     iSersicN_SG_Sigma FLOAT NULL,
         -- <descr>Not set for PT1.2. Uncertainty of iSersicN_SG.</descr>
     iE1_SG FLOAT NULL,
-        -- <descr>Unweighted mean i-band ellipticity of source cluster in a
-        -- tangent plane centered on (ra_PS, decl_PS) and with the standard N,E
-        -- basis. Note that PT1.2 contains no small galaxy model code -
-        -- ellipticities are derived from source adaptive second moments (Ixx,
-        -- Iyy, Ixy).</descr>
+        -- <descr>Inverse variance weighted mean i-band ellipticity of source
+        -- cluster in a tangent plane centered on (ra_PS, decl_PS) and with
+        -- the standard N,E basis. Ellipticities are derived from source
+        -- adaptive second moments (Ixx, Iyy, Ixy).</descr>
     iE1_SG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of iE1_SG.</descr>
+        -- <descr>Uncertainty of iE1_SG.</descr>
     iE2_SG FLOAT NULL,
-        -- <descr>Unweighted mean i-band ellipticity of source cluster in a
-        -- tangent plane centered on (ra_PS, decl_PS) and with the standard N,E
-        -- basis. Note that PT1.2 contains no small galaxy model code -
-        -- ellipticities are derived from source adaptive second moments (Ixx,
-        -- Iyy, Ixy).</descr>
+        -- <descr>Inverse variance weighted mean i-band ellipticity of source
+        -- cluster in a tangent plane centered on (ra_PS, decl_PS) and with
+        -- the standard N,E basis. Ellipticities are derived from source
+        -- adaptive second moments (Ixx, Iyy, Ixy).</descr>
     iE2_SG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of iE2_SG.</descr>
+        -- <descr>Uncertainty of iE2_SG.</descr>
     iRadius_SG FLOAT NULL,
-        -- <descr>Unweighted mean i-band radius of source cluster. Note that
-        -- PT1.2 contains no small galaxy model code - radii are derived from
-        -- source adaptive second moments (Ixx, Iyy, Ixy).</descr>
+        -- <descr>Inverse variance weighted mean i-band radius of source
+        -- cluster. Radii are derived from source adaptive second moments
+        -- (Ixx, Iyy, Ixy).</descr>
         -- <unit>arcsec</unit>
     iRadius_SG_Sigma FLOAT NULL,
         -- <descr>Uncertainty of iRadius_SG (standard deviation).</descr>
         -- <unit>arcsec</unit>
     iFlags INTEGER NULL,
         -- <descr>Encodes the number of i-band sources used to determine mean
-        -- flux/ellipticity. Equal to N_flux_samples +
-        -- N_ellipticity_samples*4096.</descr>
+        -- fluxes/ellipticity:
+        -- <ul>
+        -- <li>bits 0-7: number of PSF flux samples</li>
+        -- <li>bits 8-15: number of ESG (Experimental Small Galaxy)
+        --     model flux samples</li>
+        -- <li>bits 16-23: number of elliptical Gaussian model flux samples</li>
+        -- <li>bits 24-31: number of adaptive second moment samples;
+        --     ellipticities are derived from moments</li>
+        -- </ul></descr>
     zNumObs INTEGER NULL,
         -- <descr>Number of z-band sources associated with this object.</descr>
     zExtendedness SMALLINT NULL,
         -- <descr>Not set for PT1.2. Probability that this object is an extended
         -- object for z filter. Valid range: 0-10,000 (divide by 100 to get the 
-        -- actuall probability in the range 0-100% with 2 digit precision).
+        -- actual probability in the range 0-100% with 2 digit precision).
         -- </descr>
     zVarProb FLOAT NULL,
         -- <descr>Not set for PT1.2. Probability that this object is variable
@@ -1214,16 +1309,22 @@ CREATE TABLE Object
     zFlux_PS_Sigma FLOAT NULL,
         -- <descr>Uncertainty of zFlux_PS (standard deviation).</descr>
         -- <unit>erg/s/cm^2/Hz</unit>
-    zFlux_SG FLOAT NULL,
-        -- <descr>Not set for PT1.2. Flux for Small Galaxy model for z filter.
-        -- </descr>
-    zFlux_SG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of zFlux_SG.</descr>
-    zFlux_CSG FLOAT NULL,
-        -- <descr>Not set for PT1.2. Flux for Canonical Small Galaxy model for z
-        -- filter.</descr>
-    zFlux_CSG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of zFlux_CSG.</descr>
+    zFlux_ESG FLOAT NULL,
+        -- <descr>Inverse variance weighted mean AB flux of z-band sources
+        -- belonging to this object. Fluxes of individual sources estimated
+        -- using an Experimental Small Galaxy model.</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
+    zFlux_ESG_Sigma FLOAT NULL,
+        -- <descr>Uncertainty of zFlux_ESG (standard deviation).</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
+    zFlux_Gaussian FLOAT NULL,
+        -- <descr>Inverse variance weighted mean AB flux of z-band sources
+        -- belonging to this object. Fluxes of individual sources estimated
+        -- using an elliptical Gaussian model.</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
+    zFlux_Gaussian_Sigma FLOAT NULL,
+        -- <descr>Uncertainty of zFlux_Gaussian (standard deviation).</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
     zTimescale FLOAT NULL,
         -- <descr>Not set for PT1.2. Characteristic timescale of flux variations
         -- for z filter.</descr>
@@ -1242,39 +1343,44 @@ CREATE TABLE Object
     zSersicN_SG_Sigma FLOAT NULL,
         -- <descr>Not set for PT1.2. Uncertainty of zSersicN_SG.</descr>
     zE1_SG FLOAT NULL,
-        -- <descr>Unweighted mean z-band ellipticity of source cluster in a
-        -- tangent plane centered on (ra_PS, decl_PS) and with the standard N,E
-        -- basis. Note that PT1.2 contains no small galaxy model code -
-        -- ellipticities are derived from source adaptive second moments (Ixx,
-        -- Iyy, Ixy).</descr>
+        -- <descr>Inverse variance weighted mean z-band ellipticity of source
+        -- cluster in a tangent plane centered on (ra_PS, decl_PS) and with
+        -- the standard N,E basis. Ellipticities are derived from source
+        -- adaptive second moments (Ixx, Iyy, Ixy).</descr>
     zE1_SG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of zE1_SG.</descr>
+        -- <descr>Uncertainty of zE1_SG.</descr>
     zE2_SG FLOAT NULL,
-        -- <descr>Unweighted mean z-band ellipticity of source cluster in a
-        -- tangent plane centered on (ra_PS, decl_PS) and with the standard N,E
-        -- basis. Note that PT1.2 contains no small galaxy model code -
-        -- ellipticities are derived from source adaptive second moments (Ixx,
-        -- Iyy, Ixy).</descr>
+        -- <descr>Inverse variance weighted mean z-band ellipticity of source
+        -- cluster in a tangent plane centered on (ra_PS, decl_PS) and with
+        -- the standard N,E basis. Ellipticities are derived from source
+        -- adaptive second moments (Ixx, Iyy, Ixy).</descr>
     zE2_SG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of zE2_SG.</descr>
+        -- <descr>Uncertainty of zE2_SG.</descr>
     zRadius_SG FLOAT NULL,
-        -- <descr>Unweighted mean z-band radius of source cluster. Note that
-        -- PT1.2 contains no small galaxy model code - radii are derived from
-        -- source adaptive second moments (Ixx, Iyy, Ixy).</descr>
+        -- <descr>Inverse variance weighted mean z-band radius of source
+        -- cluster. Radii are derived from source adaptive second moments
+        -- (Ixx, Iyy, Ixy).</descr>
         -- <unit>arcsec</unit>
     zRadius_SG_Sigma FLOAT NULL,
         -- <descr>Uncertainty of zRadius_SG (standard deviation).</descr>
         -- <unit>arcsec</unit>
     zFlags INTEGER NULL,
         -- <descr>Encodes the number of z-band sources used to determine mean
-        -- flux/ellipticity. Equal to N_flux_samples +
-        -- N_ellipticity_samples*4096.</descr>
+        -- fluxes/ellipticity:
+        -- <ul>
+        -- <li>bits 0-7: number of PSF flux samples</li>
+        -- <li>bits 8-15: number of ESG (Experimental Small Galaxy)
+        --     model flux samples</li>
+        -- <li>bits 16-23: number of elliptical Gaussian model flux samples</li>
+        -- <li>bits 24-31: number of adaptive second moment samples;
+        --     ellipticities are derived from moments</li>
+        -- </ul></descr>
     yNumObs INTEGER NULL,
         -- <descr>Number of y-band sources associated with this object.</descr>
     yExtendedness SMALLINT NULL,
         -- <descr>Not set for PT1.2. Probability that this object is an extended
         -- object for y filter. Valid range: 0-10,000 (divide by 100 to get the 
-        -- actuall probability in the range 0-100% with 2 digit precision).
+        -- actual probability in the range 0-100% with 2 digit precision).
         -- </descr>
     yVarProb FLOAT NULL,
         -- <descr>Not set for PT1.2. Probability that this object is variable
@@ -1319,16 +1425,22 @@ CREATE TABLE Object
     yFlux_PS_Sigma FLOAT NULL,
         -- <descr>Uncertainty of yFlux_PS (standard deviation).</descr>
         -- <unit>erg/s/cm^2/Hz</unit>
-    yFlux_SG FLOAT NULL,
-        -- <descr>Not set for PT1.2. Flux for Small Galaxy model for y filter.
-        -- </descr>
-    yFlux_SG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of yFlux_SG.</descr>
-    yFlux_CSG FLOAT NULL,
-        -- <descr>Not set for PT1.2. Flux for Canonical Small Galaxy model for y
-        -- filter.</descr>
-    yFlux_CSG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of yFlux_CSG.</descr>
+    yFlux_ESG FLOAT NULL,
+        -- <descr>Inverse variance weighted mean AB flux of y-band sources
+        -- belonging to this object. Fluxes of individual sources estimated
+        -- using an Experimental Small Galaxy model.</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
+    yFlux_ESG_Sigma FLOAT NULL,
+        -- <descr>Uncertainty of yFlux_ESG (standard deviation).</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
+    yFlux_Gaussian FLOAT NULL,
+        -- <descr>Inverse variance weighted mean AB flux of y-band sources
+        -- belonging to this object. Fluxes of individual sources estimated
+        -- using an elliptical Gaussian model.</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
+    yFlux_Gaussian_Sigma FLOAT NULL,
+        -- <descr>Uncertainty of yFlux_Gaussian (standard deviation).</descr>
+        -- <unit>erg/s/cm^2/Hz</unit>
     yTimescale FLOAT NULL,
         -- <descr>Not set for PT1.2. Characteristic timescale of flux variations
         -- for y filter.</descr>
@@ -1347,39 +1459,45 @@ CREATE TABLE Object
     ySersicN_SG_Sigma FLOAT NULL,
         -- <descr>Not set for PT1.2. Uncertainty of ySersicN_SG.</descr>
     yE1_SG FLOAT NULL,
-        -- <descr>Unweighted mean y-band ellipticity of source cluster in a
-        -- tangent plane centered on (ra_PS, decl_PS) and with the standard N,E
-        -- basis. Note that PT1.2 contains no small galaxy model code -
-        -- ellipticities are derived from source adaptive second moments (Ixx,
-        -- Iyy, Ixy).</descr>
+        -- <descr>Inverse variance weighted mean y-band ellipticity of source
+        -- cluster in a tangent plane centered on (ra_PS, decl_PS) and with
+        -- the standard N,E basis. Ellipticities are derived from source
+        -- adaptive second moments (Ixx, Iyy, Ixy).</descr>
     yE1_SG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of yE1_SG.</descr>
+        -- <descr>Uncertainty of yE1_SG.</descr>
     yE2_SG FLOAT NULL,
-        -- <descr>Unweighted mean y-band ellipticity of source cluster in a
-        -- tangent plane centered on (ra_PS, decl_PS) and with the standard N,E
-        -- basis. Note that PT1.2 contains no small galaxy model code -
-        -- ellipticities are derived from source adaptive second moments (Ixx,
-        -- Iyy, Ixy).</descr>
+        -- <descr>Inverse variance weighted mean y-band ellipticity of source
+        -- cluster in a tangent plane centered on (ra_PS, decl_PS) and with
+        -- the standard N,E basis. Ellipticities are derived from source
+        -- adaptive second moments (Ixx, Iyy, Ixy).</descr>
     yE2_SG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of yE2_SG.</descr>
+        -- <descr>Uncertainty of yE2_SG.</descr>
     yRadius_SG FLOAT NULL,
-        -- <descr>Unweighted mean y-band radius of source cluster. Note that
-        -- PT1.2 contains no small galaxy model code - radii are derived from
-        -- source adaptive second moments (Ixx, Iyy, Ixy).</descr>
+        -- <descr>Inverse variance weighted mean y-band radius of source
+        -- cluster. Radii are derived from source adaptive second moments
+        -- (Ixx, Iyy, Ixy).</descr>
         -- <unit>arcsec</unit>
     yRadius_SG_Sigma FLOAT NULL,
         -- <descr>Uncertainty of yRadius_SG (standard deviation).</descr>
         -- <unit>arcsec</unit>
     yFlags INTEGER NULL,
         -- <descr>Encodes the number of y-band sources used to determine mean
-        -- flux/ellipticity. Equal to N_flux_samples +
-        -- N_ellipticity_samples*4096.</descr>
+        -- fluxes/ellipticity:
+        -- <ul>
+        -- <li>bits 0-7: number of PSF flux samples</li>
+        -- <li>bits 8-15: number of ESG (Experimental Small Galaxy)
+        --     model flux samples</li>
+        -- <li>bits 16-23: number of elliptical Gaussian model flux samples</li>
+        -- <li>bits 24-31: number of adaptive second moment samples;
+        --     ellipticities are derived from moments</li>
+        -- </ul></descr>
     chunkId INTEGER NULL,
         -- <descr>Internal column used by qserv.</descr>
     subChunkId INTEGER NULL,
         -- <descr>Internal column used by qserv.</descr>
     PRIMARY KEY (objectId),
-    KEY IDX_Object_decl (decl_PS ASC)
+    KEY IDX_decl (decl_PS ASC),
+    KEY IDX_htmId20 (htmId20 ASC)
 ) ENGINE=MyISAM;
 
 
@@ -1422,6 +1540,8 @@ CREATE TABLE Source
         -- <descr>Not set for PT1.2. Component of decl uncertainty due to
         -- uncertainty in WCS solution.</descr>
         -- <unit>deg</unit>
+    htmId20 BIGINT NOT NULL,
+        -- <descr>Level 20 HTM ID of (ra, decl)</descr>
     xFlux DOUBLE NULL,
         -- <descr>Not set for PT1.2.</descr>
         -- <unit>pix</unit>
@@ -1598,18 +1718,20 @@ CREATE TABLE Source
         -- <descr>Not set for PT1.2.</descr>
     extendedness SMALLINT NULL,
         -- <descr>Not set for PT1.2. Probability that this object is an extended
-        -- object. Valid range: 0-10,000 (divide by 100 to get the actuall
+        -- object. Valid range: 0-10,000 (divide by 100 to get the actual
         -- probability in the range 0-100% with 2 digit precision).</descr>
-    flux_PS FLOAT NULL,
-        -- <descr>Not set for PT1.2. Calibrated flux for Point Source model.
-        -- </descr>
-    flux_PS_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of flux_PS.</descr>
-    flux_SG FLOAT NULL,
-        -- <descr>Not set for PT1.2. Calibrated flux for Small Galaxy model.
-        -- </descr>
-    flux_SG_Sigma FLOAT NULL,
-        -- <descr>Not set for PT1.2. Uncertainty of flux_SG.</descr>
+    flux_Gaussian DOUBLE NULL,
+        -- <descr>Uncalibrated flux estimated using an elliptical Gaussian model.</descr>
+        -- <unit>DN</unit>
+    flux_Gaussian_Sigma FLOAT NULL,
+        -- <descr>Uncertainty of flux_Gaussian.</descr>
+        -- <unit>DN</unit>
+    flux_ESG DOUBLE NULL,
+        -- <descr>Uncalibrated flux for Experimental Small Galaxy model.</descr>
+        -- <unit>DN</unit>
+    flux_ESG_Sigma FLOAT NULL,
+        -- <descr>Uncertainty of flux_ESG.</descr>
+        -- <unit>DN</unit>
     sersicN_SG FLOAT NULL,
         -- <descr>Not set for PT1.2. Sersic index for Small Galaxy model.
         -- </descr>
@@ -1666,33 +1788,43 @@ CREATE TABLE Source
         -- Small Galaxy model.</descr>
     flagForAssociation SMALLINT NULL,
         -- <descr>Not set for PT1.2.</descr>
-    flagForDetection SMALLINT NULL,
+    flagForDetection BIGINT NULL,
         -- <descr>Bitwise-or of detection flags.
         -- <ul>
-        --   <li>0x0001 EDGE: source is in region labelled EDGE.</li>
-        --   <li>0x0002 SHAPE_SHIFT: centroid shifted while estimating 
+        --   <li>0x000001 EDGE: source is in region labelled EDGE.</li>
+        --   <li>0x000002 SHAPE_SHIFT: centroid shifted while estimating 
         --       adaptive moments.</li>
-        --   <li>0x0004 SHAPE_MAXITER: too many iterations for adaptive 
+        --   <li>0x000004 SHAPE_MAXITER: too many iterations for adaptive 
         --       moments.</li>
-        --   <li>0x0008 SHAPE_UNWEIGHTED: &quot;adaptive&quot; moments are
+        --   <li>0x000008 SHAPE_UNWEIGHTED: &quot;adaptive&quot; moments are
         --       unweighted.</li>
-        --   <li>0x0010 SHAPE_UNWEIGHTED_PSF: the PSF's &quot;adaptive&quot; 
+        --   <li>0x000010 SHAPE_UNWEIGHTED_PSF: the PSF's &quot;adaptive&quot; 
         --       moments are unweighted.</li>
-        --   <li>0x0020 SHAPE_UNWEIGHTED_BAD: even the unweighted moments were
+        --   <li>0x000020 SHAPE_UNWEIGHTED_BAD: even the unweighted moments were
         --       bad.</li>
-        --   <li>0x0040 PEAKCENTER: given centre is position of peak pixel.</li>
-        --   <li>0x0080 BINNED1: source was found in 1x1 binned image.</li>
-        --   <li>0x0100 INTERP: source's footprint includes interpolated 
+        --   <li>0x000040 PEAKCENTER: given centre is position of peak pixel.</li>
+        --   <li>0x000080 BINNED1: source was found in 1x1 binned image.</li>
+        --   <li>0x000100 INTERP: source's footprint includes interpolated 
         --       pixels.</li>
-        --   <li>0x0200 INTERP_CENTER: source's centre is close to interpolated
+        --   <li>0x000200 INTERP_CENTER: source's centre is close to interpolated
         --       pixels.</li>
-        --   <li>0x0400 SATUR: source's footprint includes saturated pixels.
+        --   <li>0x000400 SATUR: source's footprint includes saturated pixels.
         --       </li>
-        --   <li>0x0800 SATUR_CENTER: source's centre is close to saturated 
+        --   <li>0x000800 SATUR_CENTER: source's centre is close to saturated 
         --       pixels.</li>
-        --   <li>0x1000 DETECT_NEGATIVE: source was detected as being 
+        --   <li>0x001000 DETECT_NEGATIVE: source was detected as being 
         --       significantly negative.</li>
-        --   <li>0x2000 STAR: source is thought to be point-like.</ul></descr>
+        --   <li>0x002000 STAR: source is thought to be point-like.</li>
+        --   <li>0x004000 NO_EXPOSURE</li>
+        --   <li>0x008000 NO_PSF</li>
+        --   <li>0x010000 NO_SOURCE</li>
+        --   <li>0x020000 NO_BASIS</li>
+        --   <li>0x040000 NO_FOOTPRINT</li>
+        --   <li>0x080000 BAD_INITIAL_MOMENTS</li>
+        --   <li>0x100000 OPTIMIZER_FAILED</li>
+        --   <li>0x200000 GALAXY_MODEL_FAILED</li>
+        --   <li>0x400000 UNSAFE_INVERSION</li>
+        -- </ul></descr>
     flagForWcs SMALLINT NULL,
         -- <descr>Not set for PT1.2.</descr>
     PRIMARY KEY (sourceId),
@@ -1701,7 +1833,8 @@ CREATE TABLE Source
     KEY IDX_movingObjectId (movingObjectId ASC),
     KEY IDX_objectId (objectId ASC),
     KEY IDX_procHistoryId (procHistoryId ASC),
-    KEY IDX_Source_decl (decl ASC)
+    KEY IDX_decl (decl ASC),
+    KEY IDX_htmId20 (htmId20 ASC)
 ) ENGINE=MyISAM;
 
 
@@ -1756,6 +1889,9 @@ ALTER TABLE Raw_Amp_Exposure ADD CONSTRAINT FK_RawAmpExposure_filterId
 ALTER TABLE Raw_Amp_Exposure_Metadata ADD CONSTRAINT FK_RawAmpExposureMetadata_rawAmpExposureId
     FOREIGN KEY (rawAmpExposureId) REFERENCES Raw_Amp_Exposure (rawAmpExposureId);
 
+ALTER TABLE Raw_Amp_Exposure_To_Htm11 ADD CONSTRAINT FK_RawAmpExposureToHtm11_rawAmpExposureId
+    FOREIGN KEY (rawAmpExposureId) REFERENCES Raw_Amp_Exposure (rawAmpExposureId);
+
 ALTER TABLE Raw_Amp_To_Science_Ccd_Exposure ADD CONSTRAINT FK_RawAmpToScienceExposure_scienceCcdExposureId
     FOREIGN KEY (scienceCcdExposureId) REFERENCES Science_Ccd_Exposure (scienceCcdExposureId);
 
@@ -1775,6 +1911,9 @@ ALTER TABLE Science_Ccd_Exposure ADD CONSTRAINT FK_ScienceCcdExposure_filterId
     FOREIGN KEY (filterId) REFERENCES Filter (filterId);
 
 ALTER TABLE Snap_Ccd_To_Science_Ccd_Exposure ADD CONSTRAINT FK_SnapCcdToScienceCcdExposure_scienceCcdExposureId
+    FOREIGN KEY (scienceCcdExposureId) REFERENCES Science_Ccd_Exposure (scienceCcdExposureId);
+
+ALTER TABLE Science_Ccd_Exposure_To_Htm10 ADD CONSTRAINT FK_ScienceCcdExposureToHtm10_scienceCcdExposureId
     FOREIGN KEY (scienceCcdExposureId) REFERENCES Science_Ccd_Exposure (scienceCcdExposureId);
 
 ALTER TABLE Source ADD CONSTRAINT FK_Source_scienceCcdExposureId

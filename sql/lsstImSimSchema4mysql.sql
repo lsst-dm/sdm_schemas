@@ -34,6 +34,8 @@ CREATE TABLE SimRefGalaxy
     decl DOUBLE NOT NULL,
         -- <descr>ICRS Dec. of galaxy center.</descr>
         -- <unit>deg</unit>
+    htmId20 BIGINT NOT NULL,
+        -- <descr>Level 20 HTM ID of (ra, decl)</descr>
     uMag DOUBLE NOT NULL,
         -- <descr>u-band AB magnitude.</descr>
     gMag DOUBLE NOT NULL,
@@ -68,7 +70,8 @@ CREATE TABLE SimRefGalaxy
         --    <li>3 = Lensed Quasar</li>
         -- </ul>
         -- </descr>
-    PRIMARY KEY (refGalaxyId)
+    PRIMARY KEY (refGalaxyId),
+    KEY IDX_htmId20 (htmId20 ASC)
 ) ;
 
 
@@ -86,6 +89,8 @@ CREATE TABLE SimRefStar
     decl DOUBLE NOT NULL,
         -- <descr>ICRS Dec. of star.</descr>
         -- <unit>deg</unit>
+    htmId20 BIGINT NOT NULL,
+        -- <descr>Level 20 HTM ID of (ra, decl)</descr>
     gLat DOUBLE NOT NULL,
         -- <descr>Galactic latitude of star.</descr>
         -- <unit>deg</unit>
@@ -131,7 +136,8 @@ CREATE TABLE SimRefStar
         --    <li>9 = Cepheid</li>
         -- </ul>
         -- </descr>
-    PRIMARY KEY (refStarId)
+    PRIMARY KEY (refStarId),
+    KEY IDX_htmId20 (htmId20 ASC)
 ) ;
 
 
@@ -165,6 +171,8 @@ CREATE TABLE SimRefObject
     decl DOUBLE NOT NULL,
         -- <descr>ICRS Dec. of object.</descr>
         -- <unit>deg</unit>
+    htmId20 BIGINT NOT NULL,
+        -- <descr>Level 20 HTM ID of (ra, decl)</descr>
     gLat DOUBLE NULL,
         -- <descr>Galactic latitude of star. NULL for galaxies.</descr>
         -- <unit>deg</unit>
@@ -211,7 +219,8 @@ CREATE TABLE SimRefObject
     semiMinorDisk DOUBLE NULL,
         -- <descr>Semi-minor axis length of galaxy disk. NULL for stars.</descr>
         -- <unit>arcsec</unit>
-    PRIMARY KEY (refObjectId)
+    PRIMARY KEY (refObjectId),
+    KEY IDX_htmId20 (htmId20 ASC)
 ) ;
 
 

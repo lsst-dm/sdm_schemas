@@ -122,4 +122,6 @@ admin.execCommand0("GRANT EXECUTE, SELECT ON `%%\_%%`.* %s" % toStr)
 
 admin.execCommand0("GRANT SELECT ON `Test`.* %s" % toStr)
 
+admin.execCommand0("CALL scisql.scisql_grantPermissions('%s', '%s')" % (userName, clientHost))
+
 print "User '%s' added." % userName
