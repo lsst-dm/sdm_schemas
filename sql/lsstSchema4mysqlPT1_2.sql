@@ -1616,16 +1616,16 @@ CREATE TABLE Source
     taiRange FLOAT NULL,
         -- <descr>Exposure time.</descr>
         -- <unit>s</unit>
-    psfFlux DOUBLE NOT NULL,
+    psfFlux DOUBLE NULL,
         -- <descr>Uncalibrated PSF flux of source.</descr>
         -- <unit>DN</unit>
-    psfFluxSigma FLOAT NOT NULL,
+    psfFluxSigma FLOAT NULL,
         -- <descr>Uncertainty of psfFlux.</descr>
         -- <unit>DN</unit>
-    apFlux DOUBLE NOT NULL,
+    apFlux DOUBLE NULL,
         -- <descr>Uncalibrated aperture flux of source.</descr>
         -- <unit>DN</unit>
-    apFluxSigma FLOAT NOT NULL,
+    apFluxSigma FLOAT NULL,
         -- <descr>Uncertainty of apFlux.</descr>
         -- <unit>DN</unit>
     modelFlux DOUBLE NULL,
