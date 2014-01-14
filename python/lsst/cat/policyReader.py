@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 
-# 
 # LSST Data Management System
-# Copyright 2008, 2009, 2010 LSST Corporation.
+# Copyright 2008-2014 LSST Corporation.
 # 
 # This product includes software developed by the
 # LSST Project (http://www.lsst.org/).
@@ -20,14 +19,17 @@
 # You should have received a copy of the LSST License Statement and 
 # the GNU General Public License along with this program.  If not, 
 # see <http://www.lsstcorp.org/LegalNotices/>.
-#
 
 
-from lsst.cat.MySQLBase import MySQLBase
+# standard library
+import os
+
+#third-party
+
+#local
 from lsst.pex.logging import Log
 import lsst.pex.policy as pexPolicy
 
-import os
 
 class PolicyReader(object):
     def __init__(self, fullPath=None):

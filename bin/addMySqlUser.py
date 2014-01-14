@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 
-# 
 # LSST Data Management System
-# Copyright 2008, 2009, 2010 LSST Corporation.
+# Copyright 2008-2014 LSST Corporation.
 # 
 # This product includes software developed by the
 # LSST Project (http://www.lsst.org/).
@@ -20,16 +19,19 @@
 # You should have received a copy of the LSST License Statement and 
 # the GNU General Public License along with this program.  If not, 
 # see <http://www.lsstcorp.org/LegalNotices/>.
-#
 
-import lsst.pex.policy as pexPolicy
-from lsst.cat.MySQLBase import MySQLBase
-from lsst.cat.policyReader import PolicyReader
-
+# standard library
 import getpass
 import optparse
 import os
 import sys
+
+# third-party library
+
+# local
+import lsst.pex.policy as pexPolicy
+from lsst.cat.DbCat import DbCat
+from lsst.cat.policyReader import PolicyReader
 
 """
    This script adds mysql user, including setting up all needed 
@@ -98,8 +100,8 @@ else:
 
 (globalDbName, dcVersion, dcDb, dummy1, dummy2) = r.readGlobalSetup()
 
-admin = MySQLBase(host, port)
-admin.connect(rootU, rootP, globalDbName)
+admin = DbCat(user=rootU, passwd=rootP, host=host, port=port)
+admin.useDb(globalDbName)
 
 toStr = "TO `%s`@`%s`" % (userName, clientHost)
 if admin.userExists(userName, clientHost):

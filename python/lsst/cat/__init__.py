@@ -20,5 +20,4 @@
 # see <http://www.lsstcorp.org/LegalNotices/>.
 #
 
-from MySQLBase import *
 from .version import *

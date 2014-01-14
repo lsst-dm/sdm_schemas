@@ -23,7 +23,7 @@
 #
 
 
-from lsst.cat.MySQLBase import MySQLBase
+from lsst.cat.DbCat import DbCat
 from lsst.cat.policyReader import PolicyReader
 
 import getpass
@@ -61,15 +61,11 @@ print """
 dbSUName = raw_input("Enter mysql superuser account name: ")
 dbSUPwd = getpass.getpass()
 
-def destroyOne(x, dbName):
-    if x.dbExists(dbName):
-        x.execCommand0("DROP DATABASE IF EXISTS " + dbName)
+db = DbCat(host=serverHost, port=serverPort, userName=dbSUName, passwd=dbSUPwd)
+
+for dbName in [globalDbName, dcDbName]
+    if db.dbExists(dbName):
+        db.dropDb(dbName, mustExist=False)
         print "Destroyed '%s'." % dbName
     else:
         print "Db '%s' does not exist." % dbName
-
-x = MySQLBase(serverHost, serverPort)
-x.connect(dbSUName, dbSUPwd)
-destroyOne(x, globalDbName)
-destroyOne(x, dcDbName)
-x.disconnect()
