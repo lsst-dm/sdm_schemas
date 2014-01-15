@@ -27,7 +27,6 @@ import os
 #third-party
 
 #local
-from lsst.pex.logging import Log
 import lsst.pex.policy as pexPolicy
 
 

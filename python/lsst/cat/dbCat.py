@@ -39,7 +39,7 @@ import sys
 # third-party library
 
 # local
-from lsst.db import db
+from lsst.db.db import db
 
 
 ####################################################################################

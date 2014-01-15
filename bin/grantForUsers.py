@@ -5,7 +5,7 @@ import optparse
 import os
 import sys
 
-from lsst.cat.DbCat import DbCat
+from lsst.cat.dbCat import DbCat
 
 """
    This script runs a command specified below for all users

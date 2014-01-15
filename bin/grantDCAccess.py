@@ -26,7 +26,7 @@ import os
 import re
 import sys
 
-from lsst.cat.DbCat import DbCat
+from lsst.cat.dbCat import DbCat
 from lsst.cat.policyReader import PolicyReader
 
 

@@ -21,11 +21,11 @@
 # see <http://www.lsstcorp.org/LegalNotices/>.
 
 
-
-from lsst.cat.DbCat import DbCat
 import os
 import subprocess
 import sys
+
+from lsst.cat.dbCat import DbCat
 
 
 class DbSetup(DbCat):

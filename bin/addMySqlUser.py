@@ -30,7 +30,7 @@ import sys
 
 # local
 import lsst.pex.policy as pexPolicy
-from lsst.cat.DbCat import DbCat
+from lsst.cat.dbCat import DbCat
 from lsst.cat.policyReader import PolicyReader
 
 """

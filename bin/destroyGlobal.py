@@ -22,14 +22,13 @@
 # see <http://www.lsstcorp.org/LegalNotices/>.
 #
 
-
-from lsst.cat.DbCat import DbCat
-from lsst.cat.policyReader import PolicyReader
-
 import getpass
 import optparse
 import os
 import sys
+
+from lsst.cat.dbCat import DbCat
+from lsst.cat.policyReader import PolicyReader
 
 
 usage = """%prog -f policyFile
