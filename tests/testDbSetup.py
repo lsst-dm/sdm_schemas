@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 
-# 
 # LSST Data Management System
-# Copyright 2008, 2009, 2010 LSST Corporation.
+# Copyright 2008-2014 LSST Corporation.
 # 
 # This product includes software developed by the
 # LSST Project (http://www.lsst.org/).
@@ -20,18 +19,24 @@
 # You should have received a copy of the LSST License Statement and 
 # the GNU General Public License along with this program.  If not, 
 # see <http://www.lsstcorp.org/LegalNotices/>.
-#
 
 
-from lsst.cat.dbSetup.py import DbSetup
-from lsst.cat.policyReader import PolicyReader
+import logging
+
+from lsst.cat.dbSetup import DbSetup
+from lsst.db.utils import readCredentialFile
+
+logging.basicConfig(
+    format='%(asctime)s %(name)s %(levelname)s: %(message)s', 
+    datefmt='%m/%d/%Y %I:%M:%S', 
+    level=logging.DEBUG)
 
 
-r = PolicyReader(policyF)
-(host, port) = r.readAuthInfo()
+dict = readCredentialFile("~/.lsst.my.cnf",
+                          logging.getLogger("lsst.cat.testDbSetup"))
+(h, p, u, pw) = [dict.get(k, None) for k in ('host', 'port', 'user', 'passwd')]
+if pw is None:
+    pw = ''
 
-usr = raw_input("Enter mysql account name: ")
-pwd = getpass.getpass()
-
-x = DbSetup(host, port, usr, pwd)
+x = DbSetup(h, p, u, pw)
 x.setupUserDb()

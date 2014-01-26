@@ -33,13 +33,12 @@ Known issues:
 # standard library
 import logging
 import os
-import subprocess
 import sys
 
 # third-party library
 
 # local
-from lsst.db.db import db
+from lsst.db.db import Db
 
 
 ####################################################################################
@@ -49,12 +48,8 @@ class DbCat(Db):
 
     This class implements basic database functionality, tuned for cat needs.
     """
-    def __init__(self, user=None, passwd='', host=None, port=None, socket=None,
-                 optionFile=None, local_infile=0, sleepLen=3, maxRetryCount=0,
-                 preferTcp=False):
-        Db.__init__(user, passwd, host, port, socket, optionfile,
-                    local_infile, sleepLen, maxRetryCount, preferTcp)
-        self._logger = logging.getLogger("DBWRAPCAT")
+    def __init__(self, **kwargs):
+        Db.__init__(self, **kwargs)
 
     def getDataDirSpaceAvailPerc(self):
         """

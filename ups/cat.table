@@ -8,3 +8,4 @@ setupRequired(utils)
 setupRequired(pex_exceptions)
 
 envAppend(PYTHONPATH, ${PRODUCT_DIR}/python)
+envAppend(PATH, ${PRODUCT_DIR}/bin)

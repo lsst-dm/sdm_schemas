@@ -21,39 +21,36 @@
 # see <http://www.lsstcorp.org/LegalNotices/>.
 
 
+# standard library
 import os
-import subprocess
-import sys
 
+# local 
 from lsst.cat.dbCat import DbCat
 
 
-class DbSetup(DbCat):
+class DbSetup(object):
     """
-    This file contains a set of utilities to manage per-user databases
+    This file contains a set of utilities to manage per-user databases.
     """
 
-    def __init__(self, dbHostName, portNo, userName, userPwd):
-        DbCat.__init__(self, host=dbHostName, port=portNo)
+    def __init__(self, host, port, user, passwd):
+        self._db = DbCat(host=host, port=port, user=user, passwd=passwd)
         self._sqlDir = os.path.join(os.environ["CAT_DIR"], "sql")
         if not os.path.exists(self._sqlDir):
             raise RuntimeError("Directory '%s' not found" % self._sqlDir)
-        self._userDb = '%s_dev' % userName
+        self._userDb = '%s_dev' % user
 
     def setupUserDb(self):
         """
         Set up user database (create and load stored procedures/functions).
         If it exists, it will remove it first.
         """
-        dbScripts = [os.path.join(self._sqlDir, "lsstSchema4mysql.sql"),
+        dbScripts = [os.path.join(self._sqlDir, "lsstSchema4mysqlDC3a.sql"),
                      os.path.join(self._sqlDir, "setup_storedFunctions.sql")]
         for f in dbScripts:
             if not os.path.exists(f):
                 raise RuntimeError("Can't find file '%s'" % f)
-        self.dropUserDb()
-        self.createDb(self._userDb)
+        self._db.dropDb(self._userDb, mustExist=False)
+        self._db.createDb(self._userDb)
         for f in dbScripts:
-            self.loadSqlScript(f, self._userDb)
-
-    def dropUserDb(self):
-        self.dropDb(self._userDb, mustExist=False)
+            self._db.loadSqlScript(f, self._userDb)
