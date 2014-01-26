@@ -22,22 +22,30 @@
 
 
 # standard library
+import logging
 import os
 
 # local 
 from lsst.cat.dbCat import DbCat
-
+from lsst.db.utils import readCredentialFile
 
 class DbSetup(object):
     """
     This file contains a set of utilities to manage per-user databases.
     """
 
-    def __init__(self, host, port, user, passwd):
-        self._db = DbCat(host=host, port=port, user=user, passwd=passwd)
+    def __init__(self, read_default_file):
+        """
+        @param read_default_file   File from which default client values are read
+        """
+        self._db = DbCat(read_default_file=read_default_file)
         self._sqlDir = os.path.join(os.environ["CAT_DIR"], "sql")
         if not os.path.exists(self._sqlDir):
             raise RuntimeError("Directory '%s' not found" % self._sqlDir)
+
+        dict = readCredentialFile(read_default_file,
+                                  logging.getLogger("lsst.cat.dbSetup"))
+        user = dict["user"]
         self._userDb = '%s_dev' % user
 
     def setupUserDb(self):

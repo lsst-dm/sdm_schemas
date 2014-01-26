@@ -24,19 +24,11 @@
 import logging
 
 from lsst.cat.dbSetup import DbSetup
-from lsst.db.utils import readCredentialFile
 
 logging.basicConfig(
     format='%(asctime)s %(name)s %(levelname)s: %(message)s', 
     datefmt='%m/%d/%Y %I:%M:%S', 
     level=logging.DEBUG)
 
-
-dict = readCredentialFile("~/.lsst.my.cnf",
-                          logging.getLogger("lsst.cat.testDbSetup"))
-(h, p, u, pw) = [dict.get(k, None) for k in ('host', 'port', 'user', 'passwd')]
-if pw is None:
-    pw = ''
-
-x = DbSetup(h, p, u, pw)
+x = DbSetup("~/.lsst.my.cnf")
 x.setupUserDb()
