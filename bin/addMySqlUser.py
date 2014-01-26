@@ -21,7 +21,7 @@
 # see <http://www.lsstcorp.org/LegalNotices/>.
 
 # standard library
-import getpass
+import logging
 import optparse
 import os
 import sys
@@ -29,87 +29,78 @@ import sys
 # third-party library
 
 # local
-import lsst.pex.policy as pexPolicy
 from lsst.cat.dbCat import DbCat
-from lsst.cat.policyReader import PolicyReader
 
 """
    This script adds mysql user, including setting up all needed 
    authorizations to run DCx runs.
    User will be able to start runs, and extend runs' expiration time.
    Notice that users won't be able to hack in and extend runs by calling 
-   'UPDATE' by hand
+   'UPDATE' by hand.
 """
 
 
-usage = """%prog -u {userName} -p {userPassword} [-f {policyFile}] [-c {clientHost}] [-a {authFile}] 
+usage = """
+%prog -u userNameToAuthorize -p userPassword -c hostToAuthorize -f optionFile
+
 Where:
-  - userName:        mysql username of the added user
-  - userPassword:    mysql password of the added user
-  - clientHost:      host names authorized to access mysql server,
-                     wildcards are allowed. Default: "%" (all hosts)
-  - policyFile:      policy file. Default $CAT_DIR/policy/defaultProdCatPolicy.paf
-  - authFile:        authorization file. Default ~/.lsst/db-auth.paf 
+  userNameToAuthorize
+      mysql username of the user that is being added
+
+  userPassword
+      mysql password of the user that is being added
+
+  hostToAuthorize
+      host name authorized to access mysql server. Wildcards are allowed. 
+      Default: "%" (all hosts)
+
+  optionFile
+      Option file. The option file must contain [mysql]  section and standard
+      connection/credential information, e.g. host/port or socket, user name,
+      password.
 """
 
 
 parser = optparse.OptionParser(usage)
 parser.add_option("-u")
 parser.add_option("-p")
-parser.add_option("-f")
 parser.add_option("-c")
-parser.add_option("-a")
+parser.add_option("-f")
 
 options, arguments = parser.parse_args()
 
-if not options.u or not options.p:
+if not options.f or not options.u or not options.p:
     sys.stderr.write(os.path.basename(sys.argv[0]) + usage[5:])
     sys.exit(1)
+optionFile = options.f
+newUserName = options.u
+newUserPass = options.p
+hostToAuth = options.c if options.c is not None else '%'
 
-userName = options.u
-userPass = options.p
+globalDbName = "GlobalDB"
 
-if options.c:
-    clientHost = options.c
-else:
-    clientHost = '%'
+# FIXME: this is obsolete
+dcVersion = "DC3b"
 
-if options.a:
-    dbAuthPolicy = options.a
-else:
-    dbAuthPolicy = os.environ['HOME'] + '/.lsst/db-auth.paf'
+logging.basicConfig(
+    format='%(asctime)s %(name)s %(levelname)s: %(message)s', 
+    datefmt='%m/%d/%Y %I:%M:%S', 
+    level=logging.DEBUG)
 
-host = None
-port = None
-rootU = None
-rootP = None
-r = PolicyReader(options.f)
-
-    
-if os.path.isfile(dbAuthPolicy):
-    policyObj = pexPolicy.Policy.createPolicy(dbAuthPolicy)
-    subP = policyObj.getPolicy('database.authInfo')
-    host = subP.getString('host')
-    port = subP.getInt('port')
-    rootU = subP.getString('admU')
-    rootP = subP.getString('password')
-else:
-    rootU = raw_input("Enter mysql superuser account name: ")
-    rootP = getpass.getpass()
-    (host, port) = r.readAuthInfo()
-
-(globalDbName, dcVersion, dcDb, dummy1, dummy2) = r.readGlobalSetup()
-
-admin = DbCat(user=rootU, passwd=rootP, host=host, port=port)
+admin = DbCat(read_default_file=optionFile)
 admin.useDb(globalDbName)
 
-toStr = "TO `%s`@`%s`" % (userName, clientHost)
-if admin.userExists(userName, clientHost):
-    print 'This account already exists, upgrading priviledges. User password will not change.'
-else:
-    toStr += " IDENTIFIED BY '%s'" % userPass
+toStr = "TO `%s`@`%s`" % (newUserName, hostToAuth)
 
-admin.execCommand0("GRANT ALL ON `%s\_%%`.* %s" % (userName, toStr))
+isNewUser = True
+if admin.userExists(newUserName, hostToAuth):
+    isNewUser = False
+    print ('\n*** This account already exists, upgrading priviledges. ' +
+          'User password will not change.***\n')
+else:
+    toStr += " IDENTIFIED BY '%s'" % newUserPass
+
+admin.execCommand0("GRANT ALL ON `%s\_%%`.* %s" % (newUserName, toStr))
 
 # this is not needed because the mysql built-in annonymous
 # account is used for databases starting with "test"
@@ -133,6 +124,8 @@ admin.execCommand0("GRANT SELECT ON `Test`.* %s" % toStr)
 
 admin.execCommand0("GRANT SHOW VIEW ON *.* %s" % toStr)
 
-admin.execCommand0("CALL scisql.scisql_grantPermissions('%s', '%s')" % (userName, clientHost))
+if isNewUser:
+    admin.execCommand0("CALL scisql.scisql_grantPermissions('%s', '%s')" % \
+                           (newUserName, hostToAuth))
 
-print "User '%s' added." % userName
+print "User '%s' added." % newUserName
