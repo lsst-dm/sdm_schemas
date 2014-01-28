@@ -32,16 +32,15 @@ import sys
 from lsst.cat.dbCat import DbCat
 
 """
-   This script adds mysql user, including setting up all needed 
-   authorizations to run DCx runs.
-   User will be able to start runs, and extend runs' expiration time.
-   Notice that users won't be able to hack in and extend runs by calling 
-   'UPDATE' by hand.
+This script adds mysql user, including setting up all needed authorizations to run
+DCx runs. User will be able to start runs, and extend runs' expiration time.
+Notice that users won't be able to hack in and extend runs by calling 'UPDATE' by
+hand.
 """
 
 
 usage = """
-%prog -u userNameToAuthorize -p userPassword -c hostToAuthorize -f optionFile
+%prog -u userNameToAuthorize -p userPassword [-c hostToAuthorize] [-f optionFile]
 
 Where:
   userNameToAuthorize
@@ -55,9 +54,9 @@ Where:
       Default: "%" (all hosts)
 
   optionFile
-      Option file. The option file must contain [mysql]  section and standard
+      Option file. The option file must contain [mysql] section and standard
       connection/credential information, e.g. host/port or socket, user name,
-      password.
+      password. Default: ~/.lsstAdm.my.cnf.
 """
 
 
@@ -69,17 +68,17 @@ parser.add_option("-f")
 
 options, arguments = parser.parse_args()
 
-if not options.f or not options.u or not options.p:
-    sys.stderr.write(os.path.basename(sys.argv[0]) + usage[5:])
+if options.u is None or options.p is None:
+    sys.stderr.write(os.path.basename(sys.argv[0]) + usage[6:])
     sys.exit(1)
-optionFile = options.f
 newUserName = options.u
 newUserPass = options.p
 hostToAuth = options.c if options.c is not None else '%'
+optionFile = options.f if options.f is not None else "~/.lsstAdm.my.cnf"
 
 globalDbName = "GlobalDB"
 
-# FIXME: this is obsolete
+# FIXME: this is obsolete, see ticket #3127
 dcVersion = "DC3b"
 
 logging.basicConfig(
