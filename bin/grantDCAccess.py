@@ -21,63 +21,72 @@
 # see <http://www.lsstcorp.org/LegalNotices/>.
 
 import getpass
+import logging
 import optparse
 import os
 import re
 import sys
 
+# local 
 from lsst.cat.dbCat import DbCat
-from lsst.cat.policyReader import PolicyReader
-
 
 """
-    This script grants appropriate data-challenge-specific privileges for
-    all users except these that already have super-user grant and "test"
+This script grants appropriate data-challenge-specific privileges for all users
+except these that already have super-user grant and "test"
 """
 
 
-usage = """%prog [-f {policyFile}] [-c {clientHost}]
+usage = """
+%prog [-c hostToAuthorize] [-f optionFile]
+
 Where:
-  - clientHost:      host names authorized to access mysql server,
-                     wildcards are allowed. Default: "%" (all hosts)
-  - policyFile:      policy file. Default $CAT_DIR/policy/defaultProdCatPolicy.paf
+  hostToAuthorize
+      host name authorized to access mysql server. Wildcards are allowed. 
+      Default: "%" (all hosts)
+
+  optionFile
+      Option file. The option file must contain [mysql] section and standard
+      connection/credential information, e.g. host/port or socket, user name,
+      password. Default: ~/.lsstAdm.my.cnf.
 """
 
 
 parser = optparse.OptionParser(usage)
-parser.add_option("-f")
 parser.add_option("-c")
+parser.add_option("-f")
 
 options, arguments = parser.parse_args()
 
-if options.c:
-    clientHost = options.c
-else:
-    clientHost = '%'
+hostToAuth = options.c if options.c is not None else '%'
+optionFile = options.f if options.f is not None else "~/.lsstAdm.my.cnf"
 
-r = PolicyReader(options.f)
-(serverHost, serverPort) = r.readAuthInfo()
-(globalDbName, dcVersion, dcDb, dummy1, dummy2) = r.readGlobalSetup()
+globalDbName = "GlobalDB"
 
-rootU = raw_input("Enter mysql superuser account name: ")
-rootP = getpass.getpass()
+# FIXME: this is obsolete, see ticket #3127
+dcVersion = "DC3b"
 
 grantAll = re.compile('GRANT ALL PRIVILEGES ON \*.\* TO')
 
-db = DbCat(host=serverHost, port=serverPort, user=rootU, passwd=rootP)
+logging.basicConfig(
+    format='%(asctime)s %(name)s %(levelname)s: %(message)s', 
+    datefmt='%m/%d/%Y %I:%M:%S', 
+    level=logging.DEBUG)
+
+db = DbCat(read_default_file=optionFile)
 db.useDb(globalDbName)
 
-users = db.execCommandN('SELECT user from mysql.user WHERE user != "root" AND user != "sysbench"' AND user != 'test')
+users = db.execCommandN('SELECT user, host from mysql.user WHERE ' +
+                        'user != "root" AND user != "sysbench" AND user != "test"')
 for u in users:
-    grants = db.execCommandN("SHOW GRANTS FOR '%s'" % u)
+    grants = db.execCommandN("SHOW GRANTS FOR '%s'@'%s'" % u)
     isSU = 0
     for g in grants:
         if grantAll.match(g[0]):
             isSU = 1
     if isSU:
-        print "Skipping superuser ", u[0]
+        logger = logging.getLogger('cat.grantDbAccess')
+        logger.info("Skipping superuser %s" % u[0])
     else:
-        toStr = "TO `%s`@`%s`" % (u[0], clientHost)
+        toStr = "TO `%s`@`%s`" % (u[0], hostToAuth)
         cmd = "GRANT SELECT, INSERT ON `%s\_DB`.* %s" % (dcVersion, toStr)
         db.execCommand0(cmd)
-        print "Executed command: ", cmd
