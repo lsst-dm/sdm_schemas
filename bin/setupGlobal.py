@@ -29,7 +29,6 @@ import sys
 
 # local
 from lsst.cat.dbCat import DbCat
-from lsst.cat.policyReader import PolicyReader
 
 
 usage = """
