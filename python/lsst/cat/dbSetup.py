@@ -27,7 +27,7 @@ import os
 
 # local 
 from lsst.cat.dbCat import DbCat
-from lsst.db.utils import readCredentialFile
+
 
 class DbSetup(object):
     """
@@ -42,11 +42,10 @@ class DbSetup(object):
         self._sqlDir = os.path.join(os.environ["CAT_DIR"], "sql")
         if not os.path.exists(self._sqlDir):
             raise RuntimeError("Directory '%s' not found" % self._sqlDir)
-
-        dict = readCredentialFile(read_default_file,
-                                  logging.getLogger("lsst.cat.dbSetup"))
-        user = dict["user"]
-        self._userDb = '%s_dev' % user
+        userName = self._db.getUserName()
+        if userName is None:
+            raise RuntimeError("Can't determine username")
+        self._userDb = '%s_dev' % userName
 
     def setupUserDb(self):
         """

@@ -50,6 +50,17 @@ class DbCat(Db):
     """
     def __init__(self, **kwargs):
         Db.__init__(self, **kwargs)
+        self._logger = logging.getLogger("lsst.db.DbCat")
+
+    def getUserName(self):
+        """
+        Return name of current user (without "@<hostname>").
+        """
+        row = self.execCommand1("SELECT USER()")
+        s = row[0]
+        ret = s.partition('@')[0]
+        self._logger.info("Username is: '%s'" % ret) 
+        return ret
 
     def getDataDirSpaceAvailPerc(self):
         """
