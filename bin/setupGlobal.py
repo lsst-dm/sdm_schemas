@@ -22,6 +22,7 @@
 
 # system library
 import getpass
+import logging
 import optparse
 import os
 import sys
@@ -32,24 +33,24 @@ from lsst.cat.policyReader import PolicyReader
 
 
 usage = """
-
-%prog [-f policyFile]
+%prog [-f optionFile]
 
 Setup LSST Global database and per-data-challenge database. 
 
 Requires $CAT_ENV environment variable.
 
-If the policy file is not specified, the default
-one will be used: $CAT_DIR/policy/defaultProdCatPolicy.paf
-
+  optionFile
+      Option file. The option file must contain [mysql] section and standard
+      connection/credential information, e.g. host/port or socket, user name,
+      password. Default: ~/.lsstAdm.my.cnf.
 """
 
 
-class SetupGlobal(Object):
+class SetupGlobal(object):
     """
     Setup LSST Global database and per-data-challenge database.
     """
-    def __init__(self, dbHostName, portNo, globalDbName, dcVersion, dcDb):
+    def __init__(self, optionFile, globalDbName, dcVersion, dcDb):
         if globalDbName == "":
             raise RuntimeError("Invalid (empty) global db name")
         self._globalDbName = globalDbName
@@ -66,12 +67,7 @@ class SetupGlobal(Object):
         self._sqlDir = os.path.join(os.environ["CAT_DIR"], "sql")
         if not os.path.exists(self._sqlDir):
             raise RuntimeError("Directory '%s' not found" % self._sqlDir)
-
-        dbSUName = raw_input("Enter mysql superuser account name: ")
-        dbSUPwd = getpass.getpass()
-
-        self._db = DbCat(host=dbHostName, port=portNo, 
-                         user=dbSUName, passwd=dbSUPwd)
+        self._db = DbCat(read_default_file=optionFile)
 
     def run(self):
         """
@@ -79,7 +75,7 @@ class SetupGlobal(Object):
         the Global database. 
         """
         # create & configure Global database (if doesn't exist)
-        if self.dbExists(self._globalDbName):
+        if self._db.dbExists(self._globalDbName):
             print "'%s' exists." % self._globalDbName
         else:
             self._setupOnce(self._globalDbName, 'setup_DB_global.sql')
@@ -112,9 +108,17 @@ parser.add_option("-f")
 
 options, arguments = parser.parse_args()
 
-r = PolicyReader(options.f)
-(serverHost, serverPort) = r.readAuthInfo()
-(globalDbName, dcVersion, dcDb, dummy1, dummy2) = r.readGlobalSetup()
+optionFile = options.f if options.f is not None else "~/.lsstAdm.my.cnf"
 
-x = SetupGlobal(serverHost, serverPort, globalDbName, dcVersion, dcDb)
+# FIXME: this is obsolete, see ticket #3127
+globalDbName = "globalDB"
+dcVersion = "DC3a"
+dcDb = "DC3a_DB"
+
+logging.basicConfig(
+    format='%(asctime)s %(name)s %(levelname)s: %(message)s', 
+    datefmt='%m/%d/%Y %I:%M:%S', 
+    level=logging.DEBUG)
+
+x = SetupGlobal(optionFile, globalDbName, dcVersion, dcDb)
 x.run()
