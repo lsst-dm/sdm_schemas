@@ -76,9 +76,8 @@ newUserPass = options.p
 hostToAuth = options.c if options.c is not None else '%'
 optionFile = options.f if options.f is not None else "~/.lsstAdm.my.cnf"
 
-globalDbName = "GlobalDB"
-
 # FIXME: this is obsolete, see ticket #3127
+globalDbName = "GlobalDB"
 dcVersion = "DC3b"
 
 logging.basicConfig(
