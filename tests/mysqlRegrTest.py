@@ -1,8 +1,7 @@
 #!/usr/bin/env python
-
 # 
 # LSST Data Management System
-# Copyright 2008, 2009, 2010 LSST Corporation.
+# Copyright 2008-2014 LSST Corporation.
 # 
 # This product includes software developed by the
 # LSST Project (http://www.lsst.org/).
@@ -20,39 +19,36 @@
 # You should have received a copy of the LSST License Statement and 
 # the GNU General Public License along with this program.  If not, 
 # see <http://www.lsstcorp.org/LegalNotices/>.
-#
-
-
-from lsst.cat.MySQLBase import MySQLBase
-import lsst.pex.policy as pexPolicy
 
 
 import getpass
+import logging
 import optparse
 import os
 import sys
+
+from lsst.db.db import Db
+
 
 """
    This script runs various regression tests. It should be 
    executed using a non-administrative account.
 """
 
-policyObj = pexPolicy.Policy.createPolicy(os.environ['HOME'] + '/.lsst/db-auth.paf')
-subP = policyObj.getPolicy('database.authInfo')
-host = subP.getString('host')
-port = subP.getInt('port')
-user = subP.getString('user')
-pswd = subP.getString('password')
+logging.basicConfig(
+    format='%(asctime)s %(name)s %(levelname)s: %(message)s', 
+    datefmt='%m/%d/%Y %I:%M:%S', 
+    level=logging.DEBUG)
 
-admin = MySQLBase(host, port)
-admin.connect(user, pswd, 'rplante_DC3b_u_pt11final')
+db = Db(read_default_file="~/.lsst.my.cnf")
+db.useDb('rplante_DC3b_u_pt11final')
 
-r = admin.execCommand1("SELECT utcToTai(5)")
-r = admin.execCommand1("SELECT taiToUtc(%s)" % r)
+r = db.execCommand1("SELECT utcToTai(5)")
+r = db.execCommand1("SELECT taiToUtc(%s)" % r)
 assert(r[0] == 5)
 
-r = admin.execCommandN("SHOW TABLES")
+r = db.execCommandN("SHOW TABLES")
 assert (len(r) > 0)
 
-r = admin.execCommand1("SELECT COUNT(*) FROM Object")
+r = db.execCommand1("SELECT COUNT(*) FROM Object")
 assert (r[0] > 0)
