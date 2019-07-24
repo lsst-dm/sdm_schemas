@@ -193,7 +193,7 @@ tables:
     "@id": "#DiaObject.uPSFluxNdata"
     datatype: int
     description: The number of data points used to compute uPSFluxChi2.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: uFPFluxMean
     "@id": "#DiaObject.uFPFluxMean"
     datatype: float
@@ -246,7 +246,7 @@ tables:
     "@id": "#DiaObject.gPSFluxNdata"
     datatype: int
     description: The number of data points used to compute gPSFluxChi2.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: gFPFluxMean
     "@id": "#DiaObject.gFPFluxMean"
     datatype: float
@@ -299,7 +299,7 @@ tables:
     "@id": "#DiaObject.rPSFluxNdata"
     datatype: int
     description: The number of data points used to compute rPSFluxChi2.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: rFPFluxMean
     "@id": "#DiaObject.rFPFluxMean"
     datatype: float
@@ -352,7 +352,7 @@ tables:
     "@id": "#DiaObject.iPSFluxNdata"
     datatype: int
     description: The number of data points used to compute iPSFluxChi2.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: iFPFluxMean
     "@id": "#DiaObject.iFPFluxMean"
     datatype: float
@@ -405,7 +405,7 @@ tables:
     "@id": "#DiaObject.zPSFluxNdata"
     datatype: int
     description: The number of data points used to compute zPSFluxChi2.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: zFPFluxMean
     "@id": "#DiaObject.zFPFluxMean"
     datatype: float
@@ -458,7 +458,7 @@ tables:
     "@id": "#DiaObject.yPSFluxNdata"
     datatype: int
     description: The number of data points used to compute yPSFluxChi2.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: yFPFluxMean
     "@id": "#DiaObject.yFPFluxMean"
     datatype: float
@@ -1184,7 +1184,7 @@ tables:
     datatype: int
     description: Position of this diaSource in the processing order relative to other
       diaSources within a given diaObjectId or ssObjectId.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: ssObjectReassocTime
     "@id": "#DiaSource.ssObjectReassocTime"
     datatype: timestamp
@@ -1370,7 +1370,7 @@ tables:
     "@id": "#DiaSource.psNdata"
     datatype: int
     description: The number of data points (pixels) used to fit the model.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: trailFlux
     "@id": "#DiaSource.trailFlux"
     datatype: float
@@ -1514,7 +1514,7 @@ tables:
     "@id": "#DiaSource.trailNdata"
     datatype: int
     description: The number of data points (pixels) used to fit the model.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: dipMeanFlux
     "@id": "#DiaSource.dipMeanFlux"
     datatype: float
@@ -1707,7 +1707,7 @@ tables:
     "@id": "#DiaSource.dipNdata"
     datatype: int
     description: The number of data points (pixels) used to fit the model.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: totFlux
     "@id": "#DiaSource.totFlux"
     datatype: float
@@ -1999,7 +1999,7 @@ tables:
     datatype: int
     description: Pointer to prv_InputType. Indicates which input was used to produce
       a given object.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: psRa
     "@id": "#Object.psRa"
     datatype: double
@@ -2171,7 +2171,7 @@ tables:
     "@id": "#Object.psN"
     datatype: int
     description: The number of data points (pixels) used to fit the model.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: uBbdRa
     "@id": "#Object.uBbdRa"
     datatype: double
@@ -2293,7 +2293,7 @@ tables:
     "@id": "#Object.uBdN"
     datatype: int
     description: The number of data points (pixels) used to fit the model. For u filter.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: gBbdRa
     "@id": "#Object.gBbdRa"
     datatype: double
@@ -2415,7 +2415,7 @@ tables:
     "@id": "#Object.gBdN"
     datatype: int
     description: The number of data points (pixels) used to fit the model. For g filter.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: rBbdRa
     "@id": "#Object.rBbdRa"
     datatype: double
@@ -2537,7 +2537,7 @@ tables:
     "@id": "#Object.rBdN"
     datatype: int
     description: The number of data points (pixels) used to fit the model. For r filter.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: iBbdRa
     "@id": "#Object.iBbdRa"
     datatype: double
@@ -2659,7 +2659,7 @@ tables:
     "@id": "#Object.iBdN"
     datatype: int
     description: The number of data points (pixels) used to fit the model. For i filter.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: zBbdRa
     "@id": "#Object.zBbdRa"
     datatype: double
@@ -2781,7 +2781,7 @@ tables:
     "@id": "#Object.zBdN"
     datatype: int
     description: The number of data points (pixels) used to fit the model. For z filter.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: yBbdRa
     "@id": "#Object.yBbdRa"
     datatype: double
@@ -2903,7 +2903,7 @@ tables:
     "@id": "#Object.yBdN"
     datatype: int
     description: The number of data points (pixels) used to fit the model. For y filter.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: ugStd
     "@id": "#Object.ugStd"
     datatype: float
@@ -4365,7 +4365,7 @@ tables:
     "@id": "#Source.psN"
     datatype: int
     description: The number of data points (pixels) used to fit the model.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: psRa
     "@id": "#Source.psRa"
     datatype: double
@@ -5128,7 +5128,7 @@ tables:
     datatype: int
     description: Observing program id (e.g., universal cadence, or one of the deep
       drilling programs, etc.).
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: exposureType
     "@id": "#RawExposure.exposureType"
     datatype: byte
@@ -5270,7 +5270,7 @@ tables:
     "@id": "#CcdVisit.nExposures"
     datatype: int
     description: Number of exposures combined to produce this visit.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: ra
     "@id": "#CcdVisit.ra"
     datatype: double
@@ -5498,7 +5498,7 @@ tables:
     "@id": "#Visit.nExposures"
     datatype: int
     description: Number of exposures combined to produce this visit.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: ra
     "@id": "#Visit.ra"
     datatype: double
@@ -5536,7 +5536,7 @@ tables:
     datatype: int
     description: Observing program id (e.g., universal cadence, or one of the deep
       drilling programs, etc.).
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: exposureType
     "@id": "#Visit.exposureType"
     datatype: byte
@@ -5726,7 +5726,7 @@ tables:
     "@id": "#prv_Pipeline.pipelineId"
     datatype: int
     description: Unique id
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
     ivoa:ucd: meta.id;src
   - name: pipelineName
     "@id": "#prv_Pipeline.pipelineName"
@@ -5746,13 +5746,13 @@ tables:
     "@id": "#prv_cnf_Pipeline.pipelineCnfId"
     datatype: int
     description: Unique id
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
     ivoa:ucd: meta.id;src
   - name: pipelineId
     "@id": "#prv_cnf_Pipeline.pipelineId"
     datatype: int
     description: Id of the pipeline this configuration is for.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: validityBegin
     "@id": "#prv_cnf_Pipeline.validityBegin"
     datatype: timestamp
@@ -5772,6 +5772,7 @@ tables:
   primaryKey: "#prv_cnf_Pipeline.pipelineCnfId"
   constraints:
   - name: FK_cnfPipeline_prv_Pipeline
+    "@type": ForeignKey
     "@id": "#FK_cnfPipeline_prv_Pipeline"
     columns:
     - "#prv_cnf_Pipeline.pipelineId"
@@ -5792,7 +5793,7 @@ tables:
     "@id": "#prv_Task.taskId"
     datatype: int
     description: Unique id
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
     ivoa:ucd: meta.id;src
   - name: taskName
     "@id": "#prv_Task.taskName"
@@ -5814,30 +5815,32 @@ tables:
   - name: pipelineCnfId
     "@id": "#prv_cnf_Pipeline_Tasks.pipelineCnfId"
     datatype: int
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: taskId
     "@id": "#prv_cnf_Pipeline_Tasks.taskId"
     datatype: int
     description: Id of the corresponding task.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: parentTaskId
     "@id": "#prv_cnf_Pipeline_Tasks.parentTaskId"
     datatype: int
     description: Id of the parent task, or NULL if there is no parent task.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: taskPosition
     "@id": "#prv_cnf_Pipeline_Tasks.taskPosition"
     datatype: int
     description: Position of the task in the pipeline. Starts with 1.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   constraints:
   - name: FK_cnfPipeTasks_taskId
+    "@type": ForeignKey
     "@id": "#FK_cnfPipeTasks_taskId"
     columns:
     - "#prv_cnf_Pipeline_Tasks.taskId"
     referencedColumns:
     - "#prv_Task.taskId"
   - name: FK_cnfPipeTasks_pipeCnfId
+    "@type": ForeignKey
     "@id": "#FK_cnfPipeTasks_pipeCnfId"
     columns:
     - "#prv_cnf_Pipeline_Tasks.pipelineCnfId"
@@ -5864,13 +5867,13 @@ tables:
     "@id": "#prv_cnf_Task.taskCnfId"
     datatype: int
     description: Unique id
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
     ivoa:ucd: meta.id;src
   - name: taskId
     "@id": "#prv_cnf_Task.taskId"
     datatype: int
     description: Id of the corresponding task.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: validityBegin
     "@id": "#prv_cnf_Task.validityBegin"
     datatype: timestamp
@@ -5887,7 +5890,7 @@ tables:
     description: Version of the config (in case there is more than one configuration
       that is valid for a given validity range.
     defaultValue: '1'
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: gitSHA
     "@id": "#prv_cnf_Task.gitSHA"
     datatype: string
@@ -5899,6 +5902,7 @@ tables:
   primaryKey: "#prv_cnf_Task.taskCnfId"
   constraints:
   - name: FK_cnfTask_taskId
+    "@type": ForeignKey
     "@id": "#FK_cnfTask_taskId"
     columns:
     - "#prv_cnf_Task.taskId"
@@ -5924,7 +5928,7 @@ tables:
     "@id": "#prv_cnf_Task_Columns.taskCnfId"
     datatype: int
     description: If of the corresponding task configuration.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: tcName
     "@id": "#prv_cnf_Task_Columns.tcName"
     datatype: text
@@ -5933,6 +5937,7 @@ tables:
     mysql:datatype: TEXT
   constraints:
   - name: FK_cnfTaskCols_taskCnfId
+    "@type": ForeignKey
     "@id": "#FK_cnfTaskCols_taskCnfId"
     columns:
     - "#prv_cnf_Task_Columns.taskCnfId"
@@ -5955,7 +5960,7 @@ tables:
     "@id": "#prv_cnf_Task_Files.taskCnfId"
     datatype: int
     description: If of the corresponding task configuration.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: fileUrl
     "@id": "#prv_cnf_Task_Files.fileUrl"
     datatype: text
@@ -5963,6 +5968,7 @@ tables:
     mysql:datatype: TEXT
   constraints:
   - name: FK_cnfTaskFiles_taskCnfId
+    "@type": ForeignKey
     "@id": "#FK_cnfTaskFiles_taskCnfId"
     columns:
     - "#prv_cnf_Task_Files.taskCnfId"
@@ -5984,7 +5990,7 @@ tables:
     "@id": "#prv_cnf_Task_KVParams.taskCnfId"
     datatype: int
     description: If of the corresponding task configuration.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: theKey
     "@id": "#prv_cnf_Task_KVParams.theKey"
     datatype: string
@@ -5999,6 +6005,7 @@ tables:
     mysql:datatype: VARCHAR(255)
   constraints:
   - name: FK_cnfTaskKVParams_tcId
+    "@type": ForeignKey
     "@id": "#FK_cnfTaskKVParams_tcId"
     columns:
     - "#prv_cnf_Task_KVParams.taskCnfId"
@@ -6019,7 +6026,7 @@ tables:
     "@id": "#prv_Node.nodeId"
     datatype: int
     description: Unique id
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
     ivoa:ucd: meta.id;src
   - name: nodeName
     "@id": "#prv_Node.nodeName"
@@ -6038,7 +6045,7 @@ tables:
     "@id": "#prv_cnf_Node.nodeId"
     datatype: int
     description: Id of the node this configuration is for.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: validityBegin
     "@id": "#prv_cnf_Node.validityBegin"
     datatype: timestamp
@@ -6065,14 +6072,15 @@ tables:
     "@id": "#prv_cnf_Node.cores"
     datatype: int
     description: Number of cores.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: ram
     "@id": "#prv_cnf_Node.ram"
     datatype: int
     description: Size of memory [GB].
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   constraints:
   - name: FK_cnfNode_nodeId
+    "@type": ForeignKey
     "@id": "#FK_cnfNode_nodeId"
     columns:
     - "#prv_cnf_Node.nodeId"
@@ -6122,6 +6130,7 @@ tables:
     mysql:datatype: BIGINT
   constraints:
   - name: FK_rowIdTodataBlock_blockId
+    "@type": ForeignKey
     "@id": "#FK_rowIdTodataBlock_blockId"
     columns:
     - "#prv_RowIdToDataBlock.blockId"
@@ -6161,12 +6170,12 @@ tables:
     "@id": "#prv_TaskExecution.taskId"
     datatype: int
     description: Id of the task that is executed.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: nodeId
     "@id": "#prv_TaskExecution.nodeId"
     datatype: int
     description: Id of the node where the task is executed.
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: theTime
     "@id": "#prv_TaskExecution.theTime"
     datatype: timestamp
@@ -6179,22 +6188,25 @@ tables:
       some rare cases when manual patching in required, we can end up with more than
       one valid config version.
     defaultValue: '1'
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   primaryKey: "#prv_TaskExecution.taskExecId"
   constraints:
   - name: FK_taskExec_taskId
+    "@type": ForeignKey
     "@id": "#FK_taskExec_taskId"
     columns:
     - "#prv_TaskExecution.taskId"
     referencedColumns:
     - "#prv_Task.taskId"
   - name: FK_taskExec_nodeId
+    "@type": ForeignKey
     "@id": "#FK_taskExec_nodeId"
     columns:
     - "#prv_TaskExecution.nodeId"
     referencedColumns:
     - "#prv_Node.nodeId"
   - name: FK_taskExec_cnfVersion
+    "@type": ForeignKey
     "@id": "#FK_taskExec_cnfVersion"
     columns:
     - "#prv_TaskExecution.taskCnfVersion"
@@ -6233,12 +6245,14 @@ tables:
     mysql:datatype: BIGINT
   constraints:
   - name: FK_te2IDB_taskExecId
+    "@type": ForeignKey
     "@id": "#FK_te2IDB_taskExecId"
     columns:
     - "#prv_TaskExecutionToInputDataBlock.taskExecId"
     referencedColumns:
     - "#prv_TaskExecution.taskExecId"
   - name: FK_te2IDB_blockId
+    "@type": ForeignKey
     "@id": "#FK_te2IDB_blockId"
     columns:
     - "#prv_TaskExecutionToInputDataBlock.blockId"
@@ -6273,12 +6287,14 @@ tables:
     mysql:datatype: BIGINT
   constraints:
   - name: FK_te2ODB_taskExecId
+    "@type": ForeignKey
     "@id": "#FK_te2ODB_taskExecId"
     columns:
     - "#prv_TaskExecutionToOutputDataBlock.taskExecId"
     referencedColumns:
     - "#prv_TaskExecution.taskExecId"
   - name: FK_te2ODB_blockId
+    "@type": ForeignKey
     "@id": "#FK_te2ODB_blockId"
     columns:
     - "#prv_TaskExecutionToOutputDataBlock.blockId"
@@ -6359,6 +6375,7 @@ tables:
   primaryKey: "#sdqa_Metric.sdqa_metricId"
   constraints:
   - name: UQ_sdqaMetric_metricName
+    "@type": Unique
     "@id": "#UQ_sdqaMetric_metricName"
     columns:
     - "#sdqa_Metric.metricName"
@@ -6404,6 +6421,7 @@ tables:
   primaryKey: "#sdqa_Rating_ForAmpVisit.sdqa_ratingId"
   constraints:
   - name: UQ_sdqaRatingForAmpVisit_metricId_ampVisitId
+    "@type": Unique
     "@id": "#UQ_sdqaRatingForAmpVisit_metricId_ampVisitId"
     columns:
     - "#sdqa_Rating_ForAmpVisit.sdqa_metricId"
@@ -6462,6 +6480,7 @@ tables:
   primaryKey: "#sdqa_Rating_CcdVisit.sdqa_ratingId"
   constraints:
   - name: UQ_sdqaRatingCcdVisit_metricId_ccdVisitId
+    "@type": Unique
     "@id": "#UQ_sdqaRatingCcdVisit_metricId_ccdVisitId"
     columns:
     - "#sdqa_Rating_CcdVisit.sdqa_metricId"
