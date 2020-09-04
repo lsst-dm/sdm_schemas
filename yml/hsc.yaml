@@ -3674,7 +3674,7 @@ tables:
     "@id": "#Source.FootprintArea_value"
     datatype: int
     description:
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: Jacobian_flag
     "@id": "#Source.Jacobian_flag"
     datatype: boolean
@@ -3909,7 +3909,7 @@ tables:
     "@id": "#Source.Deblend_nChild"
     datatype: int
     description:
-    mysql:datatype: INT
+    mysql:datatype: INTEGER
   - name: Deblend_parentTooBig
     "@id": "#Source.Deblend_parentTooBig"
     datatype: boolean
