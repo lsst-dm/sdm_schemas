@@ -508,7 +508,7 @@ tables:
     description:
     mysql:datatype: BOOLEAN
   - name: gCalib_astrometry_used
-    "@id": "#Object.Calib_astrometry_used"
+    "@id": "#Object.gCalib_astrometry_used"
     datatype: boolean
     description:
     mysql:datatype: BOOLEAN
@@ -1115,7 +1115,7 @@ tables:
     description:
     mysql:datatype: BOOLEAN
   - name: rCalib_astrometry_used
-    "@id": "#Object.Calib_astrometry_used"
+    "@id": "#Object.rCalib_astrometry_used"
     datatype: boolean
     description:
     mysql:datatype: BOOLEAN
@@ -1721,7 +1721,7 @@ tables:
     description:
     mysql:datatype: BOOLEAN
   - name: iCalib_astrometry_used
-    "@id": "#Object.Calib_astrometry_used"
+    "@id": "#Object.iCalib_astrometry_used"
     datatype: boolean
     description:
     mysql:datatype: BOOLEAN
@@ -2327,7 +2327,7 @@ tables:
     mysql:datatype: BOOLEAN
 
   - name: zCalib_astrometry_used
-    "@id": "#Object.Calib_astrometry_used"
+    "@id": "#Object.zCalib_astrometry_used"
     datatype: boolean
     description:
     mysql:datatype: BOOLEAN
@@ -2935,7 +2935,7 @@ tables:
     mysql:datatype: BOOLEAN
 
   - name: yCalib_astrometry_used
-    "@id": "#Object.Calib_astrometry_used"
+    "@id": "#Object.yCalib_astrometry_used"
     datatype: boolean
     description:
     mysql:datatype: BOOLEAN
