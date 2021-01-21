@@ -155,18 +155,6 @@ tables:
     datatype: BOOLEAN
     mysql:datatype: BOOLEAN
     description:
-  - name: chunkId
-    "@id": "#position.chunkId"
-    datatype: int
-    nullable: false
-    mysql:datatype: INTEGER
-    description:
-  - name: subChunkId
-    "@id": "#position.subChunkId"
-    datatype: int
-    nullable: false
-    mysql:datatype: INTEGER
-    description:
 - name: dpdd_ref
   "@id": "#dpdd_ref"
   description: dpdd_ref table from IN2P3
@@ -4510,16 +4498,4 @@ tables:
     "@id": "#dpdd_forced.z_modelfit_CModel_initial_flag_apCorr"
     datatype: BOOLEAN
     mysql:datatype: BOOLEAN
-    description:
-  - name: chunkId
-    "@id": "#dpdd_forced.chunkId"
-    datatype: int
-    nullable: false
-    mysql:datatype: INTEGER
-    description:
-  - name: subChunkId
-    "@id": "#dpdd_forced.subChunkId"
-    datatype: int
-    nullable: false
-    mysql:datatype: INTEGER
     description:
