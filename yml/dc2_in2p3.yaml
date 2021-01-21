@@ -1,0 +1,4525 @@
+---
+name: dc2_object_run2_2i_dr6_wfd
+"@id": "dc2"
+tables:
+- name: position
+  "@id": "#position"
+  description: position table from IN2P3
+  columns:
+  - name: objectId
+    "@id": "#position.objectId"
+    datatype: long
+    nullable: false
+    mysql:datatype: BIGINT
+    description: Unique id. 
+  - name: coord_ra
+    "@id": "#position.coord_ra"
+    datatype: FLOAT
+    nullable: false
+    mysql:datatype: FLOAT
+    description: RA-coordinate
+  - name: coord_dec
+    "@id": "#position.coord_dec"
+    datatype: FLOAT
+    nullable: false
+    mysql:datatype: FLOAT
+    description: Decl-coordinate
+  - name: parent
+    "@id": "#position.parent"
+    datatype: long
+    nullable: false
+    mysql:datatype: BIGINT
+    description:
+  - name: deblend_nChild
+    "@id": "#position.deblend_nChild"
+    datatype: int
+    mysql:datatype: INTEGER
+    description:
+  - name: detect_isPrimary
+    "@id": "#position.detect_isPrimary"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: extinction_bv
+    "@id": "#position.extinction_bv"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: detect_isPatchInner
+    "@id": "#position.detect_isPatchInner"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: detect_isTractInner
+    "@id": "#position.detect_isTractInner"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_footprint_i
+    "@id": "#position.merge_footprint_i"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_footprint_r
+    "@id": "#position.merge_footprint_r"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_footprint_z
+    "@id": "#position.merge_footprint_z"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_footprint_y
+    "@id": "#position.merge_footprint_y"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_footprint_g
+    "@id": "#position.merge_footprint_g"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_footprint_u
+    "@id": "#position.merge_footprint_u"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_footprint_sky
+    "@id": "#position.merge_footprint_sky"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_peak_i
+    "@id": "#position.merge_peak_i"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_peak_r
+    "@id": "#position.merge_peak_r"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_peak_z
+    "@id": "#position.merge_peak_z"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_peak_y
+    "@id": "#position.merge_peak_y"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_peak_g
+    "@id": "#position.merge_peak_g"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_peak_u
+    "@id": "#position.merge_peak_u"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_peak_sky
+    "@id": "#position.merge_peak_sky"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_measurement_i
+    "@id": "#position.merge_measurement_i"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_measurement_r
+    "@id": "#position.merge_measurement_r"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_measurement_z
+    "@id": "#position.merge_measurement_z"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_measurement_y
+    "@id": "#position.merge_measurement_y"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_measurement_g
+    "@id": "#position.merge_measurement_g"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: merge_measurement_u
+    "@id": "#position.merge_measurement_u"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: chunkId
+    "@id": "#position.chunkId"
+    datatype: int
+    nullable: false
+    mysql:datatype: INTEGER
+    description:
+  - name: subChunkId
+    "@id": "#position.subChunkId"
+    datatype: int
+    nullable: false
+    mysql:datatype: INTEGER
+    description:
+- name: dpdd_ref
+  "@id": "#dpdd_ref"
+  description: dpdd_ref table from IN2P3
+  columns:
+  - name: objectId
+    "@id": "#dpdd_ref.objectId"
+    datatype: long
+    nullable: false
+    mysql:datatype: BIGINT
+    description:
+  - name: coord_ra
+    "@id": "#dpdd_ref.coord_ra"
+    datatype: FLOAT
+    nullable: false
+    mysql:datatype: FLOAT
+    description:
+  - name: coord_dec
+    "@id": "#dpdd_ref.coord_dec"
+    datatype: FLOAT
+    nullable: false
+    mysql:datatype: FLOAT
+    description:
+  - name: base_SdssCentroid_x
+    "@id": "#dpdd_ref.base_SdssCentroid_x"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: base_SdssCentroid_y
+    "@id": "#dpdd_ref.base_SdssCentroid_y"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: base_SdssCentroid_xErr
+    "@id": "#dpdd_ref.base_SdssCentroid_xErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_SdssCentroid_yErr
+    "@id": "#dpdd_ref.base_SdssCentroid_yErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_SdssCentroid_flag
+    "@id": "#dpdd_ref.base_SdssCentroid_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_SdssCentroid_flag_edge
+    "@id": "#dpdd_ref.base_SdssCentroid_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_SdssCentroid_flag_noSecondDerivative
+    "@id": "#dpdd_ref.base_SdssCentroid_flag_noSecondDerivative"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_SdssCentroid_flag_almostNoSecondDerivative
+    "@id": "#dpdd_ref.base_SdssCentroid_flag_almostNoSecondDerivative"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_SdssCentroid_flag_notAtMaximum
+    "@id": "#dpdd_ref.base_SdssCentroid_flag_notAtMaximum"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_SdssCentroid_flag_resetToPeak
+    "@id": "#dpdd_ref.base_SdssCentroid_flag_resetToPeak"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PsfFlux_instFlux
+    "@id": "#dpdd_ref.base_PsfFlux_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_PsfFlux_instFluxErr
+    "@id": "#dpdd_ref.base_PsfFlux_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_PsfFlux_area
+    "@id": "#dpdd_ref.base_PsfFlux_area"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_PsfFlux_apCorr
+    "@id": "#dpdd_ref.base_PsfFlux_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_PsfFlux_apCorrErr
+    "@id": "#dpdd_ref.base_PsfFlux_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_PsfFlux_flag
+    "@id": "#dpdd_ref.base_PsfFlux_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PsfFlux_flag_noGoodPixels
+    "@id": "#dpdd_ref.base_PsfFlux_flag_noGoodPixels"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PsfFlux_flag_edge
+    "@id": "#dpdd_ref.base_PsfFlux_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PsfFlux_flag_apCorr
+    "@id": "#dpdd_ref.base_PsfFlux_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PsfFlux_flag_badCentroid
+    "@id": "#dpdd_ref.base_PsfFlux_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_Blendedness_raw_instFlux
+    "@id": "#dpdd_ref.base_Blendedness_raw_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_Blendedness_raw_instFlux_child
+    "@id": "#dpdd_ref.base_Blendedness_raw_instFlux_child"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_Blendedness_raw_instFlux_parent
+    "@id": "#dpdd_ref.base_Blendedness_raw_instFlux_parent"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_Blendedness_abs_instFlux
+    "@id": "#dpdd_ref.base_Blendedness_abs_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_Blendedness_abs_instFlux_child
+    "@id": "#dpdd_ref.base_Blendedness_abs_instFlux_child"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_Blendedness_abs_instFlux_parent
+    "@id": "#dpdd_ref.base_Blendedness_abs_instFlux_parent"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_Blendedness_raw_child_xx
+    "@id": "#dpdd_ref.base_Blendedness_raw_child_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_Blendedness_raw_child_yy
+    "@id": "#dpdd_ref.base_Blendedness_raw_child_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_Blendedness_raw_child_xy
+    "@id": "#dpdd_ref.base_Blendedness_raw_child_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_Blendedness_raw_parent_xx
+    "@id": "#dpdd_ref.base_Blendedness_raw_parent_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_Blendedness_raw_parent_yy
+    "@id": "#dpdd_ref.base_Blendedness_raw_parent_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_Blendedness_raw_parent_xy
+    "@id": "#dpdd_ref.base_Blendedness_raw_parent_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_Blendedness_abs_child_xx
+    "@id": "#dpdd_ref.base_Blendedness_abs_child_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_Blendedness_abs_child_yy
+    "@id": "#dpdd_ref.base_Blendedness_abs_child_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_Blendedness_abs_child_xy
+    "@id": "#dpdd_ref.base_Blendedness_abs_child_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_Blendedness_abs_parent_xx
+    "@id": "#dpdd_ref.base_Blendedness_abs_parent_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_Blendedness_abs_parent_yy
+    "@id": "#dpdd_ref.base_Blendedness_abs_parent_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_Blendedness_abs_parent_xy
+    "@id": "#dpdd_ref.base_Blendedness_abs_parent_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_ClassificationExtendedness_value
+    "@id": "#dpdd_ref.base_ClassificationExtendedness_value"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_ClassificationExtendedness_flag
+    "@id": "#dpdd_ref.base_ClassificationExtendedness_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_Blendedness_old
+    "@id": "#dpdd_ref.base_Blendedness_old"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_Blendedness_abs
+    "@id": "#dpdd_ref.base_Blendedness_abs"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_Blendedness_flag
+    "@id": "#dpdd_ref.base_Blendedness_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_Blendedness_flag_noCentroid
+    "@id": "#dpdd_ref.base_Blendedness_flag_noCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_Blendedness_flag_noShape
+    "@id": "#dpdd_ref.base_Blendedness_flag_noShape"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag
+    "@id": "#dpdd_ref.base_PixelFlags_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag_offimage
+    "@id": "#dpdd_ref.base_PixelFlags_flag_offimage"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag_edge
+    "@id": "#dpdd_ref.base_PixelFlags_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag_interpolated
+    "@id": "#dpdd_ref.base_PixelFlags_flag_interpolated"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag_saturated
+    "@id": "#dpdd_ref.base_PixelFlags_flag_saturated"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag_cr
+    "@id": "#dpdd_ref.base_PixelFlags_flag_cr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag_bad
+    "@id": "#dpdd_ref.base_PixelFlags_flag_bad"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag_suspect
+    "@id": "#dpdd_ref.base_PixelFlags_flag_suspect"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag_interpolatedCenter
+    "@id": "#dpdd_ref.base_PixelFlags_flag_interpolatedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag_saturatedCenter
+    "@id": "#dpdd_ref.base_PixelFlags_flag_saturatedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag_crCenter
+    "@id": "#dpdd_ref.base_PixelFlags_flag_crCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag_suspectCenter
+    "@id": "#dpdd_ref.base_PixelFlags_flag_suspectCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag_clippedCenter
+    "@id": "#dpdd_ref.base_PixelFlags_flag_clippedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag_sensor_edgeCenter
+    "@id": "#dpdd_ref.base_PixelFlags_flag_sensor_edgeCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag_inexact_psfCenter
+    "@id": "#dpdd_ref.base_PixelFlags_flag_inexact_psfCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag_bright_objectCenter
+    "@id": "#dpdd_ref.base_PixelFlags_flag_bright_objectCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag_clipped
+    "@id": "#dpdd_ref.base_PixelFlags_flag_clipped"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag_sensor_edge
+    "@id": "#dpdd_ref.base_PixelFlags_flag_sensor_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag_inexact_psf
+    "@id": "#dpdd_ref.base_PixelFlags_flag_inexact_psf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_PixelFlags_flag_bright_object
+    "@id": "#dpdd_ref.base_PixelFlags_flag_bright_object"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: good
+    "@id": "#dpdd_ref.good"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmSourceMoments_x
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMoments_x"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: ext_shapeHSM_HsmSourceMoments_y
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMoments_y"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: ext_shapeHSM_HsmSourceMoments_xx
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMoments_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: ext_shapeHSM_HsmSourceMoments_yy
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMoments_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: ext_shapeHSM_HsmSourceMoments_xy
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMoments_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: ext_shapeHSM_HsmSourceMoments_flag
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMoments_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmSourceMoments_flag_no_pixels
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMoments_flag_no_pixels"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmSourceMoments_flag_not_contained
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMoments_flag_not_contained"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmSourceMoments_flag_parent_source
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMoments_flag_parent_source"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmSourceMoments_flag_badCentroid
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMoments_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmPsfMoments_x
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmPsfMoments_x"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: ext_shapeHSM_HsmPsfMoments_y
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmPsfMoments_y"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: ext_shapeHSM_HsmPsfMoments_xx
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmPsfMoments_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: ext_shapeHSM_HsmPsfMoments_yy
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmPsfMoments_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: ext_shapeHSM_HsmPsfMoments_xy
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmPsfMoments_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: ext_shapeHSM_HsmShapeRegauss_e1
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmShapeRegauss_e1"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: ext_shapeHSM_HsmShapeRegauss_e2
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmShapeRegauss_e2"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: ext_shapeHSM_HsmShapeRegauss_sigma
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmShapeRegauss_sigma"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: ext_shapeHSM_HsmShapeRegauss_resolution
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmShapeRegauss_resolution"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: ext_shapeHSM_HsmSourceMomentsRound_x
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMomentsRound_x"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: ext_shapeHSM_HsmSourceMomentsRound_y
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMomentsRound_y"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: ext_shapeHSM_HsmSourceMomentsRound_xx
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMomentsRound_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: ext_shapeHSM_HsmSourceMomentsRound_yy
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMomentsRound_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: ext_shapeHSM_HsmSourceMomentsRound_xy
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMomentsRound_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: ext_shapeHSM_HsmSourceMomentsRound_Flux
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMomentsRound_Flux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: ext_shapeHSM_HsmPsfMoments_flag
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmPsfMoments_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmPsfMoments_flag_no_pixels
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmPsfMoments_flag_no_pixels"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmPsfMoments_flag_not_contained
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmPsfMoments_flag_not_contained"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmPsfMoments_flag_parent_source
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmPsfMoments_flag_parent_source"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmShapeRegauss_flag
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmShapeRegauss_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmShapeRegauss_flag_no_pixels
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmShapeRegauss_flag_no_pixels"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmShapeRegauss_flag_not_contained
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmShapeRegauss_flag_not_contained"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmShapeRegauss_flag_parent_source
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmShapeRegauss_flag_parent_source"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmShapeRegauss_flag_galsim
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmShapeRegauss_flag_galsim"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmSourceMomentsRound_flag
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMomentsRound_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmSourceMomentsRound_flag_no_pixels
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMomentsRound_flag_no_pixels"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmSourceMomentsRound_flag_not_contained
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMomentsRound_flag_not_contained"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmSourceMomentsRound_flag_parent_source
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMomentsRound_flag_parent_source"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmPsfMoments_flag_badCentroid
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmPsfMoments_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmShapeRegauss_flag_badCentroid
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmShapeRegauss_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: ext_shapeHSM_HsmSourceMomentsRound_flag_badCentroid
+    "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMomentsRound_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_SdssShape_xx
+    "@id": "#dpdd_ref.base_SdssShape_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_SdssShape_yy
+    "@id": "#dpdd_ref.base_SdssShape_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_SdssShape_xy
+    "@id": "#dpdd_ref.base_SdssShape_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_SdssShape_xxErr
+    "@id": "#dpdd_ref.base_SdssShape_xxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_SdssShape_yyErr
+    "@id": "#dpdd_ref.base_SdssShape_yyErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_SdssShape_xyErr
+    "@id": "#dpdd_ref.base_SdssShape_xyErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: base_SdssShape_x
+    "@id": "#dpdd_ref.base_SdssShape_x"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: base_SdssShape_y
+    "@id": "#dpdd_ref.base_SdssShape_y"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: base_SdssShape_instFlux
+    "@id": "#dpdd_ref.base_SdssShape_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+- name: dpdd_forced
+  "@id": "#dpdd_forced"
+  description: dpdd_forced table from IN2P3
+  columns:
+  - name: objectId
+    "@id": "#dpdd_forced.objectId"
+    datatype: long
+    nullable: false
+    mysql:datatype: BIGINT
+    description:
+  - name: coord_ra
+    "@id": "#dpdd_forced.coord_ra"
+    datatype: FLOAT
+    nullable: false
+    mysql:datatype: FLOAT
+    description:
+  - name: coord_dec
+    "@id": "#dpdd_forced.coord_dec"
+    datatype: FLOAT
+    nullable: false
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_PixelFlags_flag
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_offimage
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_offimage"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_edge
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_interpolated
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_interpolated"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_saturated
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_saturated"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_cr
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_cr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_bad
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_bad"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_suspect
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_suspect"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_interpolatedCenter
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_interpolatedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_saturatedCenter
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_saturatedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_crCenter
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_crCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_suspectCenter
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_suspectCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_clippedCenter
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_clippedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_sensor_edgeCenter
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_sensor_edgeCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_rejectedCenter
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_rejectedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_inexact_psfCenter
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_inexact_psfCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_bright_objectCenter
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_bright_objectCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_clipped
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_clipped"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_sensor_edge
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_sensor_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_rejected
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_rejected"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_inexact_psf
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_inexact_psf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PixelFlags_flag_bright_object
+    "@id": "#dpdd_forced.g_base_PixelFlags_flag_bright_object"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_good
+    "@id": "#dpdd_forced.g_good"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_ClassificationExtendedness_value
+    "@id": "#dpdd_forced.g_base_ClassificationExtendedness_value"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_ClassificationExtendedness_flag
+    "@id": "#dpdd_forced.g_base_ClassificationExtendedness_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_modelfit_CModel_instFlux
+    "@id": "#dpdd_forced.g_modelfit_CModel_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_instFluxErr
+    "@id": "#dpdd_forced.g_modelfit_CModel_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_instFlux_inner
+    "@id": "#dpdd_forced.g_modelfit_CModel_instFlux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_fracDev
+    "@id": "#dpdd_forced.g_modelfit_CModel_fracDev"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_objective
+    "@id": "#dpdd_forced.g_modelfit_CModel_objective"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_apCorr
+    "@id": "#dpdd_forced.g_modelfit_CModel_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_apCorrErr
+    "@id": "#dpdd_forced.g_modelfit_CModel_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_flag
+    "@id": "#dpdd_forced.g_modelfit_CModel_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_modelfit_CModel_flag_region_maxArea
+    "@id": "#dpdd_forced.g_modelfit_CModel_flag_region_maxArea"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_modelfit_CModel_flag_region_maxBadPixelFraction
+    "@id": "#dpdd_forced.g_modelfit_CModel_flag_region_maxBadPixelFraction"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_modelfit_CModel_flag_badReference
+    "@id": "#dpdd_forced.g_modelfit_CModel_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_modelfit_CModel_flag_noShapeletPsf
+    "@id": "#dpdd_forced.g_modelfit_CModel_flag_noShapeletPsf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_modelfit_CModel_flag_badCentroid
+    "@id": "#dpdd_forced.g_modelfit_CModel_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_modelfit_CModel_flag_apCorr
+    "@id": "#dpdd_forced.g_modelfit_CModel_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_SdssCentroid_x
+    "@id": "#dpdd_forced.g_base_SdssCentroid_x"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: g_base_SdssCentroid_y
+    "@id": "#dpdd_forced.g_base_SdssCentroid_y"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: g_base_SdssCentroid_xErr
+    "@id": "#dpdd_forced.g_base_SdssCentroid_xErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_SdssCentroid_yErr
+    "@id": "#dpdd_forced.g_base_SdssCentroid_yErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_SdssCentroid_flag
+    "@id": "#dpdd_forced.g_base_SdssCentroid_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_SdssCentroid_flag_edge
+    "@id": "#dpdd_forced.g_base_SdssCentroid_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_SdssCentroid_flag_noSecondDerivative
+    "@id": "#dpdd_forced.g_base_SdssCentroid_flag_noSecondDerivative"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_SdssCentroid_flag_almostNoSecondDerivative
+    "@id": "#dpdd_forced.g_base_SdssCentroid_flag_almostNoSecondDerivative"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_SdssCentroid_flag_notAtMaximum
+    "@id": "#dpdd_forced.g_base_SdssCentroid_flag_notAtMaximum"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_SdssCentroid_flag_resetToPeak
+    "@id": "#dpdd_forced.g_base_SdssCentroid_flag_resetToPeak"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_SdssCentroid_flag_badInitialCentroid
+    "@id": "#dpdd_forced.g_base_SdssCentroid_flag_badInitialCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_SdssShape_xx
+    "@id": "#dpdd_forced.g_base_SdssShape_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_SdssShape_yy
+    "@id": "#dpdd_forced.g_base_SdssShape_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_SdssShape_xy
+    "@id": "#dpdd_forced.g_base_SdssShape_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_SdssShape_xxErr
+    "@id": "#dpdd_forced.g_base_SdssShape_xxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_SdssShape_yyErr
+    "@id": "#dpdd_forced.g_base_SdssShape_yyErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_SdssShape_xyErr
+    "@id": "#dpdd_forced.g_base_SdssShape_xyErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_SdssShape_x
+    "@id": "#dpdd_forced.g_base_SdssShape_x"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: g_base_SdssShape_y
+    "@id": "#dpdd_forced.g_base_SdssShape_y"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: g_base_SdssShape_instFlux
+    "@id": "#dpdd_forced.g_base_SdssShape_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_SdssShape_instFluxErr
+    "@id": "#dpdd_forced.g_base_SdssShape_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_SdssShape_psf_xx
+    "@id": "#dpdd_forced.g_base_SdssShape_psf_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_SdssShape_psf_yy
+    "@id": "#dpdd_forced.g_base_SdssShape_psf_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_SdssShape_psf_xy
+    "@id": "#dpdd_forced.g_base_SdssShape_psf_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_SdssShape_instFlux_xx_Cov
+    "@id": "#dpdd_forced.g_base_SdssShape_instFlux_xx_Cov"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_SdssShape_instFlux_yy_Cov
+    "@id": "#dpdd_forced.g_base_SdssShape_instFlux_yy_Cov"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_SdssShape_instFlux_xy_Cov
+    "@id": "#dpdd_forced.g_base_SdssShape_instFlux_xy_Cov"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_SdssShape_flag
+    "@id": "#dpdd_forced.g_base_SdssShape_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_SdssShape_flag_unweightedBad
+    "@id": "#dpdd_forced.g_base_SdssShape_flag_unweightedBad"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_SdssShape_flag_unweighted
+    "@id": "#dpdd_forced.g_base_SdssShape_flag_unweighted"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_SdssShape_flag_shift
+    "@id": "#dpdd_forced.g_base_SdssShape_flag_shift"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_SdssShape_flag_maxIter
+    "@id": "#dpdd_forced.g_base_SdssShape_flag_maxIter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_SdssShape_flag_psf
+    "@id": "#dpdd_forced.g_base_SdssShape_flag_psf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_SdssShape_flag_badCentroid
+    "@id": "#dpdd_forced.g_base_SdssShape_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PsfFlux_instFlux
+    "@id": "#dpdd_forced.g_base_PsfFlux_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_PsfFlux_instFluxErr
+    "@id": "#dpdd_forced.g_base_PsfFlux_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_PsfFlux_area
+    "@id": "#dpdd_forced.g_base_PsfFlux_area"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_PsfFlux_apCorr
+    "@id": "#dpdd_forced.g_base_PsfFlux_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_PsfFlux_apCorrErr
+    "@id": "#dpdd_forced.g_base_PsfFlux_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_PsfFlux_flag
+    "@id": "#dpdd_forced.g_base_PsfFlux_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PsfFlux_flag_noGoodPixels
+    "@id": "#dpdd_forced.g_base_PsfFlux_flag_noGoodPixels"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PsfFlux_flag_edge
+    "@id": "#dpdd_forced.g_base_PsfFlux_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PsfFlux_flag_apCorr
+    "@id": "#dpdd_forced.g_base_PsfFlux_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_PsfFlux_flag_badCentroid
+    "@id": "#dpdd_forced.g_base_PsfFlux_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_InputCount_value
+    "@id": "#dpdd_forced.g_base_InputCount_value"
+    datatype: int
+    mysql:datatype: INTEGER
+    description:
+  - name: g_base_InputCount_flag
+    "@id": "#dpdd_forced.g_base_InputCount_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_InputCount_flag_noInputs
+    "@id": "#dpdd_forced.g_base_InputCount_flag_noInputs"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_InputCount_flag_badCentroid
+    "@id": "#dpdd_forced.g_base_InputCount_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_Variance_value
+    "@id": "#dpdd_forced.g_base_Variance_value"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_Variance_flag
+    "@id": "#dpdd_forced.g_base_Variance_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_Variance_flag_emptyFootprint
+    "@id": "#dpdd_forced.g_base_Variance_flag_emptyFootprint"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_Variance_flag_badCentroid
+    "@id": "#dpdd_forced.g_base_Variance_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_LocalBackground_instFlux
+    "@id": "#dpdd_forced.g_base_LocalBackground_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_LocalBackground_instFluxErr
+    "@id": "#dpdd_forced.g_base_LocalBackground_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_base_LocalBackground_flag
+    "@id": "#dpdd_forced.g_base_LocalBackground_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_LocalBackground_flag_noGoodPixels
+    "@id": "#dpdd_forced.g_base_LocalBackground_flag_noGoodPixels"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_LocalBackground_flag_noPsf
+    "@id": "#dpdd_forced.g_base_LocalBackground_flag_noPsf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_base_LocalBackground_flag_badCentroid
+    "@id": "#dpdd_forced.g_base_LocalBackground_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_modelfit_CModel_initial_instFlux
+    "@id": "#dpdd_forced.g_modelfit_CModel_initial_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_initial_instFluxErr
+    "@id": "#dpdd_forced.g_modelfit_CModel_initial_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_initial_flux_inner
+    "@id": "#dpdd_forced.g_modelfit_CModel_initial_flux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_exp_instFlux
+    "@id": "#dpdd_forced.g_modelfit_CModel_exp_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_exp_instFluxErr
+    "@id": "#dpdd_forced.g_modelfit_CModel_exp_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_exp_flux_inner
+    "@id": "#dpdd_forced.g_modelfit_CModel_exp_flux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_dev_instFlux
+    "@id": "#dpdd_forced.g_modelfit_CModel_dev_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_dev_instFluxErr
+    "@id": "#dpdd_forced.g_modelfit_CModel_dev_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_dev_flux_inner
+    "@id": "#dpdd_forced.g_modelfit_CModel_dev_flux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_exp_apCorr
+    "@id": "#dpdd_forced.g_modelfit_CModel_exp_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_exp_apCorrErr
+    "@id": "#dpdd_forced.g_modelfit_CModel_exp_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_dev_apCorr
+    "@id": "#dpdd_forced.g_modelfit_CModel_dev_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_dev_apCorrErr
+    "@id": "#dpdd_forced.g_modelfit_CModel_dev_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_initial_apCorr
+    "@id": "#dpdd_forced.g_modelfit_CModel_initial_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_initial_apCorrErr
+    "@id": "#dpdd_forced.g_modelfit_CModel_initial_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: g_modelfit_CModel_initial_flag
+    "@id": "#dpdd_forced.g_modelfit_CModel_initial_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_modelfit_CModel_initial_flag_badReference
+    "@id": "#dpdd_forced.g_modelfit_CModel_initial_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_modelfit_CModel_initial_flag_numericError
+    "@id": "#dpdd_forced.g_modelfit_CModel_initial_flag_numericError"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_modelfit_CModel_exp_flag
+    "@id": "#dpdd_forced.g_modelfit_CModel_exp_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_modelfit_CModel_exp_flag_badReference
+    "@id": "#dpdd_forced.g_modelfit_CModel_exp_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_modelfit_CModel_exp_flag_numericError
+    "@id": "#dpdd_forced.g_modelfit_CModel_exp_flag_numericError"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_modelfit_CModel_dev_flag
+    "@id": "#dpdd_forced.g_modelfit_CModel_dev_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_modelfit_CModel_dev_flag_badReference
+    "@id": "#dpdd_forced.g_modelfit_CModel_dev_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_modelfit_CModel_dev_flag_numericError
+    "@id": "#dpdd_forced.g_modelfit_CModel_dev_flag_numericError"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_modelfit_CModel_exp_flag_apCorr
+    "@id": "#dpdd_forced.g_modelfit_CModel_exp_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_modelfit_CModel_dev_flag_apCorr
+    "@id": "#dpdd_forced.g_modelfit_CModel_dev_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: g_modelfit_CModel_initial_flag_apCorr
+    "@id": "#dpdd_forced.g_modelfit_CModel_initial_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_offimage
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_offimage"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_edge
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_interpolated
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_interpolated"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_saturated
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_saturated"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_cr
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_cr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_bad
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_bad"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_suspect
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_suspect"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_interpolatedCenter
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_interpolatedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_saturatedCenter
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_saturatedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_crCenter
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_crCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_suspectCenter
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_suspectCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_clippedCenter
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_clippedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_sensor_edgeCenter
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_sensor_edgeCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_rejectedCenter
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_rejectedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_inexact_psfCenter
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_inexact_psfCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_bright_objectCenter
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_bright_objectCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_clipped
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_clipped"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_sensor_edge
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_sensor_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_rejected
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_rejected"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_inexact_psf
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_inexact_psf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PixelFlags_flag_bright_object
+    "@id": "#dpdd_forced.i_base_PixelFlags_flag_bright_object"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_good
+    "@id": "#dpdd_forced.i_good"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_ClassificationExtendedness_value
+    "@id": "#dpdd_forced.i_base_ClassificationExtendedness_value"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_ClassificationExtendedness_flag
+    "@id": "#dpdd_forced.i_base_ClassificationExtendedness_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_modelfit_CModel_instFlux
+    "@id": "#dpdd_forced.i_modelfit_CModel_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_instFluxErr
+    "@id": "#dpdd_forced.i_modelfit_CModel_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_instFlux_inner
+    "@id": "#dpdd_forced.i_modelfit_CModel_instFlux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_fracDev
+    "@id": "#dpdd_forced.i_modelfit_CModel_fracDev"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_objective
+    "@id": "#dpdd_forced.i_modelfit_CModel_objective"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_apCorr
+    "@id": "#dpdd_forced.i_modelfit_CModel_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_apCorrErr
+    "@id": "#dpdd_forced.i_modelfit_CModel_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_flag
+    "@id": "#dpdd_forced.i_modelfit_CModel_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_modelfit_CModel_flag_region_maxArea
+    "@id": "#dpdd_forced.i_modelfit_CModel_flag_region_maxArea"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_modelfit_CModel_flag_region_maxBadPixelFraction
+    "@id": "#dpdd_forced.i_modelfit_CModel_flag_region_maxBadPixelFraction"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_modelfit_CModel_flag_badReference
+    "@id": "#dpdd_forced.i_modelfit_CModel_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_modelfit_CModel_flag_noShapeletPsf
+    "@id": "#dpdd_forced.i_modelfit_CModel_flag_noShapeletPsf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_modelfit_CModel_flag_badCentroid
+    "@id": "#dpdd_forced.i_modelfit_CModel_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_modelfit_CModel_flag_apCorr
+    "@id": "#dpdd_forced.i_modelfit_CModel_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_SdssCentroid_x
+    "@id": "#dpdd_forced.i_base_SdssCentroid_x"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: i_base_SdssCentroid_y
+    "@id": "#dpdd_forced.i_base_SdssCentroid_y"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: i_base_SdssCentroid_xErr
+    "@id": "#dpdd_forced.i_base_SdssCentroid_xErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_SdssCentroid_yErr
+    "@id": "#dpdd_forced.i_base_SdssCentroid_yErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_SdssCentroid_flag
+    "@id": "#dpdd_forced.i_base_SdssCentroid_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_SdssCentroid_flag_edge
+    "@id": "#dpdd_forced.i_base_SdssCentroid_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_SdssCentroid_flag_noSecondDerivative
+    "@id": "#dpdd_forced.i_base_SdssCentroid_flag_noSecondDerivative"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_SdssCentroid_flag_almostNoSecondDerivative
+    "@id": "#dpdd_forced.i_base_SdssCentroid_flag_almostNoSecondDerivative"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_SdssCentroid_flag_notAtMaximum
+    "@id": "#dpdd_forced.i_base_SdssCentroid_flag_notAtMaximum"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_SdssCentroid_flag_resetToPeak
+    "@id": "#dpdd_forced.i_base_SdssCentroid_flag_resetToPeak"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_SdssCentroid_flag_badInitialCentroid
+    "@id": "#dpdd_forced.i_base_SdssCentroid_flag_badInitialCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_SdssShape_xx
+    "@id": "#dpdd_forced.i_base_SdssShape_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_SdssShape_yy
+    "@id": "#dpdd_forced.i_base_SdssShape_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_SdssShape_xy
+    "@id": "#dpdd_forced.i_base_SdssShape_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_SdssShape_xxErr
+    "@id": "#dpdd_forced.i_base_SdssShape_xxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_SdssShape_yyErr
+    "@id": "#dpdd_forced.i_base_SdssShape_yyErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_SdssShape_xyErr
+    "@id": "#dpdd_forced.i_base_SdssShape_xyErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_SdssShape_x
+    "@id": "#dpdd_forced.i_base_SdssShape_x"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: i_base_SdssShape_y
+    "@id": "#dpdd_forced.i_base_SdssShape_y"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: i_base_SdssShape_instFlux
+    "@id": "#dpdd_forced.i_base_SdssShape_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_SdssShape_instFluxErr
+    "@id": "#dpdd_forced.i_base_SdssShape_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_SdssShape_psf_xx
+    "@id": "#dpdd_forced.i_base_SdssShape_psf_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_SdssShape_psf_yy
+    "@id": "#dpdd_forced.i_base_SdssShape_psf_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_SdssShape_psf_xy
+    "@id": "#dpdd_forced.i_base_SdssShape_psf_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_SdssShape_instFlux_xx_Cov
+    "@id": "#dpdd_forced.i_base_SdssShape_instFlux_xx_Cov"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_SdssShape_instFlux_yy_Cov
+    "@id": "#dpdd_forced.i_base_SdssShape_instFlux_yy_Cov"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_SdssShape_instFlux_xy_Cov
+    "@id": "#dpdd_forced.i_base_SdssShape_instFlux_xy_Cov"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_SdssShape_flag
+    "@id": "#dpdd_forced.i_base_SdssShape_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_SdssShape_flag_unweightedBad
+    "@id": "#dpdd_forced.i_base_SdssShape_flag_unweightedBad"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_SdssShape_flag_unweighted
+    "@id": "#dpdd_forced.i_base_SdssShape_flag_unweighted"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_SdssShape_flag_shift
+    "@id": "#dpdd_forced.i_base_SdssShape_flag_shift"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_SdssShape_flag_maxIter
+    "@id": "#dpdd_forced.i_base_SdssShape_flag_maxIter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_SdssShape_flag_psf
+    "@id": "#dpdd_forced.i_base_SdssShape_flag_psf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_SdssShape_flag_badCentroid
+    "@id": "#dpdd_forced.i_base_SdssShape_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PsfFlux_instFlux
+    "@id": "#dpdd_forced.i_base_PsfFlux_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_PsfFlux_instFluxErr
+    "@id": "#dpdd_forced.i_base_PsfFlux_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_PsfFlux_area
+    "@id": "#dpdd_forced.i_base_PsfFlux_area"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_PsfFlux_apCorr
+    "@id": "#dpdd_forced.i_base_PsfFlux_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_PsfFlux_apCorrErr
+    "@id": "#dpdd_forced.i_base_PsfFlux_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_PsfFlux_flag
+    "@id": "#dpdd_forced.i_base_PsfFlux_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PsfFlux_flag_noGoodPixels
+    "@id": "#dpdd_forced.i_base_PsfFlux_flag_noGoodPixels"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PsfFlux_flag_edge
+    "@id": "#dpdd_forced.i_base_PsfFlux_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PsfFlux_flag_apCorr
+    "@id": "#dpdd_forced.i_base_PsfFlux_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_PsfFlux_flag_badCentroid
+    "@id": "#dpdd_forced.i_base_PsfFlux_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_InputCount_value
+    "@id": "#dpdd_forced.i_base_InputCount_value"
+    datatype: int
+    mysql:datatype: INTEGER
+    description:
+  - name: i_base_InputCount_flag
+    "@id": "#dpdd_forced.i_base_InputCount_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_InputCount_flag_noInputs
+    "@id": "#dpdd_forced.i_base_InputCount_flag_noInputs"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_InputCount_flag_badCentroid
+    "@id": "#dpdd_forced.i_base_InputCount_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_Variance_value
+    "@id": "#dpdd_forced.i_base_Variance_value"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_Variance_flag
+    "@id": "#dpdd_forced.i_base_Variance_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_Variance_flag_emptyFootprint
+    "@id": "#dpdd_forced.i_base_Variance_flag_emptyFootprint"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_Variance_flag_badCentroid
+    "@id": "#dpdd_forced.i_base_Variance_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_LocalBackground_instFlux
+    "@id": "#dpdd_forced.i_base_LocalBackground_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_LocalBackground_instFluxErr
+    "@id": "#dpdd_forced.i_base_LocalBackground_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_base_LocalBackground_flag
+    "@id": "#dpdd_forced.i_base_LocalBackground_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_LocalBackground_flag_noGoodPixels
+    "@id": "#dpdd_forced.i_base_LocalBackground_flag_noGoodPixels"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_LocalBackground_flag_noPsf
+    "@id": "#dpdd_forced.i_base_LocalBackground_flag_noPsf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_base_LocalBackground_flag_badCentroid
+    "@id": "#dpdd_forced.i_base_LocalBackground_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_modelfit_CModel_initial_instFlux
+    "@id": "#dpdd_forced.i_modelfit_CModel_initial_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_initial_instFluxErr
+    "@id": "#dpdd_forced.i_modelfit_CModel_initial_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_initial_flux_inner
+    "@id": "#dpdd_forced.i_modelfit_CModel_initial_flux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_exp_instFlux
+    "@id": "#dpdd_forced.i_modelfit_CModel_exp_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_exp_instFluxErr
+    "@id": "#dpdd_forced.i_modelfit_CModel_exp_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_exp_flux_inner
+    "@id": "#dpdd_forced.i_modelfit_CModel_exp_flux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_dev_instFlux
+    "@id": "#dpdd_forced.i_modelfit_CModel_dev_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_dev_instFluxErr
+    "@id": "#dpdd_forced.i_modelfit_CModel_dev_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_dev_flux_inner
+    "@id": "#dpdd_forced.i_modelfit_CModel_dev_flux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_exp_apCorr
+    "@id": "#dpdd_forced.i_modelfit_CModel_exp_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_exp_apCorrErr
+    "@id": "#dpdd_forced.i_modelfit_CModel_exp_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_dev_apCorr
+    "@id": "#dpdd_forced.i_modelfit_CModel_dev_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_dev_apCorrErr
+    "@id": "#dpdd_forced.i_modelfit_CModel_dev_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_initial_apCorr
+    "@id": "#dpdd_forced.i_modelfit_CModel_initial_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_initial_apCorrErr
+    "@id": "#dpdd_forced.i_modelfit_CModel_initial_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: i_modelfit_CModel_initial_flag
+    "@id": "#dpdd_forced.i_modelfit_CModel_initial_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_modelfit_CModel_initial_flag_badReference
+    "@id": "#dpdd_forced.i_modelfit_CModel_initial_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_modelfit_CModel_initial_flag_numericError
+    "@id": "#dpdd_forced.i_modelfit_CModel_initial_flag_numericError"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_modelfit_CModel_exp_flag
+    "@id": "#dpdd_forced.i_modelfit_CModel_exp_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_modelfit_CModel_exp_flag_badReference
+    "@id": "#dpdd_forced.i_modelfit_CModel_exp_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_modelfit_CModel_exp_flag_numericError
+    "@id": "#dpdd_forced.i_modelfit_CModel_exp_flag_numericError"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_modelfit_CModel_dev_flag
+    "@id": "#dpdd_forced.i_modelfit_CModel_dev_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_modelfit_CModel_dev_flag_badReference
+    "@id": "#dpdd_forced.i_modelfit_CModel_dev_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_modelfit_CModel_dev_flag_numericError
+    "@id": "#dpdd_forced.i_modelfit_CModel_dev_flag_numericError"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_modelfit_CModel_exp_flag_apCorr
+    "@id": "#dpdd_forced.i_modelfit_CModel_exp_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_modelfit_CModel_dev_flag_apCorr
+    "@id": "#dpdd_forced.i_modelfit_CModel_dev_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: i_modelfit_CModel_initial_flag_apCorr
+    "@id": "#dpdd_forced.i_modelfit_CModel_initial_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_offimage
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_offimage"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_edge
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_interpolated
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_interpolated"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_saturated
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_saturated"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_cr
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_cr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_bad
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_bad"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_suspect
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_suspect"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_interpolatedCenter
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_interpolatedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_saturatedCenter
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_saturatedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_crCenter
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_crCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_suspectCenter
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_suspectCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_clippedCenter
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_clippedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_sensor_edgeCenter
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_sensor_edgeCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_rejectedCenter
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_rejectedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_inexact_psfCenter
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_inexact_psfCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_bright_objectCenter
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_bright_objectCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_clipped
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_clipped"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_sensor_edge
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_sensor_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_rejected
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_rejected"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_inexact_psf
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_inexact_psf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PixelFlags_flag_bright_object
+    "@id": "#dpdd_forced.r_base_PixelFlags_flag_bright_object"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_good
+    "@id": "#dpdd_forced.r_good"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_ClassificationExtendedness_value
+    "@id": "#dpdd_forced.r_base_ClassificationExtendedness_value"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_ClassificationExtendedness_flag
+    "@id": "#dpdd_forced.r_base_ClassificationExtendedness_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_modelfit_CModel_instFlux
+    "@id": "#dpdd_forced.r_modelfit_CModel_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_instFluxErr
+    "@id": "#dpdd_forced.r_modelfit_CModel_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_instFlux_inner
+    "@id": "#dpdd_forced.r_modelfit_CModel_instFlux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_fracDev
+    "@id": "#dpdd_forced.r_modelfit_CModel_fracDev"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_objective
+    "@id": "#dpdd_forced.r_modelfit_CModel_objective"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_apCorr
+    "@id": "#dpdd_forced.r_modelfit_CModel_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_apCorrErr
+    "@id": "#dpdd_forced.r_modelfit_CModel_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_flag
+    "@id": "#dpdd_forced.r_modelfit_CModel_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_modelfit_CModel_flag_region_maxArea
+    "@id": "#dpdd_forced.r_modelfit_CModel_flag_region_maxArea"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_modelfit_CModel_flag_region_maxBadPixelFraction
+    "@id": "#dpdd_forced.r_modelfit_CModel_flag_region_maxBadPixelFraction"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_modelfit_CModel_flag_badReference
+    "@id": "#dpdd_forced.r_modelfit_CModel_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_modelfit_CModel_flag_noShapeletPsf
+    "@id": "#dpdd_forced.r_modelfit_CModel_flag_noShapeletPsf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_modelfit_CModel_flag_badCentroid
+    "@id": "#dpdd_forced.r_modelfit_CModel_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_modelfit_CModel_flag_apCorr
+    "@id": "#dpdd_forced.r_modelfit_CModel_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_SdssCentroid_x
+    "@id": "#dpdd_forced.r_base_SdssCentroid_x"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: r_base_SdssCentroid_y
+    "@id": "#dpdd_forced.r_base_SdssCentroid_y"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: r_base_SdssCentroid_xErr
+    "@id": "#dpdd_forced.r_base_SdssCentroid_xErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_SdssCentroid_yErr
+    "@id": "#dpdd_forced.r_base_SdssCentroid_yErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_SdssCentroid_flag
+    "@id": "#dpdd_forced.r_base_SdssCentroid_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_SdssCentroid_flag_edge
+    "@id": "#dpdd_forced.r_base_SdssCentroid_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_SdssCentroid_flag_noSecondDerivative
+    "@id": "#dpdd_forced.r_base_SdssCentroid_flag_noSecondDerivative"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_SdssCentroid_flag_almostNoSecondDerivative
+    "@id": "#dpdd_forced.r_base_SdssCentroid_flag_almostNoSecondDerivative"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_SdssCentroid_flag_notAtMaximum
+    "@id": "#dpdd_forced.r_base_SdssCentroid_flag_notAtMaximum"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_SdssCentroid_flag_resetToPeak
+    "@id": "#dpdd_forced.r_base_SdssCentroid_flag_resetToPeak"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_SdssCentroid_flag_badInitialCentroid
+    "@id": "#dpdd_forced.r_base_SdssCentroid_flag_badInitialCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_SdssShape_xx
+    "@id": "#dpdd_forced.r_base_SdssShape_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_SdssShape_yy
+    "@id": "#dpdd_forced.r_base_SdssShape_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_SdssShape_xy
+    "@id": "#dpdd_forced.r_base_SdssShape_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_SdssShape_xxErr
+    "@id": "#dpdd_forced.r_base_SdssShape_xxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_SdssShape_yyErr
+    "@id": "#dpdd_forced.r_base_SdssShape_yyErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_SdssShape_xyErr
+    "@id": "#dpdd_forced.r_base_SdssShape_xyErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_SdssShape_x
+    "@id": "#dpdd_forced.r_base_SdssShape_x"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: r_base_SdssShape_y
+    "@id": "#dpdd_forced.r_base_SdssShape_y"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: r_base_SdssShape_instFlux
+    "@id": "#dpdd_forced.r_base_SdssShape_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_SdssShape_instFluxErr
+    "@id": "#dpdd_forced.r_base_SdssShape_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_SdssShape_psf_xx
+    "@id": "#dpdd_forced.r_base_SdssShape_psf_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_SdssShape_psf_yy
+    "@id": "#dpdd_forced.r_base_SdssShape_psf_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_SdssShape_psf_xy
+    "@id": "#dpdd_forced.r_base_SdssShape_psf_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_SdssShape_instFlux_xx_Cov
+    "@id": "#dpdd_forced.r_base_SdssShape_instFlux_xx_Cov"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_SdssShape_instFlux_yy_Cov
+    "@id": "#dpdd_forced.r_base_SdssShape_instFlux_yy_Cov"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_SdssShape_instFlux_xy_Cov
+    "@id": "#dpdd_forced.r_base_SdssShape_instFlux_xy_Cov"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_SdssShape_flag
+    "@id": "#dpdd_forced.r_base_SdssShape_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_SdssShape_flag_unweightedBad
+    "@id": "#dpdd_forced.r_base_SdssShape_flag_unweightedBad"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_SdssShape_flag_unweighted
+    "@id": "#dpdd_forced.r_base_SdssShape_flag_unweighted"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_SdssShape_flag_shift
+    "@id": "#dpdd_forced.r_base_SdssShape_flag_shift"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_SdssShape_flag_maxIter
+    "@id": "#dpdd_forced.r_base_SdssShape_flag_maxIter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_SdssShape_flag_psf
+    "@id": "#dpdd_forced.r_base_SdssShape_flag_psf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_SdssShape_flag_badCentroid
+    "@id": "#dpdd_forced.r_base_SdssShape_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PsfFlux_instFlux
+    "@id": "#dpdd_forced.r_base_PsfFlux_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_PsfFlux_instFluxErr
+    "@id": "#dpdd_forced.r_base_PsfFlux_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_PsfFlux_area
+    "@id": "#dpdd_forced.r_base_PsfFlux_area"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_PsfFlux_apCorr
+    "@id": "#dpdd_forced.r_base_PsfFlux_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_PsfFlux_apCorrErr
+    "@id": "#dpdd_forced.r_base_PsfFlux_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_PsfFlux_flag
+    "@id": "#dpdd_forced.r_base_PsfFlux_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PsfFlux_flag_noGoodPixels
+    "@id": "#dpdd_forced.r_base_PsfFlux_flag_noGoodPixels"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PsfFlux_flag_edge
+    "@id": "#dpdd_forced.r_base_PsfFlux_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PsfFlux_flag_apCorr
+    "@id": "#dpdd_forced.r_base_PsfFlux_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_PsfFlux_flag_badCentroid
+    "@id": "#dpdd_forced.r_base_PsfFlux_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_InputCount_value
+    "@id": "#dpdd_forced.r_base_InputCount_value"
+    datatype: int
+    mysql:datatype: INTEGER
+    description:
+  - name: r_base_InputCount_flag
+    "@id": "#dpdd_forced.r_base_InputCount_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_InputCount_flag_noInputs
+    "@id": "#dpdd_forced.r_base_InputCount_flag_noInputs"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_InputCount_flag_badCentroid
+    "@id": "#dpdd_forced.r_base_InputCount_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_Variance_value
+    "@id": "#dpdd_forced.r_base_Variance_value"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_Variance_flag
+    "@id": "#dpdd_forced.r_base_Variance_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_Variance_flag_emptyFootprint
+    "@id": "#dpdd_forced.r_base_Variance_flag_emptyFootprint"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_Variance_flag_badCentroid
+    "@id": "#dpdd_forced.r_base_Variance_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_LocalBackground_instFlux
+    "@id": "#dpdd_forced.r_base_LocalBackground_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_LocalBackground_instFluxErr
+    "@id": "#dpdd_forced.r_base_LocalBackground_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_base_LocalBackground_flag
+    "@id": "#dpdd_forced.r_base_LocalBackground_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_LocalBackground_flag_noGoodPixels
+    "@id": "#dpdd_forced.r_base_LocalBackground_flag_noGoodPixels"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_LocalBackground_flag_noPsf
+    "@id": "#dpdd_forced.r_base_LocalBackground_flag_noPsf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_base_LocalBackground_flag_badCentroid
+    "@id": "#dpdd_forced.r_base_LocalBackground_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_modelfit_CModel_initial_instFlux
+    "@id": "#dpdd_forced.r_modelfit_CModel_initial_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_initial_instFluxErr
+    "@id": "#dpdd_forced.r_modelfit_CModel_initial_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_initial_flux_inner
+    "@id": "#dpdd_forced.r_modelfit_CModel_initial_flux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_exp_instFlux
+    "@id": "#dpdd_forced.r_modelfit_CModel_exp_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_exp_instFluxErr
+    "@id": "#dpdd_forced.r_modelfit_CModel_exp_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_exp_flux_inner
+    "@id": "#dpdd_forced.r_modelfit_CModel_exp_flux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_dev_instFlux
+    "@id": "#dpdd_forced.r_modelfit_CModel_dev_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_dev_instFluxErr
+    "@id": "#dpdd_forced.r_modelfit_CModel_dev_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_dev_flux_inner
+    "@id": "#dpdd_forced.r_modelfit_CModel_dev_flux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_exp_apCorr
+    "@id": "#dpdd_forced.r_modelfit_CModel_exp_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_exp_apCorrErr
+    "@id": "#dpdd_forced.r_modelfit_CModel_exp_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_dev_apCorr
+    "@id": "#dpdd_forced.r_modelfit_CModel_dev_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_dev_apCorrErr
+    "@id": "#dpdd_forced.r_modelfit_CModel_dev_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_initial_apCorr
+    "@id": "#dpdd_forced.r_modelfit_CModel_initial_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_initial_apCorrErr
+    "@id": "#dpdd_forced.r_modelfit_CModel_initial_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: r_modelfit_CModel_initial_flag
+    "@id": "#dpdd_forced.r_modelfit_CModel_initial_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_modelfit_CModel_initial_flag_badReference
+    "@id": "#dpdd_forced.r_modelfit_CModel_initial_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_modelfit_CModel_initial_flag_numericError
+    "@id": "#dpdd_forced.r_modelfit_CModel_initial_flag_numericError"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_modelfit_CModel_exp_flag
+    "@id": "#dpdd_forced.r_modelfit_CModel_exp_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_modelfit_CModel_exp_flag_badReference
+    "@id": "#dpdd_forced.r_modelfit_CModel_exp_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_modelfit_CModel_exp_flag_numericError
+    "@id": "#dpdd_forced.r_modelfit_CModel_exp_flag_numericError"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_modelfit_CModel_dev_flag
+    "@id": "#dpdd_forced.r_modelfit_CModel_dev_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_modelfit_CModel_dev_flag_badReference
+    "@id": "#dpdd_forced.r_modelfit_CModel_dev_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_modelfit_CModel_dev_flag_numericError
+    "@id": "#dpdd_forced.r_modelfit_CModel_dev_flag_numericError"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_modelfit_CModel_exp_flag_apCorr
+    "@id": "#dpdd_forced.r_modelfit_CModel_exp_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_modelfit_CModel_dev_flag_apCorr
+    "@id": "#dpdd_forced.r_modelfit_CModel_dev_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: r_modelfit_CModel_initial_flag_apCorr
+    "@id": "#dpdd_forced.r_modelfit_CModel_initial_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_offimage
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_offimage"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_edge
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_interpolated
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_interpolated"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_saturated
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_saturated"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_cr
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_cr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_bad
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_bad"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_suspect
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_suspect"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_interpolatedCenter
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_interpolatedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_saturatedCenter
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_saturatedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_crCenter
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_crCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_suspectCenter
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_suspectCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_clippedCenter
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_clippedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_sensor_edgeCenter
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_sensor_edgeCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_rejectedCenter
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_rejectedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_inexact_psfCenter
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_inexact_psfCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_bright_objectCenter
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_bright_objectCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_clipped
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_clipped"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_sensor_edge
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_sensor_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_rejected
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_rejected"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_inexact_psf
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_inexact_psf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PixelFlags_flag_bright_object
+    "@id": "#dpdd_forced.u_base_PixelFlags_flag_bright_object"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_good
+    "@id": "#dpdd_forced.u_good"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_ClassificationExtendedness_value
+    "@id": "#dpdd_forced.u_base_ClassificationExtendedness_value"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_ClassificationExtendedness_flag
+    "@id": "#dpdd_forced.u_base_ClassificationExtendedness_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_modelfit_CModel_instFlux
+    "@id": "#dpdd_forced.u_modelfit_CModel_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_instFluxErr
+    "@id": "#dpdd_forced.u_modelfit_CModel_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_instFlux_inner
+    "@id": "#dpdd_forced.u_modelfit_CModel_instFlux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_fracDev
+    "@id": "#dpdd_forced.u_modelfit_CModel_fracDev"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_objective
+    "@id": "#dpdd_forced.u_modelfit_CModel_objective"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_apCorr
+    "@id": "#dpdd_forced.u_modelfit_CModel_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_apCorrErr
+    "@id": "#dpdd_forced.u_modelfit_CModel_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_flag
+    "@id": "#dpdd_forced.u_modelfit_CModel_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_modelfit_CModel_flag_region_maxArea
+    "@id": "#dpdd_forced.u_modelfit_CModel_flag_region_maxArea"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_modelfit_CModel_flag_region_maxBadPixelFraction
+    "@id": "#dpdd_forced.u_modelfit_CModel_flag_region_maxBadPixelFraction"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_modelfit_CModel_flag_badReference
+    "@id": "#dpdd_forced.u_modelfit_CModel_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_modelfit_CModel_flag_noShapeletPsf
+    "@id": "#dpdd_forced.u_modelfit_CModel_flag_noShapeletPsf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_modelfit_CModel_flag_badCentroid
+    "@id": "#dpdd_forced.u_modelfit_CModel_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_modelfit_CModel_flag_apCorr
+    "@id": "#dpdd_forced.u_modelfit_CModel_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_SdssCentroid_x
+    "@id": "#dpdd_forced.u_base_SdssCentroid_x"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: u_base_SdssCentroid_y
+    "@id": "#dpdd_forced.u_base_SdssCentroid_y"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: u_base_SdssCentroid_xErr
+    "@id": "#dpdd_forced.u_base_SdssCentroid_xErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_SdssCentroid_yErr
+    "@id": "#dpdd_forced.u_base_SdssCentroid_yErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_SdssCentroid_flag
+    "@id": "#dpdd_forced.u_base_SdssCentroid_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_SdssCentroid_flag_edge
+    "@id": "#dpdd_forced.u_base_SdssCentroid_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_SdssCentroid_flag_noSecondDerivative
+    "@id": "#dpdd_forced.u_base_SdssCentroid_flag_noSecondDerivative"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_SdssCentroid_flag_almostNoSecondDerivative
+    "@id": "#dpdd_forced.u_base_SdssCentroid_flag_almostNoSecondDerivative"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_SdssCentroid_flag_notAtMaximum
+    "@id": "#dpdd_forced.u_base_SdssCentroid_flag_notAtMaximum"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_SdssCentroid_flag_resetToPeak
+    "@id": "#dpdd_forced.u_base_SdssCentroid_flag_resetToPeak"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_SdssCentroid_flag_badInitialCentroid
+    "@id": "#dpdd_forced.u_base_SdssCentroid_flag_badInitialCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_SdssShape_xx
+    "@id": "#dpdd_forced.u_base_SdssShape_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_SdssShape_yy
+    "@id": "#dpdd_forced.u_base_SdssShape_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_SdssShape_xy
+    "@id": "#dpdd_forced.u_base_SdssShape_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_SdssShape_xxErr
+    "@id": "#dpdd_forced.u_base_SdssShape_xxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_SdssShape_yyErr
+    "@id": "#dpdd_forced.u_base_SdssShape_yyErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_SdssShape_xyErr
+    "@id": "#dpdd_forced.u_base_SdssShape_xyErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_SdssShape_x
+    "@id": "#dpdd_forced.u_base_SdssShape_x"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: u_base_SdssShape_y
+    "@id": "#dpdd_forced.u_base_SdssShape_y"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: u_base_SdssShape_instFlux
+    "@id": "#dpdd_forced.u_base_SdssShape_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_SdssShape_instFluxErr
+    "@id": "#dpdd_forced.u_base_SdssShape_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_SdssShape_psf_xx
+    "@id": "#dpdd_forced.u_base_SdssShape_psf_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_SdssShape_psf_yy
+    "@id": "#dpdd_forced.u_base_SdssShape_psf_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_SdssShape_psf_xy
+    "@id": "#dpdd_forced.u_base_SdssShape_psf_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_SdssShape_instFlux_xx_Cov
+    "@id": "#dpdd_forced.u_base_SdssShape_instFlux_xx_Cov"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_SdssShape_instFlux_yy_Cov
+    "@id": "#dpdd_forced.u_base_SdssShape_instFlux_yy_Cov"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_SdssShape_instFlux_xy_Cov
+    "@id": "#dpdd_forced.u_base_SdssShape_instFlux_xy_Cov"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_SdssShape_flag
+    "@id": "#dpdd_forced.u_base_SdssShape_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_SdssShape_flag_unweightedBad
+    "@id": "#dpdd_forced.u_base_SdssShape_flag_unweightedBad"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_SdssShape_flag_unweighted
+    "@id": "#dpdd_forced.u_base_SdssShape_flag_unweighted"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_SdssShape_flag_shift
+    "@id": "#dpdd_forced.u_base_SdssShape_flag_shift"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_SdssShape_flag_maxIter
+    "@id": "#dpdd_forced.u_base_SdssShape_flag_maxIter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_SdssShape_flag_psf
+    "@id": "#dpdd_forced.u_base_SdssShape_flag_psf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_SdssShape_flag_badCentroid
+    "@id": "#dpdd_forced.u_base_SdssShape_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PsfFlux_instFlux
+    "@id": "#dpdd_forced.u_base_PsfFlux_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_PsfFlux_instFluxErr
+    "@id": "#dpdd_forced.u_base_PsfFlux_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_PsfFlux_area
+    "@id": "#dpdd_forced.u_base_PsfFlux_area"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_PsfFlux_apCorr
+    "@id": "#dpdd_forced.u_base_PsfFlux_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_PsfFlux_apCorrErr
+    "@id": "#dpdd_forced.u_base_PsfFlux_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_PsfFlux_flag
+    "@id": "#dpdd_forced.u_base_PsfFlux_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PsfFlux_flag_noGoodPixels
+    "@id": "#dpdd_forced.u_base_PsfFlux_flag_noGoodPixels"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PsfFlux_flag_edge
+    "@id": "#dpdd_forced.u_base_PsfFlux_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PsfFlux_flag_apCorr
+    "@id": "#dpdd_forced.u_base_PsfFlux_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_PsfFlux_flag_badCentroid
+    "@id": "#dpdd_forced.u_base_PsfFlux_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_InputCount_value
+    "@id": "#dpdd_forced.u_base_InputCount_value"
+    datatype: int
+    mysql:datatype: INTEGER
+    description:
+  - name: u_base_InputCount_flag
+    "@id": "#dpdd_forced.u_base_InputCount_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_InputCount_flag_noInputs
+    "@id": "#dpdd_forced.u_base_InputCount_flag_noInputs"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_InputCount_flag_badCentroid
+    "@id": "#dpdd_forced.u_base_InputCount_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_Variance_value
+    "@id": "#dpdd_forced.u_base_Variance_value"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_Variance_flag
+    "@id": "#dpdd_forced.u_base_Variance_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_Variance_flag_emptyFootprint
+    "@id": "#dpdd_forced.u_base_Variance_flag_emptyFootprint"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_Variance_flag_badCentroid
+    "@id": "#dpdd_forced.u_base_Variance_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_LocalBackground_instFlux
+    "@id": "#dpdd_forced.u_base_LocalBackground_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_LocalBackground_instFluxErr
+    "@id": "#dpdd_forced.u_base_LocalBackground_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_base_LocalBackground_flag
+    "@id": "#dpdd_forced.u_base_LocalBackground_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_LocalBackground_flag_noGoodPixels
+    "@id": "#dpdd_forced.u_base_LocalBackground_flag_noGoodPixels"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_LocalBackground_flag_noPsf
+    "@id": "#dpdd_forced.u_base_LocalBackground_flag_noPsf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_base_LocalBackground_flag_badCentroid
+    "@id": "#dpdd_forced.u_base_LocalBackground_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_modelfit_CModel_initial_instFlux
+    "@id": "#dpdd_forced.u_modelfit_CModel_initial_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_initial_instFluxErr
+    "@id": "#dpdd_forced.u_modelfit_CModel_initial_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_initial_flux_inner
+    "@id": "#dpdd_forced.u_modelfit_CModel_initial_flux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_exp_instFlux
+    "@id": "#dpdd_forced.u_modelfit_CModel_exp_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_exp_instFluxErr
+    "@id": "#dpdd_forced.u_modelfit_CModel_exp_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_exp_flux_inner
+    "@id": "#dpdd_forced.u_modelfit_CModel_exp_flux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_dev_instFlux
+    "@id": "#dpdd_forced.u_modelfit_CModel_dev_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_dev_instFluxErr
+    "@id": "#dpdd_forced.u_modelfit_CModel_dev_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_dev_flux_inner
+    "@id": "#dpdd_forced.u_modelfit_CModel_dev_flux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_exp_apCorr
+    "@id": "#dpdd_forced.u_modelfit_CModel_exp_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_exp_apCorrErr
+    "@id": "#dpdd_forced.u_modelfit_CModel_exp_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_dev_apCorr
+    "@id": "#dpdd_forced.u_modelfit_CModel_dev_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_dev_apCorrErr
+    "@id": "#dpdd_forced.u_modelfit_CModel_dev_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_initial_apCorr
+    "@id": "#dpdd_forced.u_modelfit_CModel_initial_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_initial_apCorrErr
+    "@id": "#dpdd_forced.u_modelfit_CModel_initial_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: u_modelfit_CModel_initial_flag
+    "@id": "#dpdd_forced.u_modelfit_CModel_initial_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_modelfit_CModel_initial_flag_badReference
+    "@id": "#dpdd_forced.u_modelfit_CModel_initial_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_modelfit_CModel_initial_flag_numericError
+    "@id": "#dpdd_forced.u_modelfit_CModel_initial_flag_numericError"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_modelfit_CModel_exp_flag
+    "@id": "#dpdd_forced.u_modelfit_CModel_exp_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_modelfit_CModel_exp_flag_badReference
+    "@id": "#dpdd_forced.u_modelfit_CModel_exp_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_modelfit_CModel_exp_flag_numericError
+    "@id": "#dpdd_forced.u_modelfit_CModel_exp_flag_numericError"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_modelfit_CModel_dev_flag
+    "@id": "#dpdd_forced.u_modelfit_CModel_dev_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_modelfit_CModel_dev_flag_badReference
+    "@id": "#dpdd_forced.u_modelfit_CModel_dev_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_modelfit_CModel_dev_flag_numericError
+    "@id": "#dpdd_forced.u_modelfit_CModel_dev_flag_numericError"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_modelfit_CModel_exp_flag_apCorr
+    "@id": "#dpdd_forced.u_modelfit_CModel_exp_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_modelfit_CModel_dev_flag_apCorr
+    "@id": "#dpdd_forced.u_modelfit_CModel_dev_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: u_modelfit_CModel_initial_flag_apCorr
+    "@id": "#dpdd_forced.u_modelfit_CModel_initial_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_offimage
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_offimage"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_edge
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_interpolated
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_interpolated"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_saturated
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_saturated"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_cr
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_cr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_bad
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_bad"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_suspect
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_suspect"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_interpolatedCenter
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_interpolatedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_saturatedCenter
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_saturatedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_crCenter
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_crCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_suspectCenter
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_suspectCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_clippedCenter
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_clippedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_sensor_edgeCenter
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_sensor_edgeCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_rejectedCenter
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_rejectedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_inexact_psfCenter
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_inexact_psfCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_bright_objectCenter
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_bright_objectCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_clipped
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_clipped"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_sensor_edge
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_sensor_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_rejected
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_rejected"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_inexact_psf
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_inexact_psf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PixelFlags_flag_bright_object
+    "@id": "#dpdd_forced.y_base_PixelFlags_flag_bright_object"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_good
+    "@id": "#dpdd_forced.y_good"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_ClassificationExtendedness_value
+    "@id": "#dpdd_forced.y_base_ClassificationExtendedness_value"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_ClassificationExtendedness_flag
+    "@id": "#dpdd_forced.y_base_ClassificationExtendedness_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_modelfit_CModel_instFlux
+    "@id": "#dpdd_forced.y_modelfit_CModel_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_instFluxErr
+    "@id": "#dpdd_forced.y_modelfit_CModel_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_instFlux_inner
+    "@id": "#dpdd_forced.y_modelfit_CModel_instFlux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_fracDev
+    "@id": "#dpdd_forced.y_modelfit_CModel_fracDev"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_objective
+    "@id": "#dpdd_forced.y_modelfit_CModel_objective"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_apCorr
+    "@id": "#dpdd_forced.y_modelfit_CModel_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_apCorrErr
+    "@id": "#dpdd_forced.y_modelfit_CModel_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_flag
+    "@id": "#dpdd_forced.y_modelfit_CModel_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_modelfit_CModel_flag_region_maxArea
+    "@id": "#dpdd_forced.y_modelfit_CModel_flag_region_maxArea"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_modelfit_CModel_flag_region_maxBadPixelFraction
+    "@id": "#dpdd_forced.y_modelfit_CModel_flag_region_maxBadPixelFraction"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_modelfit_CModel_flag_badReference
+    "@id": "#dpdd_forced.y_modelfit_CModel_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_modelfit_CModel_flag_noShapeletPsf
+    "@id": "#dpdd_forced.y_modelfit_CModel_flag_noShapeletPsf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_modelfit_CModel_flag_badCentroid
+    "@id": "#dpdd_forced.y_modelfit_CModel_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_modelfit_CModel_flag_apCorr
+    "@id": "#dpdd_forced.y_modelfit_CModel_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_SdssCentroid_x
+    "@id": "#dpdd_forced.y_base_SdssCentroid_x"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: y_base_SdssCentroid_y
+    "@id": "#dpdd_forced.y_base_SdssCentroid_y"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: y_base_SdssCentroid_xErr
+    "@id": "#dpdd_forced.y_base_SdssCentroid_xErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_SdssCentroid_yErr
+    "@id": "#dpdd_forced.y_base_SdssCentroid_yErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_SdssCentroid_flag
+    "@id": "#dpdd_forced.y_base_SdssCentroid_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_SdssCentroid_flag_edge
+    "@id": "#dpdd_forced.y_base_SdssCentroid_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_SdssCentroid_flag_noSecondDerivative
+    "@id": "#dpdd_forced.y_base_SdssCentroid_flag_noSecondDerivative"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_SdssCentroid_flag_almostNoSecondDerivative
+    "@id": "#dpdd_forced.y_base_SdssCentroid_flag_almostNoSecondDerivative"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_SdssCentroid_flag_notAtMaximum
+    "@id": "#dpdd_forced.y_base_SdssCentroid_flag_notAtMaximum"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_SdssCentroid_flag_resetToPeak
+    "@id": "#dpdd_forced.y_base_SdssCentroid_flag_resetToPeak"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_SdssCentroid_flag_badInitialCentroid
+    "@id": "#dpdd_forced.y_base_SdssCentroid_flag_badInitialCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_SdssShape_xx
+    "@id": "#dpdd_forced.y_base_SdssShape_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_SdssShape_yy
+    "@id": "#dpdd_forced.y_base_SdssShape_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_SdssShape_xy
+    "@id": "#dpdd_forced.y_base_SdssShape_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_SdssShape_xxErr
+    "@id": "#dpdd_forced.y_base_SdssShape_xxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_SdssShape_yyErr
+    "@id": "#dpdd_forced.y_base_SdssShape_yyErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_SdssShape_xyErr
+    "@id": "#dpdd_forced.y_base_SdssShape_xyErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_SdssShape_x
+    "@id": "#dpdd_forced.y_base_SdssShape_x"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: y_base_SdssShape_y
+    "@id": "#dpdd_forced.y_base_SdssShape_y"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: y_base_SdssShape_instFlux
+    "@id": "#dpdd_forced.y_base_SdssShape_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_SdssShape_instFluxErr
+    "@id": "#dpdd_forced.y_base_SdssShape_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_SdssShape_psf_xx
+    "@id": "#dpdd_forced.y_base_SdssShape_psf_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_SdssShape_psf_yy
+    "@id": "#dpdd_forced.y_base_SdssShape_psf_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_SdssShape_psf_xy
+    "@id": "#dpdd_forced.y_base_SdssShape_psf_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_SdssShape_instFlux_xx_Cov
+    "@id": "#dpdd_forced.y_base_SdssShape_instFlux_xx_Cov"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_SdssShape_instFlux_yy_Cov
+    "@id": "#dpdd_forced.y_base_SdssShape_instFlux_yy_Cov"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_SdssShape_instFlux_xy_Cov
+    "@id": "#dpdd_forced.y_base_SdssShape_instFlux_xy_Cov"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_SdssShape_flag
+    "@id": "#dpdd_forced.y_base_SdssShape_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_SdssShape_flag_unweightedBad
+    "@id": "#dpdd_forced.y_base_SdssShape_flag_unweightedBad"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_SdssShape_flag_unweighted
+    "@id": "#dpdd_forced.y_base_SdssShape_flag_unweighted"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_SdssShape_flag_shift
+    "@id": "#dpdd_forced.y_base_SdssShape_flag_shift"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_SdssShape_flag_maxIter
+    "@id": "#dpdd_forced.y_base_SdssShape_flag_maxIter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_SdssShape_flag_psf
+    "@id": "#dpdd_forced.y_base_SdssShape_flag_psf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_SdssShape_flag_badCentroid
+    "@id": "#dpdd_forced.y_base_SdssShape_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PsfFlux_instFlux
+    "@id": "#dpdd_forced.y_base_PsfFlux_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_PsfFlux_instFluxErr
+    "@id": "#dpdd_forced.y_base_PsfFlux_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_PsfFlux_area
+    "@id": "#dpdd_forced.y_base_PsfFlux_area"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_PsfFlux_apCorr
+    "@id": "#dpdd_forced.y_base_PsfFlux_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_PsfFlux_apCorrErr
+    "@id": "#dpdd_forced.y_base_PsfFlux_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_PsfFlux_flag
+    "@id": "#dpdd_forced.y_base_PsfFlux_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PsfFlux_flag_noGoodPixels
+    "@id": "#dpdd_forced.y_base_PsfFlux_flag_noGoodPixels"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PsfFlux_flag_edge
+    "@id": "#dpdd_forced.y_base_PsfFlux_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PsfFlux_flag_apCorr
+    "@id": "#dpdd_forced.y_base_PsfFlux_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_PsfFlux_flag_badCentroid
+    "@id": "#dpdd_forced.y_base_PsfFlux_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_InputCount_value
+    "@id": "#dpdd_forced.y_base_InputCount_value"
+    datatype: int
+    mysql:datatype: INTEGER
+    description:
+  - name: y_base_InputCount_flag
+    "@id": "#dpdd_forced.y_base_InputCount_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_InputCount_flag_noInputs
+    "@id": "#dpdd_forced.y_base_InputCount_flag_noInputs"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_InputCount_flag_badCentroid
+    "@id": "#dpdd_forced.y_base_InputCount_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_Variance_value
+    "@id": "#dpdd_forced.y_base_Variance_value"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_Variance_flag
+    "@id": "#dpdd_forced.y_base_Variance_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_Variance_flag_emptyFootprint
+    "@id": "#dpdd_forced.y_base_Variance_flag_emptyFootprint"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_Variance_flag_badCentroid
+    "@id": "#dpdd_forced.y_base_Variance_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_LocalBackground_instFlux
+    "@id": "#dpdd_forced.y_base_LocalBackground_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_LocalBackground_instFluxErr
+    "@id": "#dpdd_forced.y_base_LocalBackground_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_base_LocalBackground_flag
+    "@id": "#dpdd_forced.y_base_LocalBackground_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_LocalBackground_flag_noGoodPixels
+    "@id": "#dpdd_forced.y_base_LocalBackground_flag_noGoodPixels"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_LocalBackground_flag_noPsf
+    "@id": "#dpdd_forced.y_base_LocalBackground_flag_noPsf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_base_LocalBackground_flag_badCentroid
+    "@id": "#dpdd_forced.y_base_LocalBackground_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_modelfit_CModel_initial_instFlux
+    "@id": "#dpdd_forced.y_modelfit_CModel_initial_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_initial_instFluxErr
+    "@id": "#dpdd_forced.y_modelfit_CModel_initial_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_initial_flux_inner
+    "@id": "#dpdd_forced.y_modelfit_CModel_initial_flux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_exp_instFlux
+    "@id": "#dpdd_forced.y_modelfit_CModel_exp_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_exp_instFluxErr
+    "@id": "#dpdd_forced.y_modelfit_CModel_exp_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_exp_flux_inner
+    "@id": "#dpdd_forced.y_modelfit_CModel_exp_flux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_dev_instFlux
+    "@id": "#dpdd_forced.y_modelfit_CModel_dev_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_dev_instFluxErr
+    "@id": "#dpdd_forced.y_modelfit_CModel_dev_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_dev_flux_inner
+    "@id": "#dpdd_forced.y_modelfit_CModel_dev_flux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_exp_apCorr
+    "@id": "#dpdd_forced.y_modelfit_CModel_exp_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_exp_apCorrErr
+    "@id": "#dpdd_forced.y_modelfit_CModel_exp_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_dev_apCorr
+    "@id": "#dpdd_forced.y_modelfit_CModel_dev_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_dev_apCorrErr
+    "@id": "#dpdd_forced.y_modelfit_CModel_dev_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_initial_apCorr
+    "@id": "#dpdd_forced.y_modelfit_CModel_initial_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_initial_apCorrErr
+    "@id": "#dpdd_forced.y_modelfit_CModel_initial_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: y_modelfit_CModel_initial_flag
+    "@id": "#dpdd_forced.y_modelfit_CModel_initial_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_modelfit_CModel_initial_flag_badReference
+    "@id": "#dpdd_forced.y_modelfit_CModel_initial_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_modelfit_CModel_initial_flag_numericError
+    "@id": "#dpdd_forced.y_modelfit_CModel_initial_flag_numericError"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_modelfit_CModel_exp_flag
+    "@id": "#dpdd_forced.y_modelfit_CModel_exp_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_modelfit_CModel_exp_flag_badReference
+    "@id": "#dpdd_forced.y_modelfit_CModel_exp_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_modelfit_CModel_exp_flag_numericError
+    "@id": "#dpdd_forced.y_modelfit_CModel_exp_flag_numericError"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_modelfit_CModel_dev_flag
+    "@id": "#dpdd_forced.y_modelfit_CModel_dev_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_modelfit_CModel_dev_flag_badReference
+    "@id": "#dpdd_forced.y_modelfit_CModel_dev_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_modelfit_CModel_dev_flag_numericError
+    "@id": "#dpdd_forced.y_modelfit_CModel_dev_flag_numericError"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_modelfit_CModel_exp_flag_apCorr
+    "@id": "#dpdd_forced.y_modelfit_CModel_exp_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_modelfit_CModel_dev_flag_apCorr
+    "@id": "#dpdd_forced.y_modelfit_CModel_dev_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: y_modelfit_CModel_initial_flag_apCorr
+    "@id": "#dpdd_forced.y_modelfit_CModel_initial_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_offimage
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_offimage"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_edge
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_interpolated
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_interpolated"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_saturated
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_saturated"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_cr
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_cr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_bad
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_bad"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_suspect
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_suspect"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_interpolatedCenter
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_interpolatedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_saturatedCenter
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_saturatedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_crCenter
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_crCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_suspectCenter
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_suspectCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_clippedCenter
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_clippedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_sensor_edgeCenter
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_sensor_edgeCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_rejectedCenter
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_rejectedCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_inexact_psfCenter
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_inexact_psfCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_bright_objectCenter
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_bright_objectCenter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_clipped
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_clipped"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_sensor_edge
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_sensor_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_rejected
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_rejected"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_inexact_psf
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_inexact_psf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PixelFlags_flag_bright_object
+    "@id": "#dpdd_forced.z_base_PixelFlags_flag_bright_object"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_good
+    "@id": "#dpdd_forced.z_good"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_ClassificationExtendedness_value
+    "@id": "#dpdd_forced.z_base_ClassificationExtendedness_value"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_ClassificationExtendedness_flag
+    "@id": "#dpdd_forced.z_base_ClassificationExtendedness_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_modelfit_CModel_instFlux
+    "@id": "#dpdd_forced.z_modelfit_CModel_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_instFluxErr
+    "@id": "#dpdd_forced.z_modelfit_CModel_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_instFlux_inner
+    "@id": "#dpdd_forced.z_modelfit_CModel_instFlux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_fracDev
+    "@id": "#dpdd_forced.z_modelfit_CModel_fracDev"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_objective
+    "@id": "#dpdd_forced.z_modelfit_CModel_objective"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_apCorr
+    "@id": "#dpdd_forced.z_modelfit_CModel_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_apCorrErr
+    "@id": "#dpdd_forced.z_modelfit_CModel_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_flag
+    "@id": "#dpdd_forced.z_modelfit_CModel_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_modelfit_CModel_flag_region_maxArea
+    "@id": "#dpdd_forced.z_modelfit_CModel_flag_region_maxArea"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_modelfit_CModel_flag_region_maxBadPixelFraction
+    "@id": "#dpdd_forced.z_modelfit_CModel_flag_region_maxBadPixelFraction"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_modelfit_CModel_flag_badReference
+    "@id": "#dpdd_forced.z_modelfit_CModel_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_modelfit_CModel_flag_noShapeletPsf
+    "@id": "#dpdd_forced.z_modelfit_CModel_flag_noShapeletPsf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_modelfit_CModel_flag_badCentroid
+    "@id": "#dpdd_forced.z_modelfit_CModel_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_modelfit_CModel_flag_apCorr
+    "@id": "#dpdd_forced.z_modelfit_CModel_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_SdssCentroid_x
+    "@id": "#dpdd_forced.z_base_SdssCentroid_x"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: z_base_SdssCentroid_y
+    "@id": "#dpdd_forced.z_base_SdssCentroid_y"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: z_base_SdssCentroid_xErr
+    "@id": "#dpdd_forced.z_base_SdssCentroid_xErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_SdssCentroid_yErr
+    "@id": "#dpdd_forced.z_base_SdssCentroid_yErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_SdssCentroid_flag
+    "@id": "#dpdd_forced.z_base_SdssCentroid_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_SdssCentroid_flag_edge
+    "@id": "#dpdd_forced.z_base_SdssCentroid_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_SdssCentroid_flag_noSecondDerivative
+    "@id": "#dpdd_forced.z_base_SdssCentroid_flag_noSecondDerivative"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_SdssCentroid_flag_almostNoSecondDerivative
+    "@id": "#dpdd_forced.z_base_SdssCentroid_flag_almostNoSecondDerivative"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_SdssCentroid_flag_notAtMaximum
+    "@id": "#dpdd_forced.z_base_SdssCentroid_flag_notAtMaximum"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_SdssCentroid_flag_resetToPeak
+    "@id": "#dpdd_forced.z_base_SdssCentroid_flag_resetToPeak"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_SdssCentroid_flag_badInitialCentroid
+    "@id": "#dpdd_forced.z_base_SdssCentroid_flag_badInitialCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_SdssShape_xx
+    "@id": "#dpdd_forced.z_base_SdssShape_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_SdssShape_yy
+    "@id": "#dpdd_forced.z_base_SdssShape_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_SdssShape_xy
+    "@id": "#dpdd_forced.z_base_SdssShape_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_SdssShape_xxErr
+    "@id": "#dpdd_forced.z_base_SdssShape_xxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_SdssShape_yyErr
+    "@id": "#dpdd_forced.z_base_SdssShape_yyErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_SdssShape_xyErr
+    "@id": "#dpdd_forced.z_base_SdssShape_xyErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_SdssShape_x
+    "@id": "#dpdd_forced.z_base_SdssShape_x"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: z_base_SdssShape_y
+    "@id": "#dpdd_forced.z_base_SdssShape_y"
+    datatype: DOUBLE
+    mysql:datatype: DOUBLE
+    description:
+  - name: z_base_SdssShape_instFlux
+    "@id": "#dpdd_forced.z_base_SdssShape_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_SdssShape_instFluxErr
+    "@id": "#dpdd_forced.z_base_SdssShape_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_SdssShape_psf_xx
+    "@id": "#dpdd_forced.z_base_SdssShape_psf_xx"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_SdssShape_psf_yy
+    "@id": "#dpdd_forced.z_base_SdssShape_psf_yy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_SdssShape_psf_xy
+    "@id": "#dpdd_forced.z_base_SdssShape_psf_xy"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_SdssShape_instFlux_xx_Cov
+    "@id": "#dpdd_forced.z_base_SdssShape_instFlux_xx_Cov"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_SdssShape_instFlux_yy_Cov
+    "@id": "#dpdd_forced.z_base_SdssShape_instFlux_yy_Cov"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_SdssShape_instFlux_xy_Cov
+    "@id": "#dpdd_forced.z_base_SdssShape_instFlux_xy_Cov"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_SdssShape_flag
+    "@id": "#dpdd_forced.z_base_SdssShape_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_SdssShape_flag_unweightedBad
+    "@id": "#dpdd_forced.z_base_SdssShape_flag_unweightedBad"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_SdssShape_flag_unweighted
+    "@id": "#dpdd_forced.z_base_SdssShape_flag_unweighted"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_SdssShape_flag_shift
+    "@id": "#dpdd_forced.z_base_SdssShape_flag_shift"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_SdssShape_flag_maxIter
+    "@id": "#dpdd_forced.z_base_SdssShape_flag_maxIter"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_SdssShape_flag_psf
+    "@id": "#dpdd_forced.z_base_SdssShape_flag_psf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_SdssShape_flag_badCentroid
+    "@id": "#dpdd_forced.z_base_SdssShape_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PsfFlux_instFlux
+    "@id": "#dpdd_forced.z_base_PsfFlux_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_PsfFlux_instFluxErr
+    "@id": "#dpdd_forced.z_base_PsfFlux_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_PsfFlux_area
+    "@id": "#dpdd_forced.z_base_PsfFlux_area"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_PsfFlux_apCorr
+    "@id": "#dpdd_forced.z_base_PsfFlux_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_PsfFlux_apCorrErr
+    "@id": "#dpdd_forced.z_base_PsfFlux_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_PsfFlux_flag
+    "@id": "#dpdd_forced.z_base_PsfFlux_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PsfFlux_flag_noGoodPixels
+    "@id": "#dpdd_forced.z_base_PsfFlux_flag_noGoodPixels"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PsfFlux_flag_edge
+    "@id": "#dpdd_forced.z_base_PsfFlux_flag_edge"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PsfFlux_flag_apCorr
+    "@id": "#dpdd_forced.z_base_PsfFlux_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_PsfFlux_flag_badCentroid
+    "@id": "#dpdd_forced.z_base_PsfFlux_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_InputCount_value
+    "@id": "#dpdd_forced.z_base_InputCount_value"
+    datatype: int
+    mysql:datatype: INTEGER
+    description:
+  - name: z_base_InputCount_flag
+    "@id": "#dpdd_forced.z_base_InputCount_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_InputCount_flag_noInputs
+    "@id": "#dpdd_forced.z_base_InputCount_flag_noInputs"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_InputCount_flag_badCentroid
+    "@id": "#dpdd_forced.z_base_InputCount_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_Variance_value
+    "@id": "#dpdd_forced.z_base_Variance_value"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_Variance_flag
+    "@id": "#dpdd_forced.z_base_Variance_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_Variance_flag_emptyFootprint
+    "@id": "#dpdd_forced.z_base_Variance_flag_emptyFootprint"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_Variance_flag_badCentroid
+    "@id": "#dpdd_forced.z_base_Variance_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_LocalBackground_instFlux
+    "@id": "#dpdd_forced.z_base_LocalBackground_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_LocalBackground_instFluxErr
+    "@id": "#dpdd_forced.z_base_LocalBackground_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_base_LocalBackground_flag
+    "@id": "#dpdd_forced.z_base_LocalBackground_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_LocalBackground_flag_noGoodPixels
+    "@id": "#dpdd_forced.z_base_LocalBackground_flag_noGoodPixels"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_LocalBackground_flag_noPsf
+    "@id": "#dpdd_forced.z_base_LocalBackground_flag_noPsf"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_base_LocalBackground_flag_badCentroid
+    "@id": "#dpdd_forced.z_base_LocalBackground_flag_badCentroid"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_modelfit_CModel_initial_instFlux
+    "@id": "#dpdd_forced.z_modelfit_CModel_initial_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_initial_instFluxErr
+    "@id": "#dpdd_forced.z_modelfit_CModel_initial_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_initial_flux_inner
+    "@id": "#dpdd_forced.z_modelfit_CModel_initial_flux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_exp_instFlux
+    "@id": "#dpdd_forced.z_modelfit_CModel_exp_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_exp_instFluxErr
+    "@id": "#dpdd_forced.z_modelfit_CModel_exp_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_exp_flux_inner
+    "@id": "#dpdd_forced.z_modelfit_CModel_exp_flux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_dev_instFlux
+    "@id": "#dpdd_forced.z_modelfit_CModel_dev_instFlux"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_dev_instFluxErr
+    "@id": "#dpdd_forced.z_modelfit_CModel_dev_instFluxErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_dev_flux_inner
+    "@id": "#dpdd_forced.z_modelfit_CModel_dev_flux_inner"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_exp_apCorr
+    "@id": "#dpdd_forced.z_modelfit_CModel_exp_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_exp_apCorrErr
+    "@id": "#dpdd_forced.z_modelfit_CModel_exp_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_dev_apCorr
+    "@id": "#dpdd_forced.z_modelfit_CModel_dev_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_dev_apCorrErr
+    "@id": "#dpdd_forced.z_modelfit_CModel_dev_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_initial_apCorr
+    "@id": "#dpdd_forced.z_modelfit_CModel_initial_apCorr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_initial_apCorrErr
+    "@id": "#dpdd_forced.z_modelfit_CModel_initial_apCorrErr"
+    datatype: FLOAT
+    mysql:datatype: FLOAT
+    description:
+  - name: z_modelfit_CModel_initial_flag
+    "@id": "#dpdd_forced.z_modelfit_CModel_initial_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_modelfit_CModel_initial_flag_badReference
+    "@id": "#dpdd_forced.z_modelfit_CModel_initial_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_modelfit_CModel_initial_flag_numericError
+    "@id": "#dpdd_forced.z_modelfit_CModel_initial_flag_numericError"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_modelfit_CModel_exp_flag
+    "@id": "#dpdd_forced.z_modelfit_CModel_exp_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_modelfit_CModel_exp_flag_badReference
+    "@id": "#dpdd_forced.z_modelfit_CModel_exp_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_modelfit_CModel_exp_flag_numericError
+    "@id": "#dpdd_forced.z_modelfit_CModel_exp_flag_numericError"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_modelfit_CModel_dev_flag
+    "@id": "#dpdd_forced.z_modelfit_CModel_dev_flag"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_modelfit_CModel_dev_flag_badReference
+    "@id": "#dpdd_forced.z_modelfit_CModel_dev_flag_badReference"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_modelfit_CModel_dev_flag_numericError
+    "@id": "#dpdd_forced.z_modelfit_CModel_dev_flag_numericError"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_modelfit_CModel_exp_flag_apCorr
+    "@id": "#dpdd_forced.z_modelfit_CModel_exp_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_modelfit_CModel_dev_flag_apCorr
+    "@id": "#dpdd_forced.z_modelfit_CModel_dev_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: z_modelfit_CModel_initial_flag_apCorr
+    "@id": "#dpdd_forced.z_modelfit_CModel_initial_flag_apCorr"
+    datatype: BOOLEAN
+    mysql:datatype: BOOLEAN
+    description:
+  - name: chunkId
+    "@id": "#dpdd_forced.chunkId"
+    datatype: int
+    nullable: false
+    mysql:datatype: INTEGER
+    description:
+  - name: subChunkId
+    "@id": "#dpdd_forced.subChunkId"
+    datatype: int
+    nullable: false
+    mysql:datatype: INTEGER
+    description:
