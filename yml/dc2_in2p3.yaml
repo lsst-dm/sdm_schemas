@@ -14,15 +14,15 @@ tables:
     description: Unique id. 
   - name: coord_ra
     "@id": "#position.coord_ra"
-    datatype: float
+    datatype: double
     nullable: false
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     description: RA-coordinate
   - name: coord_dec
     "@id": "#position.coord_dec"
-    datatype: float
+    datatype: double
     nullable: false
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     description: Decl-coordinate
   - name: parent
     "@id": "#position.parent"
@@ -42,8 +42,8 @@ tables:
     description:
   - name: extinction_bv
     "@id": "#position.extinction_bv"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: detect_isPatchInner
     "@id": "#position.detect_isPatchInner"
@@ -167,15 +167,15 @@ tables:
     description:
   - name: coord_ra
     "@id": "#dpdd_ref.coord_ra"
-    datatype: float
+    datatype: double
     nullable: false
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     description:
   - name: coord_dec
     "@id": "#dpdd_ref.coord_dec"
-    datatype: float
+    datatype: double
     nullable: false
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     description:
   - name: base_SdssCentroid_x
     "@id": "#dpdd_ref.base_SdssCentroid_x"
@@ -189,13 +189,13 @@ tables:
     description:
   - name: base_SdssCentroid_xErr
     "@id": "#dpdd_ref.base_SdssCentroid_xErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_SdssCentroid_yErr
     "@id": "#dpdd_ref.base_SdssCentroid_yErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_SdssCentroid_flag
     "@id": "#dpdd_ref.base_SdssCentroid_flag"
@@ -229,28 +229,28 @@ tables:
     description:
   - name: base_PsfFlux_instFlux
     "@id": "#dpdd_ref.base_PsfFlux_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_PsfFlux_instFluxErr
     "@id": "#dpdd_ref.base_PsfFlux_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_PsfFlux_area
     "@id": "#dpdd_ref.base_PsfFlux_area"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_PsfFlux_apCorr
     "@id": "#dpdd_ref.base_PsfFlux_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_PsfFlux_apCorrErr
     "@id": "#dpdd_ref.base_PsfFlux_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_PsfFlux_flag
     "@id": "#dpdd_ref.base_PsfFlux_flag"
@@ -279,98 +279,98 @@ tables:
     description:
   - name: base_Blendedness_raw_instFlux
     "@id": "#dpdd_ref.base_Blendedness_raw_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_Blendedness_raw_instFlux_child
     "@id": "#dpdd_ref.base_Blendedness_raw_instFlux_child"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_Blendedness_raw_instFlux_parent
     "@id": "#dpdd_ref.base_Blendedness_raw_instFlux_parent"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_Blendedness_abs_instFlux
     "@id": "#dpdd_ref.base_Blendedness_abs_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_Blendedness_abs_instFlux_child
     "@id": "#dpdd_ref.base_Blendedness_abs_instFlux_child"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_Blendedness_abs_instFlux_parent
     "@id": "#dpdd_ref.base_Blendedness_abs_instFlux_parent"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_Blendedness_raw_child_xx
     "@id": "#dpdd_ref.base_Blendedness_raw_child_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_Blendedness_raw_child_yy
     "@id": "#dpdd_ref.base_Blendedness_raw_child_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_Blendedness_raw_child_xy
     "@id": "#dpdd_ref.base_Blendedness_raw_child_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_Blendedness_raw_parent_xx
     "@id": "#dpdd_ref.base_Blendedness_raw_parent_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_Blendedness_raw_parent_yy
     "@id": "#dpdd_ref.base_Blendedness_raw_parent_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_Blendedness_raw_parent_xy
     "@id": "#dpdd_ref.base_Blendedness_raw_parent_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_Blendedness_abs_child_xx
     "@id": "#dpdd_ref.base_Blendedness_abs_child_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_Blendedness_abs_child_yy
     "@id": "#dpdd_ref.base_Blendedness_abs_child_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_Blendedness_abs_child_xy
     "@id": "#dpdd_ref.base_Blendedness_abs_child_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_Blendedness_abs_parent_xx
     "@id": "#dpdd_ref.base_Blendedness_abs_parent_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_Blendedness_abs_parent_yy
     "@id": "#dpdd_ref.base_Blendedness_abs_parent_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_Blendedness_abs_parent_xy
     "@id": "#dpdd_ref.base_Blendedness_abs_parent_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_ClassificationExtendedness_value
     "@id": "#dpdd_ref.base_ClassificationExtendedness_value"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_ClassificationExtendedness_flag
     "@id": "#dpdd_ref.base_ClassificationExtendedness_flag"
@@ -379,13 +379,13 @@ tables:
     description:
   - name: base_Blendedness_old
     "@id": "#dpdd_ref.base_Blendedness_old"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_Blendedness_abs
     "@id": "#dpdd_ref.base_Blendedness_abs"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_Blendedness_flag
     "@id": "#dpdd_ref.base_Blendedness_flag"
@@ -519,18 +519,18 @@ tables:
     description:
   - name: ext_shapeHSM_HsmSourceMoments_xx
     "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMoments_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: ext_shapeHSM_HsmSourceMoments_yy
     "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMoments_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: ext_shapeHSM_HsmSourceMoments_xy
     "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMoments_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: ext_shapeHSM_HsmSourceMoments_flag
     "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMoments_flag"
@@ -569,68 +569,68 @@ tables:
     description:
   - name: ext_shapeHSM_HsmPsfMoments_xx
     "@id": "#dpdd_ref.ext_shapeHSM_HsmPsfMoments_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: ext_shapeHSM_HsmPsfMoments_yy
     "@id": "#dpdd_ref.ext_shapeHSM_HsmPsfMoments_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: ext_shapeHSM_HsmPsfMoments_xy
     "@id": "#dpdd_ref.ext_shapeHSM_HsmPsfMoments_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: ext_shapeHSM_HsmShapeRegauss_e1
     "@id": "#dpdd_ref.ext_shapeHSM_HsmShapeRegauss_e1"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: ext_shapeHSM_HsmShapeRegauss_e2
     "@id": "#dpdd_ref.ext_shapeHSM_HsmShapeRegauss_e2"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: ext_shapeHSM_HsmShapeRegauss_sigma
     "@id": "#dpdd_ref.ext_shapeHSM_HsmShapeRegauss_sigma"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: ext_shapeHSM_HsmShapeRegauss_resolution
     "@id": "#dpdd_ref.ext_shapeHSM_HsmShapeRegauss_resolution"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: ext_shapeHSM_HsmSourceMomentsRound_x
     "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMomentsRound_x"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: ext_shapeHSM_HsmSourceMomentsRound_y
     "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMomentsRound_y"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: ext_shapeHSM_HsmSourceMomentsRound_xx
     "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMomentsRound_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: ext_shapeHSM_HsmSourceMomentsRound_yy
     "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMomentsRound_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: ext_shapeHSM_HsmSourceMomentsRound_xy
     "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMomentsRound_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: ext_shapeHSM_HsmSourceMomentsRound_Flux
     "@id": "#dpdd_ref.ext_shapeHSM_HsmSourceMomentsRound_Flux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: ext_shapeHSM_HsmPsfMoments_flag
     "@id": "#dpdd_ref.ext_shapeHSM_HsmPsfMoments_flag"
@@ -714,33 +714,33 @@ tables:
     description:
   - name: base_SdssShape_xx
     "@id": "#dpdd_ref.base_SdssShape_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_SdssShape_yy
     "@id": "#dpdd_ref.base_SdssShape_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_SdssShape_xy
     "@id": "#dpdd_ref.base_SdssShape_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_SdssShape_xxErr
     "@id": "#dpdd_ref.base_SdssShape_xxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_SdssShape_yyErr
     "@id": "#dpdd_ref.base_SdssShape_yyErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_SdssShape_xyErr
     "@id": "#dpdd_ref.base_SdssShape_xyErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: base_SdssShape_x
     "@id": "#dpdd_ref.base_SdssShape_x"
@@ -754,8 +754,593 @@ tables:
     description:
   - name: base_SdssShape_instFlux
     "@id": "#dpdd_ref.base_SdssShape_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: base_SdssShape_instFluxErr
+    "@id": "#dpdd_ref.base_SdssShape_instFluxErr"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: base_SdssShape_psf_xx
+    "@id": "#dpdd_ref.base_SdssShape_psf_xx"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: base_SdssShape_psf_yy
+    "@id": "#dpdd_ref.base_SdssShape_psf_yy"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: base_SdssShape_psf_xy
+    "@id": "#dpdd_ref.base_SdssShape_psf_xy"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: base_SdssShape_instFlux_xx_Cov
+    "@id": "#dpdd_ref.base_SdssShape_instFlux_xx_Cov"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: base_SdssShape_instFlux_yy_Cov
+    "@id": "#dpdd_ref.base_SdssShape_instFlux_yy_Cov"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: base_SdssShape_instFlux_xy_Cov
+    "@id": "#dpdd_ref.base_SdssShape_instFlux_xy_Cov"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: base_SdssShape_flag
+    "@id": "#dpdd_ref.base_SdssShape_flag"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_SdssShape_flag_unweightedBad
+    "@id": "#dpdd_ref.base_SdssShape_flag_unweightedBad"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_SdssShape_flag_unweighted
+    "@id": "#dpdd_ref.base_SdssShape_flag_unweighted"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_SdssShape_flag_shift
+    "@id": "#dpdd_ref.base_SdssShape_flag_shift"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_SdssShape_flag_maxIter
+    "@id": "#dpdd_ref.base_SdssShape_flag_maxIter"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_SdssShape_flag_psf
+    "@id": "#dpdd_ref.base_SdssShape_flag_psf"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: base_SdssShape_flag_badCentroid
+    "@id": "#dpdd_ref.base_SdssShape_flag_badCentroid"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: deblend_psfCenter_x
+    "@id": "#dpdd_ref.deblend_psfCenter_x"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: deblend_psfCenter_y
+    "@id": "#dpdd_ref.deblend_psfCenter_y"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: deblend_psf_instFlux
+    "@id": "#dpdd_ref.deblend_psf_instFlux"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: deblend_deblendedAsPsf
+    "@id": "#dpdd_ref.deblend_deblendedAsPsf"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: deblend_tooManyPeaks
+    "@id": "#dpdd_ref.deblend_tooManyPeaks"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: deblend_parentTooBig
+    "@id": "#dpdd_ref.deblend_parentTooBig"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: deblend_masked
+    "@id": "#dpdd_ref.deblend_masked"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: deblend_skipped
+    "@id": "#dpdd_ref.deblend_skipped"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: deblend_rampedTemplate
+    "@id": "#dpdd_ref.deblend_rampedTemplate"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: deblend_patchedTemplate
+    "@id": "#dpdd_ref.deblend_patchedTemplate"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: deblend_hasStrayFlux
+    "@id": "#dpdd_ref.deblend_hasStrayFlux"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: deblend_psfflux
+    "@id": "#dpdd_ref.deblend_psfflux"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_initial_instFlux
+    "@id": "#dpdd_ref.modelfit_CModel_initial_instFlux"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_initial_instFluxErr
+    "@id": "#dpdd_ref.modelfit_CModel_initial_instFluxErr"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_initial_flux_inner
+    "@id": "#dpdd_ref.modelfit_CModel_initial_flux_inner"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_initial_ellipse_xx
+    "@id": "#dpdd_ref.modelfit_CModel_initial_ellipse_xx"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_initial_ellipse_yy
+    "@id": "#dpdd_ref.modelfit_CModel_initial_ellipse_yy"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_initial_ellipse_xy
+    "@id": "#dpdd_ref.modelfit_CModel_initial_ellipse_xy"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_initial_objective
+    "@id": "#dpdd_ref.modelfit_CModel_initial_objective"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_initial_nonlinear_0
+    "@id": "#dpdd_ref.modelfit_CModel_initial_nonlinear_0"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_initial_nonlinear_1
+    "@id": "#dpdd_ref.modelfit_CModel_initial_nonlinear_1"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_initial_nonlinear_2
+    "@id": "#dpdd_ref.modelfit_CModel_initial_nonlinear_2"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_initial_fixed_0
+    "@id": "#dpdd_ref.modelfit_CModel_initial_fixed_0"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_initial_fixed_1
+    "@id": "#dpdd_ref.modelfit_CModel_initial_fixed_1"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_initial_nIter
+    "@id": "#dpdd_ref.modelfit_CModel_initial_nIter"
+    datatype: int
+    mysql:datatype: INTEGER
+    description:
+  - name: modelfit_CModel_initial_time
+    "@id": "#dpdd_ref.modelfit_CModel_initial_time"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_exp_instFlux
+    "@id": "#dpdd_ref.modelfit_CModel_exp_instFlux"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_exp_instFluxErr
+    "@id": "#dpdd_ref.modelfit_CModel_exp_instFluxErr"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_exp_flux_inner
+    "@id": "#dpdd_ref.modelfit_CModel_exp_flux_inner"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_exp_ellipse_xx
+    "@id": "#dpdd_ref.modelfit_CModel_exp_ellipse_xx"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_exp_ellipse_yy
+    "@id": "#dpdd_ref.modelfit_CModel_exp_ellipse_yy"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_exp_ellipse_xy
+    "@id": "#dpdd_ref.modelfit_CModel_exp_ellipse_xy"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_exp_objective
+    "@id": "#dpdd_ref.modelfit_CModel_exp_objective"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_exp_nonlinear_0
+    "@id": "#dpdd_ref.modelfit_CModel_exp_nonlinear_0"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_exp_nonlinear_1
+    "@id": "#dpdd_ref.modelfit_CModel_exp_nonlinear_1"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_exp_nonlinear_2
+    "@id": "#dpdd_ref.modelfit_CModel_exp_nonlinear_2"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_exp_fixed_0
+    "@id": "#dpdd_ref.modelfit_CModel_exp_fixed_0"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_exp_fixed_1
+    "@id": "#dpdd_ref.modelfit_CModel_exp_fixed_1"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_exp_nIter
+    "@id": "#dpdd_ref.modelfit_CModel_exp_nIter"
+    datatype: int
+    mysql:datatype: INTEGER
+    description:
+  - name: modelfit_CModel_exp_time
+    "@id": "#dpdd_ref.modelfit_CModel_exp_time"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_dev_instFlux
+    "@id": "#dpdd_ref.modelfit_CModel_dev_instFlux"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_dev_instFluxErr
+    "@id": "#dpdd_ref.modelfit_CModel_dev_instFluxErr"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_dev_flux_inner
+    "@id": "#dpdd_ref.modelfit_CModel_dev_flux_inner"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_dev_ellipse_xx
+    "@id": "#dpdd_ref.modelfit_CModel_dev_ellipse_xx"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_dev_ellipse_yy
+    "@id": "#dpdd_ref.modelfit_CModel_dev_ellipse_yy"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_dev_ellipse_xy
+    "@id": "#dpdd_ref.modelfit_CModel_dev_ellipse_xy"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_dev_objective
+    "@id": "#dpdd_ref.modelfit_CModel_dev_objective"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_dev_nonlinear_0
+    "@id": "#dpdd_ref.modelfit_CModel_dev_nonlinear_0"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_dev_nonlinear_1
+    "@id": "#dpdd_ref.modelfit_CModel_dev_nonlinear_1"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_dev_nonlinear_2
+    "@id": "#dpdd_ref.modelfit_CModel_dev_nonlinear_2"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_dev_fixed_0
+    "@id": "#dpdd_ref.modelfit_CModel_dev_fixed_0"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_dev_fixed_1
+    "@id": "#dpdd_ref.modelfit_CModel_dev_fixed_1"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_dev_nIter
+    "@id": "#dpdd_ref.modelfit_CModel_dev_nIter"
+    datatype: int
+    mysql:datatype: INTEGER
+    description:
+  - name: modelfit_CModel_dev_time
+    "@id": "#dpdd_ref.modelfit_CModel_dev_time"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_instFlux
+    "@id": "#dpdd_ref.modelfit_CModel_instFlux"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_instFluxErr
+    "@id": "#dpdd_ref.modelfit_CModel_instFluxErr"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_instFlux_inner
+    "@id": "#dpdd_ref.modelfit_CModel_instFlux_inner"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_fracDev
+    "@id": "#dpdd_ref.modelfit_CModel_fracDev"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_objective
+    "@id": "#dpdd_ref.modelfit_CModel_objective"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_ellipse_xx
+    "@id": "#dpdd_ref.modelfit_CModel_ellipse_xx"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_ellipse_yy
+    "@id": "#dpdd_ref.modelfit_CModel_ellipse_yy"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_ellipse_xy
+    "@id": "#dpdd_ref.modelfit_CModel_ellipse_xy"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_region_initial_ellipse_xx
+    "@id": "#dpdd_ref.modelfit_CModel_region_initial_ellipse_xx"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_region_initial_ellipse_yy
+    "@id": "#dpdd_ref.modelfit_CModel_region_initial_ellipse_yy"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_region_initial_ellipse_xy
+    "@id": "#dpdd_ref.modelfit_CModel_region_initial_ellipse_xy"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_region_final_ellipse_xx
+    "@id": "#dpdd_ref.modelfit_CModel_region_final_ellipse_xx"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_region_final_ellipse_yy
+    "@id": "#dpdd_ref.modelfit_CModel_region_final_ellipse_yy"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_region_final_ellipse_xy
+    "@id": "#dpdd_ref.modelfit_CModel_region_final_ellipse_xy"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_exp_apCorr
+    "@id": "#dpdd_ref.modelfit_CModel_exp_apCorr"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_exp_apCorrErr
+    "@id": "#dpdd_ref.modelfit_CModel_exp_apCorrErr"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_initial_apCorr
+    "@id": "#dpdd_ref.modelfit_CModel_initial_apCorr"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_initial_apCorrErr
+    "@id": "#dpdd_ref.modelfit_CModel_initial_apCorrErr"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_dev_apCorr
+    "@id": "#dpdd_ref.modelfit_CModel_dev_apCorr"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_dev_apCorrErr
+    "@id": "#dpdd_ref.modelfit_CModel_dev_apCorrErr"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_apCorr
+    "@id": "#dpdd_ref.modelfit_CModel_apCorr"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_apCorrErr
+    "@id": "#dpdd_ref.modelfit_CModel_apCorrErr"
+    datatype: double
+    mysql:datatype: DOUBLE
+    description:
+  - name: modelfit_CModel_initial_flag
+    "@id": "#dpdd_ref.modelfit_CModel_initial_flag"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_initial_flag_trSmall
+    "@id": "#dpdd_ref.modelfit_CModel_initial_flag_trSmall"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_initial_flag_maxIter
+    "@id": "#dpdd_ref.modelfit_CModel_initial_flag_maxIter"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_initial_flag_numericError
+    "@id": "#dpdd_ref.modelfit_CModel_initial_flag_numericError"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_exp_flag
+    "@id": "#dpdd_ref.modelfit_CModel_exp_flag"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_exp_flag_trSmall
+    "@id": "#dpdd_ref.modelfit_CModel_exp_flag_trSmall"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_exp_flag_maxIter
+    "@id": "#dpdd_ref.modelfit_CModel_exp_flag_maxIter"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_exp_flag_numericError
+    "@id": "#dpdd_ref.modelfit_CModel_exp_flag_numericError"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_dev_flag
+    "@id": "#dpdd_ref.modelfit_CModel_dev_flag"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_dev_flag_trSmall
+    "@id": "#dpdd_ref.modelfit_CModel_dev_flag_trSmall"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_dev_flag_maxIter
+    "@id": "#dpdd_ref.modelfit_CModel_dev_flag_maxIter"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_dev_flag_numericError
+    "@id": "#dpdd_ref.modelfit_CModel_dev_flag_numericError"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_flag
+    "@id": "#dpdd_ref.modelfit_CModel_flag"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_flag_region_maxArea
+    "@id": "#dpdd_ref.modelfit_CModel_flag_region_maxArea"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_flag_region_maxBadPixelFraction
+    "@id": "#dpdd_ref.modelfit_CModel_flag_region_maxBadPixelFraction"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_flags_region_usedFootprintArea
+    "@id": "#dpdd_ref.modelfit_CModel_flags_region_usedFootprintArea"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_flags_region_usedPsfArea
+    "@id": "#dpdd_ref.modelfit_CModel_flags_region_usedPsfArea"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_flags_region_usedInitialEllipseMin
+    "@id": "#dpdd_ref.modelfit_CModel_flags_region_usedInitialEllipseMin"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_flags_region_usedInitialEllipseMax
+    "@id": "#dpdd_ref.modelfit_CModel_flags_region_usedInitialEllipseMax"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_flag_noShape
+    "@id": "#dpdd_ref.modelfit_CModel_flag_noShape"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_flags_smallShape
+    "@id": "#dpdd_ref.modelfit_CModel_flags_smallShape"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_flag_noShapeletPsf
+    "@id": "#dpdd_ref.modelfit_CModel_flag_noShapeletPsf"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_flag_badCentroid
+    "@id": "#dpdd_ref.modelfit_CModel_flag_badCentroid"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_exp_flag_apCorr
+    "@id": "#dpdd_ref.modelfit_CModel_exp_flag_apCorr"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_initial_flag_apCorr
+    "@id": "#dpdd_ref.modelfit_CModel_initial_flag_apCorr"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_dev_flag_apCorr
+    "@id": "#dpdd_ref.modelfit_CModel_dev_flag_apCorr"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description:
+  - name: modelfit_CModel_flag_apCorr
+    "@id": "#dpdd_ref.modelfit_CModel_flag_apCorr"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
     description:
 - name: dpdd_forced
   "@id": "#dpdd_forced"
@@ -769,15 +1354,15 @@ tables:
     description:
   - name: coord_ra
     "@id": "#dpdd_forced.coord_ra"
-    datatype: float
+    datatype: double
     nullable: false
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     description:
   - name: coord_dec
     "@id": "#dpdd_forced.coord_dec"
-    datatype: float
+    datatype: double
     nullable: false
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_PixelFlags_flag
     "@id": "#dpdd_forced.g_base_PixelFlags_flag"
@@ -896,8 +1481,8 @@ tables:
     description:
   - name: g_base_ClassificationExtendedness_value
     "@id": "#dpdd_forced.g_base_ClassificationExtendedness_value"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_ClassificationExtendedness_flag
     "@id": "#dpdd_forced.g_base_ClassificationExtendedness_flag"
@@ -906,38 +1491,38 @@ tables:
     description:
   - name: g_modelfit_CModel_instFlux
     "@id": "#dpdd_forced.g_modelfit_CModel_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_instFluxErr
     "@id": "#dpdd_forced.g_modelfit_CModel_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_instFlux_inner
     "@id": "#dpdd_forced.g_modelfit_CModel_instFlux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_fracDev
     "@id": "#dpdd_forced.g_modelfit_CModel_fracDev"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_objective
     "@id": "#dpdd_forced.g_modelfit_CModel_objective"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_apCorr
     "@id": "#dpdd_forced.g_modelfit_CModel_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_apCorrErr
     "@id": "#dpdd_forced.g_modelfit_CModel_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_flag
     "@id": "#dpdd_forced.g_modelfit_CModel_flag"
@@ -986,13 +1571,13 @@ tables:
     description:
   - name: g_base_SdssCentroid_xErr
     "@id": "#dpdd_forced.g_base_SdssCentroid_xErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_SdssCentroid_yErr
     "@id": "#dpdd_forced.g_base_SdssCentroid_yErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_SdssCentroid_flag
     "@id": "#dpdd_forced.g_base_SdssCentroid_flag"
@@ -1031,33 +1616,33 @@ tables:
     description:
   - name: g_base_SdssShape_xx
     "@id": "#dpdd_forced.g_base_SdssShape_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_SdssShape_yy
     "@id": "#dpdd_forced.g_base_SdssShape_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_SdssShape_xy
     "@id": "#dpdd_forced.g_base_SdssShape_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_SdssShape_xxErr
     "@id": "#dpdd_forced.g_base_SdssShape_xxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_SdssShape_yyErr
     "@id": "#dpdd_forced.g_base_SdssShape_yyErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_SdssShape_xyErr
     "@id": "#dpdd_forced.g_base_SdssShape_xyErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_SdssShape_x
     "@id": "#dpdd_forced.g_base_SdssShape_x"
@@ -1071,43 +1656,43 @@ tables:
     description:
   - name: g_base_SdssShape_instFlux
     "@id": "#dpdd_forced.g_base_SdssShape_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_SdssShape_instFluxErr
     "@id": "#dpdd_forced.g_base_SdssShape_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_SdssShape_psf_xx
     "@id": "#dpdd_forced.g_base_SdssShape_psf_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_SdssShape_psf_yy
     "@id": "#dpdd_forced.g_base_SdssShape_psf_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_SdssShape_psf_xy
     "@id": "#dpdd_forced.g_base_SdssShape_psf_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_SdssShape_instFlux_xx_Cov
     "@id": "#dpdd_forced.g_base_SdssShape_instFlux_xx_Cov"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_SdssShape_instFlux_yy_Cov
     "@id": "#dpdd_forced.g_base_SdssShape_instFlux_yy_Cov"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_SdssShape_instFlux_xy_Cov
     "@id": "#dpdd_forced.g_base_SdssShape_instFlux_xy_Cov"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_SdssShape_flag
     "@id": "#dpdd_forced.g_base_SdssShape_flag"
@@ -1146,28 +1731,28 @@ tables:
     description:
   - name: g_base_PsfFlux_instFlux
     "@id": "#dpdd_forced.g_base_PsfFlux_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_PsfFlux_instFluxErr
     "@id": "#dpdd_forced.g_base_PsfFlux_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_PsfFlux_area
     "@id": "#dpdd_forced.g_base_PsfFlux_area"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_PsfFlux_apCorr
     "@id": "#dpdd_forced.g_base_PsfFlux_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_PsfFlux_apCorrErr
     "@id": "#dpdd_forced.g_base_PsfFlux_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_PsfFlux_flag
     "@id": "#dpdd_forced.g_base_PsfFlux_flag"
@@ -1216,8 +1801,8 @@ tables:
     description:
   - name: g_base_Variance_value
     "@id": "#dpdd_forced.g_base_Variance_value"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_Variance_flag
     "@id": "#dpdd_forced.g_base_Variance_flag"
@@ -1236,13 +1821,13 @@ tables:
     description:
   - name: g_base_LocalBackground_instFlux
     "@id": "#dpdd_forced.g_base_LocalBackground_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_LocalBackground_instFluxErr
     "@id": "#dpdd_forced.g_base_LocalBackground_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_base_LocalBackground_flag
     "@id": "#dpdd_forced.g_base_LocalBackground_flag"
@@ -1266,78 +1851,78 @@ tables:
     description:
   - name: g_modelfit_CModel_initial_instFlux
     "@id": "#dpdd_forced.g_modelfit_CModel_initial_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_initial_instFluxErr
     "@id": "#dpdd_forced.g_modelfit_CModel_initial_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_initial_flux_inner
     "@id": "#dpdd_forced.g_modelfit_CModel_initial_flux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_exp_instFlux
     "@id": "#dpdd_forced.g_modelfit_CModel_exp_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_exp_instFluxErr
     "@id": "#dpdd_forced.g_modelfit_CModel_exp_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_exp_flux_inner
     "@id": "#dpdd_forced.g_modelfit_CModel_exp_flux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_dev_instFlux
     "@id": "#dpdd_forced.g_modelfit_CModel_dev_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_dev_instFluxErr
     "@id": "#dpdd_forced.g_modelfit_CModel_dev_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_dev_flux_inner
     "@id": "#dpdd_forced.g_modelfit_CModel_dev_flux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_exp_apCorr
     "@id": "#dpdd_forced.g_modelfit_CModel_exp_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_exp_apCorrErr
     "@id": "#dpdd_forced.g_modelfit_CModel_exp_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_dev_apCorr
     "@id": "#dpdd_forced.g_modelfit_CModel_dev_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_dev_apCorrErr
     "@id": "#dpdd_forced.g_modelfit_CModel_dev_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_initial_apCorr
     "@id": "#dpdd_forced.g_modelfit_CModel_initial_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_initial_apCorrErr
     "@id": "#dpdd_forced.g_modelfit_CModel_initial_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: g_modelfit_CModel_initial_flag
     "@id": "#dpdd_forced.g_modelfit_CModel_initial_flag"
@@ -1516,8 +2101,8 @@ tables:
     description:
   - name: i_base_ClassificationExtendedness_value
     "@id": "#dpdd_forced.i_base_ClassificationExtendedness_value"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_ClassificationExtendedness_flag
     "@id": "#dpdd_forced.i_base_ClassificationExtendedness_flag"
@@ -1526,38 +2111,38 @@ tables:
     description:
   - name: i_modelfit_CModel_instFlux
     "@id": "#dpdd_forced.i_modelfit_CModel_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_instFluxErr
     "@id": "#dpdd_forced.i_modelfit_CModel_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_instFlux_inner
     "@id": "#dpdd_forced.i_modelfit_CModel_instFlux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_fracDev
     "@id": "#dpdd_forced.i_modelfit_CModel_fracDev"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_objective
     "@id": "#dpdd_forced.i_modelfit_CModel_objective"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_apCorr
     "@id": "#dpdd_forced.i_modelfit_CModel_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_apCorrErr
     "@id": "#dpdd_forced.i_modelfit_CModel_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_flag
     "@id": "#dpdd_forced.i_modelfit_CModel_flag"
@@ -1606,13 +2191,13 @@ tables:
     description:
   - name: i_base_SdssCentroid_xErr
     "@id": "#dpdd_forced.i_base_SdssCentroid_xErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_SdssCentroid_yErr
     "@id": "#dpdd_forced.i_base_SdssCentroid_yErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_SdssCentroid_flag
     "@id": "#dpdd_forced.i_base_SdssCentroid_flag"
@@ -1651,33 +2236,33 @@ tables:
     description:
   - name: i_base_SdssShape_xx
     "@id": "#dpdd_forced.i_base_SdssShape_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_SdssShape_yy
     "@id": "#dpdd_forced.i_base_SdssShape_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_SdssShape_xy
     "@id": "#dpdd_forced.i_base_SdssShape_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_SdssShape_xxErr
     "@id": "#dpdd_forced.i_base_SdssShape_xxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_SdssShape_yyErr
     "@id": "#dpdd_forced.i_base_SdssShape_yyErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_SdssShape_xyErr
     "@id": "#dpdd_forced.i_base_SdssShape_xyErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_SdssShape_x
     "@id": "#dpdd_forced.i_base_SdssShape_x"
@@ -1691,43 +2276,43 @@ tables:
     description:
   - name: i_base_SdssShape_instFlux
     "@id": "#dpdd_forced.i_base_SdssShape_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_SdssShape_instFluxErr
     "@id": "#dpdd_forced.i_base_SdssShape_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_SdssShape_psf_xx
     "@id": "#dpdd_forced.i_base_SdssShape_psf_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_SdssShape_psf_yy
     "@id": "#dpdd_forced.i_base_SdssShape_psf_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_SdssShape_psf_xy
     "@id": "#dpdd_forced.i_base_SdssShape_psf_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_SdssShape_instFlux_xx_Cov
     "@id": "#dpdd_forced.i_base_SdssShape_instFlux_xx_Cov"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_SdssShape_instFlux_yy_Cov
     "@id": "#dpdd_forced.i_base_SdssShape_instFlux_yy_Cov"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_SdssShape_instFlux_xy_Cov
     "@id": "#dpdd_forced.i_base_SdssShape_instFlux_xy_Cov"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_SdssShape_flag
     "@id": "#dpdd_forced.i_base_SdssShape_flag"
@@ -1766,28 +2351,28 @@ tables:
     description:
   - name: i_base_PsfFlux_instFlux
     "@id": "#dpdd_forced.i_base_PsfFlux_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_PsfFlux_instFluxErr
     "@id": "#dpdd_forced.i_base_PsfFlux_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_PsfFlux_area
     "@id": "#dpdd_forced.i_base_PsfFlux_area"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_PsfFlux_apCorr
     "@id": "#dpdd_forced.i_base_PsfFlux_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_PsfFlux_apCorrErr
     "@id": "#dpdd_forced.i_base_PsfFlux_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_PsfFlux_flag
     "@id": "#dpdd_forced.i_base_PsfFlux_flag"
@@ -1836,8 +2421,8 @@ tables:
     description:
   - name: i_base_Variance_value
     "@id": "#dpdd_forced.i_base_Variance_value"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_Variance_flag
     "@id": "#dpdd_forced.i_base_Variance_flag"
@@ -1856,13 +2441,13 @@ tables:
     description:
   - name: i_base_LocalBackground_instFlux
     "@id": "#dpdd_forced.i_base_LocalBackground_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_LocalBackground_instFluxErr
     "@id": "#dpdd_forced.i_base_LocalBackground_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_base_LocalBackground_flag
     "@id": "#dpdd_forced.i_base_LocalBackground_flag"
@@ -1886,78 +2471,78 @@ tables:
     description:
   - name: i_modelfit_CModel_initial_instFlux
     "@id": "#dpdd_forced.i_modelfit_CModel_initial_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_initial_instFluxErr
     "@id": "#dpdd_forced.i_modelfit_CModel_initial_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_initial_flux_inner
     "@id": "#dpdd_forced.i_modelfit_CModel_initial_flux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_exp_instFlux
     "@id": "#dpdd_forced.i_modelfit_CModel_exp_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_exp_instFluxErr
     "@id": "#dpdd_forced.i_modelfit_CModel_exp_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_exp_flux_inner
     "@id": "#dpdd_forced.i_modelfit_CModel_exp_flux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_dev_instFlux
     "@id": "#dpdd_forced.i_modelfit_CModel_dev_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_dev_instFluxErr
     "@id": "#dpdd_forced.i_modelfit_CModel_dev_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_dev_flux_inner
     "@id": "#dpdd_forced.i_modelfit_CModel_dev_flux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_exp_apCorr
     "@id": "#dpdd_forced.i_modelfit_CModel_exp_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_exp_apCorrErr
     "@id": "#dpdd_forced.i_modelfit_CModel_exp_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_dev_apCorr
     "@id": "#dpdd_forced.i_modelfit_CModel_dev_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_dev_apCorrErr
     "@id": "#dpdd_forced.i_modelfit_CModel_dev_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_initial_apCorr
     "@id": "#dpdd_forced.i_modelfit_CModel_initial_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_initial_apCorrErr
     "@id": "#dpdd_forced.i_modelfit_CModel_initial_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: i_modelfit_CModel_initial_flag
     "@id": "#dpdd_forced.i_modelfit_CModel_initial_flag"
@@ -2136,8 +2721,8 @@ tables:
     description:
   - name: r_base_ClassificationExtendedness_value
     "@id": "#dpdd_forced.r_base_ClassificationExtendedness_value"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_ClassificationExtendedness_flag
     "@id": "#dpdd_forced.r_base_ClassificationExtendedness_flag"
@@ -2146,38 +2731,38 @@ tables:
     description:
   - name: r_modelfit_CModel_instFlux
     "@id": "#dpdd_forced.r_modelfit_CModel_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_instFluxErr
     "@id": "#dpdd_forced.r_modelfit_CModel_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_instFlux_inner
     "@id": "#dpdd_forced.r_modelfit_CModel_instFlux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_fracDev
     "@id": "#dpdd_forced.r_modelfit_CModel_fracDev"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_objective
     "@id": "#dpdd_forced.r_modelfit_CModel_objective"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_apCorr
     "@id": "#dpdd_forced.r_modelfit_CModel_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_apCorrErr
     "@id": "#dpdd_forced.r_modelfit_CModel_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_flag
     "@id": "#dpdd_forced.r_modelfit_CModel_flag"
@@ -2226,13 +2811,13 @@ tables:
     description:
   - name: r_base_SdssCentroid_xErr
     "@id": "#dpdd_forced.r_base_SdssCentroid_xErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_SdssCentroid_yErr
     "@id": "#dpdd_forced.r_base_SdssCentroid_yErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_SdssCentroid_flag
     "@id": "#dpdd_forced.r_base_SdssCentroid_flag"
@@ -2271,33 +2856,33 @@ tables:
     description:
   - name: r_base_SdssShape_xx
     "@id": "#dpdd_forced.r_base_SdssShape_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_SdssShape_yy
     "@id": "#dpdd_forced.r_base_SdssShape_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_SdssShape_xy
     "@id": "#dpdd_forced.r_base_SdssShape_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_SdssShape_xxErr
     "@id": "#dpdd_forced.r_base_SdssShape_xxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_SdssShape_yyErr
     "@id": "#dpdd_forced.r_base_SdssShape_yyErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_SdssShape_xyErr
     "@id": "#dpdd_forced.r_base_SdssShape_xyErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_SdssShape_x
     "@id": "#dpdd_forced.r_base_SdssShape_x"
@@ -2311,43 +2896,43 @@ tables:
     description:
   - name: r_base_SdssShape_instFlux
     "@id": "#dpdd_forced.r_base_SdssShape_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_SdssShape_instFluxErr
     "@id": "#dpdd_forced.r_base_SdssShape_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_SdssShape_psf_xx
     "@id": "#dpdd_forced.r_base_SdssShape_psf_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_SdssShape_psf_yy
     "@id": "#dpdd_forced.r_base_SdssShape_psf_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_SdssShape_psf_xy
     "@id": "#dpdd_forced.r_base_SdssShape_psf_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_SdssShape_instFlux_xx_Cov
     "@id": "#dpdd_forced.r_base_SdssShape_instFlux_xx_Cov"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_SdssShape_instFlux_yy_Cov
     "@id": "#dpdd_forced.r_base_SdssShape_instFlux_yy_Cov"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_SdssShape_instFlux_xy_Cov
     "@id": "#dpdd_forced.r_base_SdssShape_instFlux_xy_Cov"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_SdssShape_flag
     "@id": "#dpdd_forced.r_base_SdssShape_flag"
@@ -2386,28 +2971,28 @@ tables:
     description:
   - name: r_base_PsfFlux_instFlux
     "@id": "#dpdd_forced.r_base_PsfFlux_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_PsfFlux_instFluxErr
     "@id": "#dpdd_forced.r_base_PsfFlux_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_PsfFlux_area
     "@id": "#dpdd_forced.r_base_PsfFlux_area"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_PsfFlux_apCorr
     "@id": "#dpdd_forced.r_base_PsfFlux_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_PsfFlux_apCorrErr
     "@id": "#dpdd_forced.r_base_PsfFlux_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_PsfFlux_flag
     "@id": "#dpdd_forced.r_base_PsfFlux_flag"
@@ -2456,8 +3041,8 @@ tables:
     description:
   - name: r_base_Variance_value
     "@id": "#dpdd_forced.r_base_Variance_value"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_Variance_flag
     "@id": "#dpdd_forced.r_base_Variance_flag"
@@ -2476,13 +3061,13 @@ tables:
     description:
   - name: r_base_LocalBackground_instFlux
     "@id": "#dpdd_forced.r_base_LocalBackground_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_LocalBackground_instFluxErr
     "@id": "#dpdd_forced.r_base_LocalBackground_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_base_LocalBackground_flag
     "@id": "#dpdd_forced.r_base_LocalBackground_flag"
@@ -2506,78 +3091,78 @@ tables:
     description:
   - name: r_modelfit_CModel_initial_instFlux
     "@id": "#dpdd_forced.r_modelfit_CModel_initial_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_initial_instFluxErr
     "@id": "#dpdd_forced.r_modelfit_CModel_initial_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_initial_flux_inner
     "@id": "#dpdd_forced.r_modelfit_CModel_initial_flux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_exp_instFlux
     "@id": "#dpdd_forced.r_modelfit_CModel_exp_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_exp_instFluxErr
     "@id": "#dpdd_forced.r_modelfit_CModel_exp_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_exp_flux_inner
     "@id": "#dpdd_forced.r_modelfit_CModel_exp_flux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_dev_instFlux
     "@id": "#dpdd_forced.r_modelfit_CModel_dev_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_dev_instFluxErr
     "@id": "#dpdd_forced.r_modelfit_CModel_dev_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_dev_flux_inner
     "@id": "#dpdd_forced.r_modelfit_CModel_dev_flux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_exp_apCorr
     "@id": "#dpdd_forced.r_modelfit_CModel_exp_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_exp_apCorrErr
     "@id": "#dpdd_forced.r_modelfit_CModel_exp_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_dev_apCorr
     "@id": "#dpdd_forced.r_modelfit_CModel_dev_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_dev_apCorrErr
     "@id": "#dpdd_forced.r_modelfit_CModel_dev_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_initial_apCorr
     "@id": "#dpdd_forced.r_modelfit_CModel_initial_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_initial_apCorrErr
     "@id": "#dpdd_forced.r_modelfit_CModel_initial_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: r_modelfit_CModel_initial_flag
     "@id": "#dpdd_forced.r_modelfit_CModel_initial_flag"
@@ -2756,8 +3341,8 @@ tables:
     description:
   - name: u_base_ClassificationExtendedness_value
     "@id": "#dpdd_forced.u_base_ClassificationExtendedness_value"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_ClassificationExtendedness_flag
     "@id": "#dpdd_forced.u_base_ClassificationExtendedness_flag"
@@ -2766,38 +3351,38 @@ tables:
     description:
   - name: u_modelfit_CModel_instFlux
     "@id": "#dpdd_forced.u_modelfit_CModel_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_instFluxErr
     "@id": "#dpdd_forced.u_modelfit_CModel_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_instFlux_inner
     "@id": "#dpdd_forced.u_modelfit_CModel_instFlux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_fracDev
     "@id": "#dpdd_forced.u_modelfit_CModel_fracDev"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_objective
     "@id": "#dpdd_forced.u_modelfit_CModel_objective"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_apCorr
     "@id": "#dpdd_forced.u_modelfit_CModel_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_apCorrErr
     "@id": "#dpdd_forced.u_modelfit_CModel_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_flag
     "@id": "#dpdd_forced.u_modelfit_CModel_flag"
@@ -2846,13 +3431,13 @@ tables:
     description:
   - name: u_base_SdssCentroid_xErr
     "@id": "#dpdd_forced.u_base_SdssCentroid_xErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_SdssCentroid_yErr
     "@id": "#dpdd_forced.u_base_SdssCentroid_yErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_SdssCentroid_flag
     "@id": "#dpdd_forced.u_base_SdssCentroid_flag"
@@ -2891,33 +3476,33 @@ tables:
     description:
   - name: u_base_SdssShape_xx
     "@id": "#dpdd_forced.u_base_SdssShape_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_SdssShape_yy
     "@id": "#dpdd_forced.u_base_SdssShape_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_SdssShape_xy
     "@id": "#dpdd_forced.u_base_SdssShape_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_SdssShape_xxErr
     "@id": "#dpdd_forced.u_base_SdssShape_xxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_SdssShape_yyErr
     "@id": "#dpdd_forced.u_base_SdssShape_yyErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_SdssShape_xyErr
     "@id": "#dpdd_forced.u_base_SdssShape_xyErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_SdssShape_x
     "@id": "#dpdd_forced.u_base_SdssShape_x"
@@ -2931,43 +3516,43 @@ tables:
     description:
   - name: u_base_SdssShape_instFlux
     "@id": "#dpdd_forced.u_base_SdssShape_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_SdssShape_instFluxErr
     "@id": "#dpdd_forced.u_base_SdssShape_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_SdssShape_psf_xx
     "@id": "#dpdd_forced.u_base_SdssShape_psf_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_SdssShape_psf_yy
     "@id": "#dpdd_forced.u_base_SdssShape_psf_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_SdssShape_psf_xy
     "@id": "#dpdd_forced.u_base_SdssShape_psf_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_SdssShape_instFlux_xx_Cov
     "@id": "#dpdd_forced.u_base_SdssShape_instFlux_xx_Cov"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_SdssShape_instFlux_yy_Cov
     "@id": "#dpdd_forced.u_base_SdssShape_instFlux_yy_Cov"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_SdssShape_instFlux_xy_Cov
     "@id": "#dpdd_forced.u_base_SdssShape_instFlux_xy_Cov"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_SdssShape_flag
     "@id": "#dpdd_forced.u_base_SdssShape_flag"
@@ -3006,28 +3591,28 @@ tables:
     description:
   - name: u_base_PsfFlux_instFlux
     "@id": "#dpdd_forced.u_base_PsfFlux_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_PsfFlux_instFluxErr
     "@id": "#dpdd_forced.u_base_PsfFlux_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_PsfFlux_area
     "@id": "#dpdd_forced.u_base_PsfFlux_area"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_PsfFlux_apCorr
     "@id": "#dpdd_forced.u_base_PsfFlux_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_PsfFlux_apCorrErr
     "@id": "#dpdd_forced.u_base_PsfFlux_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_PsfFlux_flag
     "@id": "#dpdd_forced.u_base_PsfFlux_flag"
@@ -3076,8 +3661,8 @@ tables:
     description:
   - name: u_base_Variance_value
     "@id": "#dpdd_forced.u_base_Variance_value"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_Variance_flag
     "@id": "#dpdd_forced.u_base_Variance_flag"
@@ -3096,13 +3681,13 @@ tables:
     description:
   - name: u_base_LocalBackground_instFlux
     "@id": "#dpdd_forced.u_base_LocalBackground_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_LocalBackground_instFluxErr
     "@id": "#dpdd_forced.u_base_LocalBackground_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_base_LocalBackground_flag
     "@id": "#dpdd_forced.u_base_LocalBackground_flag"
@@ -3126,78 +3711,78 @@ tables:
     description:
   - name: u_modelfit_CModel_initial_instFlux
     "@id": "#dpdd_forced.u_modelfit_CModel_initial_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_initial_instFluxErr
     "@id": "#dpdd_forced.u_modelfit_CModel_initial_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_initial_flux_inner
     "@id": "#dpdd_forced.u_modelfit_CModel_initial_flux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_exp_instFlux
     "@id": "#dpdd_forced.u_modelfit_CModel_exp_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_exp_instFluxErr
     "@id": "#dpdd_forced.u_modelfit_CModel_exp_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_exp_flux_inner
     "@id": "#dpdd_forced.u_modelfit_CModel_exp_flux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_dev_instFlux
     "@id": "#dpdd_forced.u_modelfit_CModel_dev_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_dev_instFluxErr
     "@id": "#dpdd_forced.u_modelfit_CModel_dev_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_dev_flux_inner
     "@id": "#dpdd_forced.u_modelfit_CModel_dev_flux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_exp_apCorr
     "@id": "#dpdd_forced.u_modelfit_CModel_exp_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_exp_apCorrErr
     "@id": "#dpdd_forced.u_modelfit_CModel_exp_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_dev_apCorr
     "@id": "#dpdd_forced.u_modelfit_CModel_dev_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_dev_apCorrErr
     "@id": "#dpdd_forced.u_modelfit_CModel_dev_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_initial_apCorr
     "@id": "#dpdd_forced.u_modelfit_CModel_initial_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_initial_apCorrErr
     "@id": "#dpdd_forced.u_modelfit_CModel_initial_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: u_modelfit_CModel_initial_flag
     "@id": "#dpdd_forced.u_modelfit_CModel_initial_flag"
@@ -3376,8 +3961,8 @@ tables:
     description:
   - name: y_base_ClassificationExtendedness_value
     "@id": "#dpdd_forced.y_base_ClassificationExtendedness_value"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_ClassificationExtendedness_flag
     "@id": "#dpdd_forced.y_base_ClassificationExtendedness_flag"
@@ -3386,38 +3971,38 @@ tables:
     description:
   - name: y_modelfit_CModel_instFlux
     "@id": "#dpdd_forced.y_modelfit_CModel_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_instFluxErr
     "@id": "#dpdd_forced.y_modelfit_CModel_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_instFlux_inner
     "@id": "#dpdd_forced.y_modelfit_CModel_instFlux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_fracDev
     "@id": "#dpdd_forced.y_modelfit_CModel_fracDev"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_objective
     "@id": "#dpdd_forced.y_modelfit_CModel_objective"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_apCorr
     "@id": "#dpdd_forced.y_modelfit_CModel_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_apCorrErr
     "@id": "#dpdd_forced.y_modelfit_CModel_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_flag
     "@id": "#dpdd_forced.y_modelfit_CModel_flag"
@@ -3466,13 +4051,13 @@ tables:
     description:
   - name: y_base_SdssCentroid_xErr
     "@id": "#dpdd_forced.y_base_SdssCentroid_xErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_SdssCentroid_yErr
     "@id": "#dpdd_forced.y_base_SdssCentroid_yErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_SdssCentroid_flag
     "@id": "#dpdd_forced.y_base_SdssCentroid_flag"
@@ -3511,33 +4096,33 @@ tables:
     description:
   - name: y_base_SdssShape_xx
     "@id": "#dpdd_forced.y_base_SdssShape_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_SdssShape_yy
     "@id": "#dpdd_forced.y_base_SdssShape_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_SdssShape_xy
     "@id": "#dpdd_forced.y_base_SdssShape_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_SdssShape_xxErr
     "@id": "#dpdd_forced.y_base_SdssShape_xxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_SdssShape_yyErr
     "@id": "#dpdd_forced.y_base_SdssShape_yyErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_SdssShape_xyErr
     "@id": "#dpdd_forced.y_base_SdssShape_xyErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_SdssShape_x
     "@id": "#dpdd_forced.y_base_SdssShape_x"
@@ -3551,43 +4136,43 @@ tables:
     description:
   - name: y_base_SdssShape_instFlux
     "@id": "#dpdd_forced.y_base_SdssShape_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_SdssShape_instFluxErr
     "@id": "#dpdd_forced.y_base_SdssShape_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_SdssShape_psf_xx
     "@id": "#dpdd_forced.y_base_SdssShape_psf_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_SdssShape_psf_yy
     "@id": "#dpdd_forced.y_base_SdssShape_psf_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_SdssShape_psf_xy
     "@id": "#dpdd_forced.y_base_SdssShape_psf_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_SdssShape_instFlux_xx_Cov
     "@id": "#dpdd_forced.y_base_SdssShape_instFlux_xx_Cov"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_SdssShape_instFlux_yy_Cov
     "@id": "#dpdd_forced.y_base_SdssShape_instFlux_yy_Cov"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_SdssShape_instFlux_xy_Cov
     "@id": "#dpdd_forced.y_base_SdssShape_instFlux_xy_Cov"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_SdssShape_flag
     "@id": "#dpdd_forced.y_base_SdssShape_flag"
@@ -3626,28 +4211,28 @@ tables:
     description:
   - name: y_base_PsfFlux_instFlux
     "@id": "#dpdd_forced.y_base_PsfFlux_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_PsfFlux_instFluxErr
     "@id": "#dpdd_forced.y_base_PsfFlux_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_PsfFlux_area
     "@id": "#dpdd_forced.y_base_PsfFlux_area"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_PsfFlux_apCorr
     "@id": "#dpdd_forced.y_base_PsfFlux_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_PsfFlux_apCorrErr
     "@id": "#dpdd_forced.y_base_PsfFlux_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_PsfFlux_flag
     "@id": "#dpdd_forced.y_base_PsfFlux_flag"
@@ -3696,8 +4281,8 @@ tables:
     description:
   - name: y_base_Variance_value
     "@id": "#dpdd_forced.y_base_Variance_value"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_Variance_flag
     "@id": "#dpdd_forced.y_base_Variance_flag"
@@ -3716,13 +4301,13 @@ tables:
     description:
   - name: y_base_LocalBackground_instFlux
     "@id": "#dpdd_forced.y_base_LocalBackground_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_LocalBackground_instFluxErr
     "@id": "#dpdd_forced.y_base_LocalBackground_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_base_LocalBackground_flag
     "@id": "#dpdd_forced.y_base_LocalBackground_flag"
@@ -3746,78 +4331,78 @@ tables:
     description:
   - name: y_modelfit_CModel_initial_instFlux
     "@id": "#dpdd_forced.y_modelfit_CModel_initial_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_initial_instFluxErr
     "@id": "#dpdd_forced.y_modelfit_CModel_initial_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_initial_flux_inner
     "@id": "#dpdd_forced.y_modelfit_CModel_initial_flux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_exp_instFlux
     "@id": "#dpdd_forced.y_modelfit_CModel_exp_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_exp_instFluxErr
     "@id": "#dpdd_forced.y_modelfit_CModel_exp_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_exp_flux_inner
     "@id": "#dpdd_forced.y_modelfit_CModel_exp_flux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_dev_instFlux
     "@id": "#dpdd_forced.y_modelfit_CModel_dev_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_dev_instFluxErr
     "@id": "#dpdd_forced.y_modelfit_CModel_dev_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_dev_flux_inner
     "@id": "#dpdd_forced.y_modelfit_CModel_dev_flux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_exp_apCorr
     "@id": "#dpdd_forced.y_modelfit_CModel_exp_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_exp_apCorrErr
     "@id": "#dpdd_forced.y_modelfit_CModel_exp_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_dev_apCorr
     "@id": "#dpdd_forced.y_modelfit_CModel_dev_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_dev_apCorrErr
     "@id": "#dpdd_forced.y_modelfit_CModel_dev_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_initial_apCorr
     "@id": "#dpdd_forced.y_modelfit_CModel_initial_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_initial_apCorrErr
     "@id": "#dpdd_forced.y_modelfit_CModel_initial_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: y_modelfit_CModel_initial_flag
     "@id": "#dpdd_forced.y_modelfit_CModel_initial_flag"
@@ -3996,8 +4581,8 @@ tables:
     description:
   - name: z_base_ClassificationExtendedness_value
     "@id": "#dpdd_forced.z_base_ClassificationExtendedness_value"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_ClassificationExtendedness_flag
     "@id": "#dpdd_forced.z_base_ClassificationExtendedness_flag"
@@ -4006,38 +4591,38 @@ tables:
     description:
   - name: z_modelfit_CModel_instFlux
     "@id": "#dpdd_forced.z_modelfit_CModel_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_instFluxErr
     "@id": "#dpdd_forced.z_modelfit_CModel_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_instFlux_inner
     "@id": "#dpdd_forced.z_modelfit_CModel_instFlux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_fracDev
     "@id": "#dpdd_forced.z_modelfit_CModel_fracDev"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_objective
     "@id": "#dpdd_forced.z_modelfit_CModel_objective"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_apCorr
     "@id": "#dpdd_forced.z_modelfit_CModel_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_apCorrErr
     "@id": "#dpdd_forced.z_modelfit_CModel_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_flag
     "@id": "#dpdd_forced.z_modelfit_CModel_flag"
@@ -4086,13 +4671,13 @@ tables:
     description:
   - name: z_base_SdssCentroid_xErr
     "@id": "#dpdd_forced.z_base_SdssCentroid_xErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_SdssCentroid_yErr
     "@id": "#dpdd_forced.z_base_SdssCentroid_yErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_SdssCentroid_flag
     "@id": "#dpdd_forced.z_base_SdssCentroid_flag"
@@ -4131,33 +4716,33 @@ tables:
     description:
   - name: z_base_SdssShape_xx
     "@id": "#dpdd_forced.z_base_SdssShape_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_SdssShape_yy
     "@id": "#dpdd_forced.z_base_SdssShape_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_SdssShape_xy
     "@id": "#dpdd_forced.z_base_SdssShape_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_SdssShape_xxErr
     "@id": "#dpdd_forced.z_base_SdssShape_xxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_SdssShape_yyErr
     "@id": "#dpdd_forced.z_base_SdssShape_yyErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_SdssShape_xyErr
     "@id": "#dpdd_forced.z_base_SdssShape_xyErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_SdssShape_x
     "@id": "#dpdd_forced.z_base_SdssShape_x"
@@ -4171,43 +4756,43 @@ tables:
     description:
   - name: z_base_SdssShape_instFlux
     "@id": "#dpdd_forced.z_base_SdssShape_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_SdssShape_instFluxErr
     "@id": "#dpdd_forced.z_base_SdssShape_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_SdssShape_psf_xx
     "@id": "#dpdd_forced.z_base_SdssShape_psf_xx"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_SdssShape_psf_yy
     "@id": "#dpdd_forced.z_base_SdssShape_psf_yy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_SdssShape_psf_xy
     "@id": "#dpdd_forced.z_base_SdssShape_psf_xy"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_SdssShape_instFlux_xx_Cov
     "@id": "#dpdd_forced.z_base_SdssShape_instFlux_xx_Cov"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_SdssShape_instFlux_yy_Cov
     "@id": "#dpdd_forced.z_base_SdssShape_instFlux_yy_Cov"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_SdssShape_instFlux_xy_Cov
     "@id": "#dpdd_forced.z_base_SdssShape_instFlux_xy_Cov"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_SdssShape_flag
     "@id": "#dpdd_forced.z_base_SdssShape_flag"
@@ -4246,28 +4831,28 @@ tables:
     description:
   - name: z_base_PsfFlux_instFlux
     "@id": "#dpdd_forced.z_base_PsfFlux_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_PsfFlux_instFluxErr
     "@id": "#dpdd_forced.z_base_PsfFlux_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_PsfFlux_area
     "@id": "#dpdd_forced.z_base_PsfFlux_area"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_PsfFlux_apCorr
     "@id": "#dpdd_forced.z_base_PsfFlux_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_PsfFlux_apCorrErr
     "@id": "#dpdd_forced.z_base_PsfFlux_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_PsfFlux_flag
     "@id": "#dpdd_forced.z_base_PsfFlux_flag"
@@ -4316,8 +4901,8 @@ tables:
     description:
   - name: z_base_Variance_value
     "@id": "#dpdd_forced.z_base_Variance_value"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_Variance_flag
     "@id": "#dpdd_forced.z_base_Variance_flag"
@@ -4336,13 +4921,13 @@ tables:
     description:
   - name: z_base_LocalBackground_instFlux
     "@id": "#dpdd_forced.z_base_LocalBackground_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_LocalBackground_instFluxErr
     "@id": "#dpdd_forced.z_base_LocalBackground_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_base_LocalBackground_flag
     "@id": "#dpdd_forced.z_base_LocalBackground_flag"
@@ -4366,78 +4951,78 @@ tables:
     description:
   - name: z_modelfit_CModel_initial_instFlux
     "@id": "#dpdd_forced.z_modelfit_CModel_initial_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_initial_instFluxErr
     "@id": "#dpdd_forced.z_modelfit_CModel_initial_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_initial_flux_inner
     "@id": "#dpdd_forced.z_modelfit_CModel_initial_flux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_exp_instFlux
     "@id": "#dpdd_forced.z_modelfit_CModel_exp_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_exp_instFluxErr
     "@id": "#dpdd_forced.z_modelfit_CModel_exp_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_exp_flux_inner
     "@id": "#dpdd_forced.z_modelfit_CModel_exp_flux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_dev_instFlux
     "@id": "#dpdd_forced.z_modelfit_CModel_dev_instFlux"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_dev_instFluxErr
     "@id": "#dpdd_forced.z_modelfit_CModel_dev_instFluxErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_dev_flux_inner
     "@id": "#dpdd_forced.z_modelfit_CModel_dev_flux_inner"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_exp_apCorr
     "@id": "#dpdd_forced.z_modelfit_CModel_exp_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_exp_apCorrErr
     "@id": "#dpdd_forced.z_modelfit_CModel_exp_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_dev_apCorr
     "@id": "#dpdd_forced.z_modelfit_CModel_dev_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_dev_apCorrErr
     "@id": "#dpdd_forced.z_modelfit_CModel_dev_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_initial_apCorr
     "@id": "#dpdd_forced.z_modelfit_CModel_initial_apCorr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_initial_apCorrErr
     "@id": "#dpdd_forced.z_modelfit_CModel_initial_apCorrErr"
-    datatype: float
-    mysql:datatype: FLOAT
+    datatype: double
+    mysql:datatype: DOUBLE
     description:
   - name: z_modelfit_CModel_initial_flag
     "@id": "#dpdd_forced.z_modelfit_CModel_initial_flag"
