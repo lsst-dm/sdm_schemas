@@ -78,32 +78,32 @@ tables:
     mysql:datatype: FLOAT
   - name: extendedness
     "@id": "#object.extendedness"
-    datatype: float
+    datatype: double
     description: 0:star, 1:extended.  DM Stack `base_ClassificationExtendedness_value
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
   - name: blendedness
     "@id": "#object.blendedness"
-    datatype: float
+    datatype: double
     description: measure of how flux is affected by neighbors (1 - flux.child/flux.parent)
      (see 4.9.11 of [1705.06766](https://arxiv.org/abs/1705.06766))
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
   - name: Ixx_pixel
     "@id": "#object.Ixx_pixel"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity across bands.
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: nmgy*asec^2
   - name: Iyy_pixel
     "@id": "#object.Iyy_pixel"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity across bands.
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: nmgy*asec^2
   - name: Ixy_pixel
     "@id": "#object.Ixy_pixel"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity across bands.
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: nmgy*asec^2
   - name: I_flag
     "@id": "#object.I_flag"
@@ -112,176 +112,176 @@ tables:
     mysql:datatype: BOOLEAN
   - name: IxxPSF_pixel
     "@id": "#object.IxxPSF_pixel"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF across bands
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunits: nmgy*asec^2
   - name: IyyPSF_pixel
     "@id": "#object.IyyPSF_pixel"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF across bands
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunits: nmgy*asec^2
   - name: IxyPSF_pixel
     "@id": "#object.IxyPSF_pixel"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF across bands
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunits: nmgy*asec^2
   - name: mag_g_cModel
     "@id": "#object.mag_g_cModel"
-    datatype: float
+    datatype: double
     description: Composite model (cModel) magnitude for g filter fitted by cModel
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
   - name: mag_i_cModel
     "@id": "#object.mag_i_cModel"
-    datatype: float
+    datatype: double
     description: Composite model (cModel) magnitude for i filter fitted by cModel
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
   - name: mag_r_cModel
     "@id": "#object.mag_r_cModel"
-    datatype: float
+    datatype: double
     description: Composite model (cModel) magnitude for r filter fitted by cModel
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
   - name: mag_u_cModel
     "@id": "#object.mag_u_cModel"
-    datatype: float
+    datatype: double
     description: Composite model (cModel) magnitude for u filter fitted by cModel
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
   - name: mag_y_cModel
     "@id": "#object.mag_y_cModel"
-    datatype: float
+    datatype: double
     description: Composite model (cModel) magnitude for y filter fitted by cModel
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
   - name: mag_z_cModel
     "@id": "#object.mag_z_cModel"
-    datatype: float
+    datatype: double
     description: Composite model (cModel) magnitude for z filter fitted by cModel
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
   - name: magerr_g_cModel
     "@id": "#object.magerr_g_cModel"
-    datatype: float
+    datatype: double
     description: Error on mag_g_cModel
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
     ivoa:ucd: stat.error
   - name: magerr_i_cModel
     "@id": "#object.magerr_i_cModel"
-    datatype: float
+    datatype: double
     description: Error on mag_i_cModel
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
     ivoa:ucd: stat.error
   - name: magerr_r_cModel
     "@id": "#object.magerr_r_cModel"
-    datatype: float
+    datatype: double
     description: Error on mag_r_cModel
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
     ivoa:ucd: stat.error
   - name: magerr_u_cModel
     "@id": "#object.magerr_u_cModel"
-    datatype: float
+    datatype: double
     description: Error on mag_u_cModel
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
     ivoa:ucd: stat.error
   - name: magerr_y_cModel
     "@id": "#object.magerr_y_cModel"
-    datatype: float
+    datatype: double
     description: Error on mag_y_cModel
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
     ivoa:ucd: stat.error
   - name: magerr_z_cModel
     "@id": "#object.magerr_z_cModel"
-    datatype: float
+    datatype: double
     description: Error on mag_z_cModel
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
     ivoa:ucd: stat.error
   - name: snr_g_cModel
     "@id": "#object.snr_g_cModel"
-    datatype: float
+    datatype: double
     description: Signal to noise ratio for magnitude for g filter fitted by cModel
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     ivoa:ucd: stat.snr
   - name: snr_i_cModel
     "@id": "#object.snr_i_cModel"
-    datatype: float
+    datatype: double
     description: Signal to noise ratio for magnitude for i filter fitted by cModel
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     ivoa:ucd: stat.snr
   - name: snr_r_cModel
     "@id": "#object.snr_r_cModel"
-    datatype: float
+    datatype: double
     description: Signal to noise ratio for magnitude for r filter fitted by cModel
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     ivoa:ucd: stat.snr
   - name: snr_u_cModel
     "@id": "#object.snr_u_cModel"
-    datatype: float
+    datatype: double
     description: Signal to noise ratio for magnitude for u filter fitted by cModel
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     ivoa:ucd: stat.snr
   - name: snr_y_cModel
     "@id": "#object.snr_y_cModel"
-    datatype: float
+    datatype: double
     description: Signal to noise ratio for magnitude for y filter fitted by cModel
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     ivoa:ucd: stat.snr
   - name: snr_z_cModel
     "@id": "#object.snr_z_cModel"
-    datatype: float
+    datatype: double
     description: Signal to noise ratio for magnitude for z filter fitted by cModel
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     ivoa:ucd: stat.snr
   - name: psFlux_g
     "@id": "#object.psFlux_g"
-    datatype: float
+    datatype: double
     description: Calibrated flux for Point Source model for g filter.
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: nmgy
     ivoa:ucd: phot.count
   - name: psFlux_i
     "@id": "#object.psFlux_i"
-    datatype: float
+    datatype: double
     description: Calibrated flux for Point Source model for i filter.
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: nmgy
     ivoa:ucd: phot.count
   - name: psFlux_r
     "@id": "#object.psFlux_r"
-    datatype: float
+    datatype: double
     description: Calibrated flux for Point Source model for r filter.
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: nmgy
     ivoa:ucd: phot.count
   - name: psFlux_u
     "@id": "#object.psFlux_u"
-    datatype: float
+    datatype: double
     description: Calibrated flux for Point Source model for u filter.
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: nmgy
     ivoa:ucd: phot.count
   - name: psFlux_y
     "@id": "#object.psFlux_y"
-    datatype: float
+    datatype: double
     description: Calibrated flux for Point Source model for y filter.
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: nmgy
     ivoa:ucd: phot.count
   - name: psFlux_z
     "@id": "#object.psFlux_z"
-    datatype: float
+    datatype: double
     description: Calibrated flux for Point Source model for z filter.
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: nmgy
     ivoa:ucd: phot.count
   - name: psFlux_flag_g
@@ -316,122 +316,122 @@ tables:
     mysql:datatype: BOOLEAN
   - name: psFluxErr_g
     "@id": "#object.psFluxErr_g"
-    datatype: float
+    datatype: double
     description: Uncertainty of psFlux_g.
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: nmgy
     ivoa:ucd: stat.error;phot.count
   - name: psFluxErr_i
     "@id": "#object.psFluxErr_i"
-    datatype: float
+    datatype: double
     description: Uncertainty of psFlux_i.
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: nmgy
     ivoa:ucd: stat.error;phot.count
   - name: psFluxErr_r
     "@id": "#object.psFluxErr_r"
-    datatype: float
+    datatype: double
     description: Uncertainty of psFlux_r.
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: nmgy
     ivoa:ucd: stat.error;phot.count
   - name: psFluxErr_u
     "@id": "#object.psFluxErr_u"
-    datatype: float
+    datatype: double
     description: Uncertainty of psFlux_u.
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: nmgy
     ivoa:ucd: stat.error;phot.count
   - name: psFluxErr_y
     "@id": "#object.psFluxErr_y"
-    datatype: float
+    datatype: double
     description: Uncertainty of psFlux_y.
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: nmgy
     ivoa:ucd: stat.error;phot.count
   - name: psFluxErr_z
     "@id": "#object.psFluxErr_z"
-    datatype: float
+    datatype: double
     description: Uncertainty of psFlux_z.
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: nmgy
     ivoa:ucd: stat.error;phot.count
   - name: mag_g
     "@id": "#object.mag_g"
-    datatype: float
+    datatype: double
     description: Magnitude for g filter
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
   - name: mag_i
     "@id": "#object.mag_i"
-    datatype: float
+    datatype: double
     description: Magnitude for i filter
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
   - name: mag_r
     "@id": "#object.mag_r"
-    datatype: float
+    datatype: double
     description: Magnitude for r filter
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
   - name: mag_u
     "@id": "#object.mag_u"
-    datatype: float
+    datatype: double
     description: Magnitude for u filter
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
   - name: mag_y
     "@id": "#object.mag_y"
-    datatype: float
+    datatype: double
     description: Magnitude for y filter
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
   - name: mag_z
     "@id": "#object.mag_z"
-    datatype: float
+    datatype: double
     description: magnitude for z filter
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
   - name: magerr_g
     "@id": "#object.magerr_g"
-    datatype: float
+    datatype: double
     description: Error on mag_g
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
     ivoa:ucd: stat.error
   - name: magerr_i
     "@id": "#object.magerr_i"
-    datatype: float
+    datatype: double
     description: Error on mag_i
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
     ivoa:ucd: stat.error
   - name: magerr_r
     "@id": "#object.magerr_r"
-    datatype: float
+    datatype: double
     description: Error on mag_r
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
     ivoa:ucd: stat.error
   - name: magerr_u
     "@id": "#object.magerr_u"
-    datatype: float
+    datatype: double
     description: Error on mag_u
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
     ivoa:ucd: stat.error
   - name: magerr_y
     "@id": "#object.magerr_y"
-    datatype: float
+    datatype: double
     description: Error on mag_y
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
     ivoa:ucd: stat.error
   - name: magerr_z
     "@id": "#object.magerr_z"
-    datatype: float
+    datatype: double
     description: Error on mag_z
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: mag
     ivoa:ucd: stat.error
   - name: I_flag_g
@@ -466,219 +466,219 @@ tables:
     mysql:datatype: BOOLEAN
   - name: Ixx_pixel_g
     "@id": "#object.Ixx_pixel_g"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity, g band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: Ixx_pixel_i
     "@id": "#object.Ixx_pixel_i"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity, i band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: Ixx_pixel_r
     "@id": "#object.Ixx_pixel_r"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity, r band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: Ixx_pixel_u
     "@id": "#object.Ixx_pixel_u"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity, u band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: Ixx_pixel_y
     "@id": "#object.Ixx_pixel_y"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity, y band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: Ixx_pixel_z
     "@id": "#object.Ixx_pixel_z"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity, z band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: Iyy_pixel_g
     "@id": "#object.Iyy_pixel_g"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity, g band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: Iyy_pixel_i
     "@id": "#object.Iyy_pixel_i"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity, i band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: Iyy_pixel_r
     "@id": "#object.Iyy_pixel_r"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity, r band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: Iyy_pixel_u
     "@id": "#object.Iyy_pixel_u"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity, u band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: Iyy_pixel_y
     "@id": "#object.Iyy_pixel_y"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity, y band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: Iyy_pixel_z
     "@id": "#object.Iyy_pixel_z"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity, z band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: Ixy_pixel_g
     "@id": "#object.Ixy_pixel_g"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity, g band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: Ixy_pixel_i
     "@id": "#object.Ixy_pixel_i"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity, i band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: Ixy_pixel_r
     "@id": "#object.Ixy_pixel_r"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity, r band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: Ixy_pixel_u
     "@id": "#object.Ixy_pixel_u"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity, u band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: Ixy_pixel_y
     "@id": "#object.Ixy_pixel_y"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity, y band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: Ixy_pixel_z
     "@id": "#object.Ixy_pixel_z"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the source intensity, z band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: IxxPSF_pixel_g
     "@id": "#object.IxxPSF_pixel_g"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF, g band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: IxxPSF_pixel_i
     "@id": "#object.IxxPSF_pixel_i"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF, i band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: IxxPSF_pixel_r
     "@id": "#object.IxxPSF_pixel_r"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF, r band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: IxxPSF_pixel_u
     "@id": "#object.IxxPSF_pixel_u"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF, u band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: IxxPSF_pixel_y
     "@id": "#object.IxxPSF_pixel_y"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF, y band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: IxxPSF_pixel_z
     "@id": "#object.IxxPSF_pixel_z"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF, z band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: IyyPSF_pixel_g
     "@id": "#object.IyyPSF_pixel_g"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF, g band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: IyyPSF_pixel_i
     "@id": "#object.IyyPSF_pixel_i"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF, i band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: IyyPSF_pixel_r
     "@id": "#object.IyyPSF_pixel_r"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF, r band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: IyyPSF_pixel_u
     "@id": "#object.IyyPSF_pixel_u"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF, u band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: IyyPSF_pixel_y
     "@id": "#object.IyyPSF_pixel_y"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF, y band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: IyyPSF_pixel_z
     "@id": "#object.IyyPSF_pixel_z"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF, z band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: IxyPSF_pixel_g
     "@id": "#object.IxyPSF_pixel_g"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF, g band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: IxyPSF_pixel_i
     "@id": "#object.IxyPSF_pixel_i"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF, i band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: IxyPSF_pixel_r
     "@id": "#object.IxyPSF_pixel_r"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF, r band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: IxyPSF_pixel_u
     "@id": "#object.IxyPSF_pixel_u"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF, u band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: IxyPSF_pixel_y
     "@id": "#object.IxyPSF_pixel_y"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF, y band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: IxyPSF_pixel_z
     "@id": "#object.IxyPSF_pixel_z"
-    datatype: float
+    datatype: double
     description: Adaptive second moment of the PSF, z band
-    mysql:datatype: FLOAT
+    mysql:datatype: DOUBLE
     fits:tunit: asec^2
   - name: good
     "@id": "#object.good"
