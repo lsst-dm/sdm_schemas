@@ -35,11 +35,16 @@ tables:
     fits:tunit: deg
     ivoa:ucd: pos.eq.dec
   - name: tract
+    "@id": "#object.tract"
+    datatype: long
+    description: tract ID
     mysql:datatype: BIGINT
   - name: patch
+    "@id": "#object.patch"
     datatype: char
     length: 3
     mysql:datatype: CHAR(3)
+    description: patch ID
   - name: x
     "@id": "#object.x"
     datatype: double
@@ -693,50 +698,98 @@ tables:
     description: True if the source has no flagged pixels and is not deblended
     mysql:datatype: BOOLEAN
   - name: cModelFlux_g
+    "@id": "#object.cModelFlux_g"
+    datatype: double
     mysql:datatype: DOUBLE
   - name: cModelFlux_i
+    "@id": "#object.cModelFlux_i"
+    datatype: double
     mysql:datatype: DOUBLE
   - name: cModelFlux_r
+    "@id": "#object.cModelFlux_r"
+    datatype: double
     mysql:datatype: DOUBLE
   - name: cModelFlux_u
+    "@id": "#object.cModelFlux_u"
+    datatype: double
     mysql:datatype: DOUBLE
   - name: cModelFlux_y
+    "@id": "#object.cModelFlux_y"
+    datatype: double
     mysql:datatype: DOUBLE
   - name: cModelFlux_z
+    "@id": "#object.cModelFlux_z"
+    datatype: double
     mysql:datatype: DOUBLE
   - name: cModelFluxErr_g
+    "@id": "#object.cModelFluxErr_g"
+    datatype: double
     mysql:datatype: DOUBLE
   - name: cModelFluxErr_i
+    "@id": "#object.cModelFluxErr_i"
+    datatype: double
     mysql:datatype: DOUBLE
   - name: cModelFluxErr_r
+    "@id": "#object.cModelFluxErr_r"
+    datatype: double
     mysql:datatype: DOUBLE
   - name: cModelFluxErr_u
+    "@id": "#object.cModelFluxErr_u"
+    datatype: double
     mysql:datatype: DOUBLE
   - name: cModelFluxErr_y
+    "@id": "#object.cModelFluxErr_y"
+    datatype: double
     mysql:datatype: DOUBLE
   - name: cModelFluxErr_z
+    "@id": "#object.cModelFluxErr_z"
+    datatype: double
     mysql:datatype: DOUBLE
   - name: cModelFlux_flag_g
+    "@id": "#object.cModelFlux_flag_g"
+    datatype: boolean
     mysql:datatype: BOOLEAN
   - name: cModelFlux_flag_i
+    "@id": "#object.cModelFlux_flag_i"
+    datatype: boolean
     mysql:datatype: BOOLEAN
   - name: cModelFlux_flag_r
+    "@id": "#object.cModelFlux_flag_r"
+    datatype: boolean
     mysql:datatype: BOOLEAN
   - name: cModelFlux_flag_u
+    "@id": "#object.cModelFlux_flag_u"
+    datatype: boolean
     mysql:datatype: BOOLEAN
   - name: cModelFlux_flag_y
+    "@id": "#object.cModelFlux_flag_y"
+    datatype: boolean
     mysql:datatype: BOOLEAN
   - name: cModelFlux_flag_z
+    "@id": "#object.cModelFlux_flag_z"
+    datatype: boolean
     mysql:datatype: BOOLEAN
   - name: psf_fwhm_g
+    "@id": "#object.psf_fwhm_g"
+    datatype: double
     mysql:datatype: DOUBLE
   - name: psf_fwhm_i
+    "@id": "#object.psf_fwhm_i"
+    datatype: double
     mysql:datatype: DOUBLE
   - name: psf_fwhm_r
+    "@id": "#object.psf_fwhm_r"
+    datatype: double
     mysql:datatype: DOUBLE
   - name: psf_fwhm_u
+    "@id": "#object.psf_fwhm_u"
+    datatype: double
     mysql:datatype: DOUBLE
   - name: psf_fwhm_y
+    "@id": "#object.psf_fwhm_y"
+    datatype: double
     mysql:datatype: DOUBLE
   - name: psf_fwhm_z
+    "@id": "#object.psf_fwhm_z"
+    datatype: double
     mysql:datatype: DOUBLE
