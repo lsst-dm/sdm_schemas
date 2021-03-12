@@ -37,7 +37,9 @@ tables:
   - name: tract
     mysql:datatype: BIGINT
   - name: patch
-    mysql:datatype: TEXT
+    datatype: char
+    length: 3
+    mysql:datatype: CHAR(3)
   - name: x
     "@id": "#object.x"
     datatype: double
