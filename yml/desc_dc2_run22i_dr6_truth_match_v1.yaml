@@ -1,0 +1,178 @@
+---
+name: desc_dc2_dr6_truth_match
+"@id": "#desc_dc2_dr6_truth_match"
+tables:
+- name: truth_match
+  "@id": "#truth_match"
+  description: Truth Match table for DC2 Simulated Sky Survey DR6 v1 
+
+  columns:
+  - name: id 
+    "@id": "#truth_match.id"
+    datatype: char 
+    mysql:datatype: CHAR(20)
+    description: Unique object ID
+  - name: host_galaxy 
+    "@id": "#truth_match.host_galaxy"
+    datatype: long
+    mysql:datatype: BIGINT 
+    description: ID of the host galaxy for a SN/AGN entry (-1 for other truth types)
+  - name: ra 
+    "@id": "#truth_match.ra"
+    datatype: double
+    mysql:datatype: DOUBLE 
+    fits:tunit: deg
+    description: Right Ascension
+    ivoa:ucd: pos.eq.ra
+  - name: dec 
+    "@id": "#truth_match.dec"
+    datatype: double
+    mysql:datatype: DOUBLE 
+    fits:tunit: deg
+    description: Declination
+    ivoa:ucd: pos.eq.dec
+  - name: redshift 
+    "@id": "#truth_match.redshift"
+    datatype: float
+    mysql:datatype: FLOAT 
+    description: Redshift
+  - name: is_variable 
+    "@id": "#truth_match.is_variable"
+    datatype: int
+    mysql:datatype: INTEGER 
+    description: 1 for a variable source
+  - name: is_pointsource 
+    "@id": "#truth_match.is_pointsource"
+    datatype: int
+    mysql:datatype: INTEGER 
+    description: 1 for a point source
+  - name: flux_u
+    "@id": "#truth_match.flux_u"
+    datatype: float
+    mysql:datatype: FLOAT 
+    fits:tunit: nJy 
+    description: Static flux value in u
+  - name: flux_g
+    "@id": "#truth_match.flux_g"
+    datatype: float
+    mysql:datatype: FLOAT 
+    fits:tunit: nJy 
+    description: Static flux value in g
+  - name: flux_r
+    "@id": "#truth_match.flux_r"
+    datatype: float
+    mysql:datatype: FLOAT 
+    fits:tunit: nJy 
+    description: Static flux value in r
+  - name: flux_i
+    "@id": "#truth_match.flux_i"
+    datatype: float
+    mysql:datatype: FLOAT 
+    fits:tunit: nJy 
+    description: Static flux value in i
+  - name: flux_z
+    "@id": "#truth_match.flux_z"
+    datatype: float
+    mysql:datatype: FLOAT 
+    fits:tunit: nJy 
+    description: Static flux value in z
+  - name: flux_y
+    "@id": "#truth_match.flux_y"
+    datatype: float
+    mysql:datatype: FLOAT 
+    fits:tunit: nJy 
+    description: Static flux value in y
+  - name: flux_u_noMW
+    "@id": "#truth_match.flux_u_noMW"
+    datatype: float
+    mysql:datatype: FLOAT 
+    fits:tunit: nJy 
+    description: Static flux value in u, without Milky Way extinction (i.e., dereddened)
+  - name: flux_g_noMW
+    "@id": "#truth_match.flux_g_noMW"
+    datatype: float
+    mysql:datatype: FLOAT 
+    fits:tunit: nJy 
+    description: Static flux value in g, without Milky Way extinction (i.e., dereddened)
+  - name: flux_r_noMW
+    "@id": "#truth_match.flux_r_noMW"
+    datatype: float
+    mysql:datatype: FLOAT 
+    fits:tunit: nJy 
+    description: Static flux value in r, without Milky Way extinction (i.e., dereddened)
+  - name: flux_i_noMW
+    "@id": "#truth_match.flux_i_noMW"
+    datatype: float
+    mysql:datatype: FLOAT 
+    fits:tunit: nJy 
+    description: Static flux value in i, without Milky Way extinction (i.e., dereddened)
+  - name: flux_z_noMW
+    "@id": "#truth_match.flux_z_noMW"
+    datatype: float
+    mysql:datatype: FLOAT 
+    fits:tunit: nJy 
+    description: Static flux value in z, without Milky Way extinction (i.e., dereddened)
+  - name: flux_y_noMW
+    "@id": "#truth_match.flux_y_noMW"
+    datatype: float
+    mysql:datatype: FLOAT 
+    fits:tunit: nJy 
+    description: Static flux value in y, without Milky Way extinction (i.e., dereddened)
+  - name: mag_r
+    "@id": "#truth_match.mag_r"
+    datatype: float
+    mysql:datatype: FLOAT 
+    fits:tunit: mag
+    description: Magnitude in r
+  - name: tract 
+    "@id": "#truth_match.tract"
+    datatype: long
+    mysql:datatype: BIGINT 
+    description: Tract ID in Sky Map
+  - name: patch 
+    "@id": "#truth_match.patch"
+    datatype: char
+    length: 3
+    mysql:datatype: CHAR(3)
+    description: Patch ID in Sky Map (as a string, `x,y`)
+  - name: cosmodc2_hp 
+    "@id": "#truth_match.cosmodc2_hp"
+    datatype: long
+    mysql:datatype: BIGINT 
+    description: Healpix ID in cosmoDC2 (for galaxies only; -1 for stars and SNe)
+  - name: cosmodc2_id 
+    "@id": "#truth_match.cosmodc2_id"
+    datatype: long
+    mysql:datatype: BIGINT 
+    description: Galaxy ID in cosmoDC2 (for galaxies only; -1 for stars and SNe)
+  - name: truth_type 
+    "@id": "#truth_match.truth_type"
+    datatype: long
+    mysql:datatype: BIGINT 
+    description: 1 for galaxies, 2 for stars, and 3 for SNe
+  - name: match_objectId 
+    "@id": "#truth_match.match_objectId"
+    datatype: long
+    mysql:datatype: BIGINT 
+    description: `objectId` of the matching object entry (-1 for unmatched truth entries)
+  - name: match_sep 
+    "@id": "#truth_match.match_sep"
+    datatype: double
+    mysql:datatype: DOUBLE 
+    fits:tunit: asec
+    description: On-sky angular separation of this object-truth matching pair (-1 for unmatched truth entries)
+  - name: is_good_match 
+    "@id": "#truth_match.is_good_match"
+    datatype: boolean
+    mysql:datatype: BOOLEAN 
+    description: True if this object--truth matching pair satisfies all matching criteria
+  - name: is_nearest_neighbor 
+    "@id": "#truth_match.is_nearest_neighbor"
+    datatype: boolean
+    mysql:datatype: BOOLEAN 
+    description: True if this truth entry is the nearest neighbor of the object specified by `match_objectId`
+  - name: is_unique_truth_entry
+    "@id": "#truth_match.is_unique_truth_entry"
+    datatype: boolean
+    mysql:datatype: BOOLEAN
+    description: True for truth entries that appear for the first time in this truth table
