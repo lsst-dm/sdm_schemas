@@ -2,7 +2,7 @@
 name: desc_dc2_run22i
 "@id": "#desc_dc2_run22i"
 tables:
-- name: Object
+- name: object
   "@id": "#object"
   description: The Object table contains descriptions of the multi-epoch static astronomical
     objects, in particular their astrophysical properties as derived from analysis

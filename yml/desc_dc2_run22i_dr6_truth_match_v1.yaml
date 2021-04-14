@@ -134,7 +134,7 @@ tables:
     datatype: char
     length: 3
     mysql:datatype: CHAR(3)
-    description: Patch ID in Sky Map (as a string, `x,y`)
+    description: Patch ID in Sky Map (as a string, x,y)
   - name: cosmodc2_hp 
     "@id": "#truth_match.cosmodc2_hp"
     datatype: long
@@ -154,7 +154,7 @@ tables:
     "@id": "#truth_match.match_objectId"
     datatype: long
     mysql:datatype: BIGINT 
-    description: `objectId` of the matching object entry (-1 for unmatched truth entries)
+    description: objectId of the matching object entry (-1 for unmatched truth entries)
   - name: match_sep 
     "@id": "#truth_match.match_sep"
     datatype: double
@@ -170,7 +170,7 @@ tables:
     "@id": "#truth_match.is_nearest_neighbor"
     datatype: boolean
     mysql:datatype: BOOLEAN 
-    description: True if this truth entry is the nearest neighbor of the object specified by `match_objectId`
+    description: True if this truth entry is the nearest neighbor of the object specified by match_objectId
   - name: is_unique_truth_entry
     "@id": "#truth_match.is_unique_truth_entry"
     datatype: boolean
