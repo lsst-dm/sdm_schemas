@@ -606,6 +606,50 @@ tables:
     description: Natural log of the probability that the observed diaObject is the
       same as the nearbyObj3.
     mysql:datatype: FLOAT
+  - name: nearbyExtObj1
+    "@id": "#DiaObject.nearbyExtObj1"
+    datatype: long
+    description: Id of the closest extended DR Object by second moment-based separation.
+    mysql:datatype: BIGINT
+    ivoa:ucd: meta.id;src
+  - name: nearbyExtObj1Sep
+    "@id": "#DiaObject.nearbyExtObj1Sep"
+    datatype: float
+    description: Second moment-based separation of nearbyExtObj1.
+    mysql:datatype: FLOAT
+  - name: nearbyExtObj2
+    "@id": "#DiaObject.nearbyExtObj2"
+    datatype: long
+    description: Id of the second closest extended DR Object by second moment-based separation.
+    mysql:datatype: BIGINT
+    ivoa:ucd: meta.id;src
+  - name: nearbyExtObj2Sep
+    "@id": "#DiaObject.nearbyExtObj2Sep"
+    datatype: float
+    description: Second moment-based separation of nearbyExtObj2.
+    mysql:datatype: FLOAT
+  - name: nearbyExtObj1
+    "@id": "#DiaObject.nearbyExtObj1"
+    datatype: long
+    description: Id of the closest extended DR Object by second moment-based separation.
+    mysql:datatype: BIGINT
+    ivoa:ucd: meta.id;src
+  - name: nearbyExtObj1Sep
+    "@id": "#DiaObject.nearbyExtObj1Sep"
+    datatype: float
+    description: Second moment-based separation of nearbyExtObj1.
+    mysql:datatype: FLOAT
+  - name: nearbyLowzGal
+    "@id": "#DiaObject.nearbyLowzGal"
+    datatype: string
+    length: 64
+    description: External catalog name of the nearest low-z potential host.
+    mysql:datatype: VARCHAR(64)
+  - name: nearbyLowzGalSep
+    "@id": "#DiaObject.nearbyLowzGalSep"
+    datatype: float
+    description: Separation distance of nearbyLowzGal.
+    mysql:datatype: FLOAT
   - name: flags
     "@id": "#DiaObject.flags"
     datatype: long
