@@ -50,7 +50,7 @@ tables:
     "@id": "#DeepCoadd.tract"
     datatype: int
     description: Sky-tract number.
-    mysql:datatype: INT(11)
+    mysql:datatype: INTEGER(11)
   - name: patch
     "@id": "#DeepCoadd.patch"
     datatype: char
@@ -298,7 +298,7 @@ tables:
   - name: intValue
     "@id": "#DeepCoadd_Metadata.intValue"
     datatype: int
-    mysql:datatype: INT(11)
+    mysql:datatype: INTEGER(11)
   - name: doubleValue
     "@id": "#DeepCoadd_Metadata.doubleValue"
     datatype: double
@@ -325,7 +325,7 @@ tables:
     datatype: int
     description: ID for Level 10 HTM triangle overlapping exposure. For each exposure
       in DeepCoadd,  there will be one row for every overlapping triangle.
-    mysql:datatype: INT(11)
+    mysql:datatype: INTEGER(11)
     ivoa:ucd: pos.HTM
   mysql:charset: latin1
 - name: LeapSeconds
@@ -890,7 +890,7 @@ tables:
     "@id": "#RunDeepForcedSource.exposure_filter_id"
     datatype: int
     description: Id of the filter for the band.
-    mysql:datatype: INT(11)
+    mysql:datatype: INTEGER(11)
     ivoa:ucd: meta.id;instr.filter
   - name: exposure_time
     "@id": "#RunDeepForcedSource.exposure_time"
@@ -994,7 +994,7 @@ tables:
     datatype: int
     description: Number of children that this source has. Zero if it's the final deblending
       product.
-    mysql:datatype: INT(11)
+    mysql:datatype: INTEGER(11)
   - name: deblend_deblended_as_psf
     "@id": "#RunDeepSource.deblend_deblended_as_psf"
     datatype: boolean
@@ -1780,7 +1780,7 @@ tables:
     datatype: int
     description: ID of filter used for the coadd the source was detected and measured
       on (pointer to DeepCoadd).
-    mysql:datatype: INT(11)
+    mysql:datatype: INTEGER(11)
     ivoa:ucd: meta.id;instr.filter
   primaryKey: "#RunDeepSource.id"
   mysql:charset: latin1
@@ -1797,7 +1797,7 @@ tables:
     "@id": "#Science_Ccd_Exposure.run"
     datatype: int
     description: Run number.
-    mysql:datatype: INT(11)
+    mysql:datatype: INTEGER(11)
   - name: camcol
     "@id": "#Science_Ccd_Exposure.camcol"
     datatype: byte
@@ -1813,7 +1813,7 @@ tables:
     "@id": "#Science_Ccd_Exposure.field"
     datatype: int
     description: Field number.
-    mysql:datatype: INT(11)
+    mysql:datatype: INTEGER(11)
   - name: filterName
     "@id": "#Science_Ccd_Exposure.filterName"
     datatype: char
@@ -2020,19 +2020,19 @@ tables:
     "@id": "#Science_Ccd_Exposure.nCombine"
     datatype: int
     description: Number of images co-added to create a deeper image.
-    mysql:datatype: INT(11)
+    mysql:datatype: INTEGER(11)
   - name: binX
     "@id": "#Science_Ccd_Exposure.binX"
     datatype: int
     description: Binning of the CCD in x.
-    mysql:datatype: INT(11)
+    mysql:datatype: INTEGER(11)
     fits:tunit: pixel
     ivoa:ucd: meta.number
   - name: binY
     "@id": "#Science_Ccd_Exposure.binY"
     datatype: int
     description: Binning of the CCD in y.
-    mysql:datatype: INT(11)
+    mysql:datatype: INTEGER(11)
     fits:tunit: pixel
     ivoa:ucd: meta.number
   - name: fluxMag0
@@ -2092,7 +2092,7 @@ tables:
   - name: intValue
     "@id": "#Science_Ccd_Exposure_Metadata.intValue"
     datatype: int
-    mysql:datatype: INT(11)
+    mysql:datatype: INTEGER(11)
   - name: doubleValue
     "@id": "#Science_Ccd_Exposure_Metadata.doubleValue"
     datatype: double
@@ -2116,7 +2116,7 @@ tables:
   - name: run
     "@id": "#Science_Ccd_Exposure_NoFile.run"
     datatype: int
-    mysql:datatype: INT(11)
+    mysql:datatype: INTEGER(11)
   - name: filterId
     "@id": "#Science_Ccd_Exposure_NoFile.filterId"
     datatype: byte
@@ -2128,7 +2128,7 @@ tables:
   - name: field
     "@id": "#Science_Ccd_Exposure_NoFile.field"
     datatype: int
-    mysql:datatype: INT(11)
+    mysql:datatype: INTEGER(11)
   - name: path
     "@id": "#Science_Ccd_Exposure_NoFile.path"
     datatype: string
@@ -2149,7 +2149,7 @@ tables:
     datatype: int
     description: ID for Level 10 HTM triangle overlapping exposure. For each exposure
       in DeepCoadd, there will be one row for every overlapping triangle.
-    mysql:datatype: INT(11)
+    mysql:datatype: INTEGER(11)
     ivoa:ucd: pos.HTM
   mysql:charset: latin1
 - name: ZZZ_Db_Description

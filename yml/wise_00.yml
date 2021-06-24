@@ -1,5 +1,6 @@
 ---
 name: wise_00
+"@id": "#wise_00"
 description: ALLWISE, All-Sky, NeoWISE
 tables:
 - name: allsky_2band_p1bm_frm
@@ -3062,7 +3063,7 @@ tables:
     description: unique entry counter (key) number
     datatype: long
 - name: allwise_p3as_mep
-  "@id": "#allwise_p3as_psd"
+  "@id": "#allwise_p3as_mep"
   description: AllWISE Source Catalog
   columns:
   - name: cntr_mf
