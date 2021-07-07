@@ -1,0 +1,1688 @@
+---
+name: wise_01
+description: ALLWISE
+tables:
+- name: allwise_p3as_mep
+  "@id": "#allwise_p3as_mep"
+  description: AllWISE Source Catalog
+  columns:
+  - name: cntr_mf
+    "@id": "#allwise_p3as_mep.cntr_mf"
+    description: Reference source cntr from Multiframe source_id_mf
+    datatype: long
+  - name: source_id_mf
+    "@id": "#allwise_p3as_mep.source_id_mf"
+    description: Source id from Multiframe (coadd id and source number)
+    datatype: char
+    votable:arraysize: 28
+  - name: ra
+    "@id": "#allwise_p3as_mep.ra"
+    description: right ascension (J2000)
+    datatype: double
+    ivoa:ucd: pos.eq.ra
+    fits:tunit: deg
+  - name: dec
+    "@id": "#allwise_p3as_mep.dec"
+    description: declination (J2000)
+    datatype: double
+    ivoa:ucd: pos.eq.dec
+    fits:tunit: deg
+  - name: nb
+    "@id": "#allwise_p3as_mep.nb"
+    description: number of PSF components used in profile fit for source
+    datatype: int
+  - name: na
+    "@id": "#allwise_p3as_mep.na"
+    description: active deblend flag (=1 if actively deblended)
+    datatype: int
+  - name: cc_flags
+    "@id": "#allwise_p3as_mep.cc_flags"
+    description: contamination and confusion flags affecting the source in each band
+    datatype: char
+    votable:arraysize: 4
+  - name: cat
+    "@id": "#allwise_p3as_mep.cat"
+    description: flag indicating whether source will be in catalog  1= in ALLWISE
+      Catalog
+    datatype: short
+    votable:arraysize: 1
+  - name: cntr
+    "@id": "#allwise_p3as_mep.cntr"
+    description: unique identification number for this source (key)
+    datatype: long
+  - name: frame_id
+    "@id": "#allwise_p3as_mep.frame_id"
+    description: frameset identifier
+    datatype: char
+    votable:arraysize: 9
+  - name: mjd
+    "@id": "#allwise_p3as_mep.mjd"
+    description: modified Julian date of the mid-point of the observation of the frame
+    datatype: double
+    fits:tunit: day
+  - name: w1mpro_ep
+    "@id": "#allwise_p3as_mep.w1mpro_ep"
+    description: Single-exposure profile-fit  magnitude, band 1
+    datatype: double
+    ivoa:ucd: phot.mag
+    fits:tunit: mag
+  - name: w1sigmpro_ep
+    "@id": "#allwise_p3as_mep.w1sigmpro_ep"
+    description: Single-exposure profile-fit photometric measurement uncertainty,
+      band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1rchi2_ep
+    "@id": "#allwise_p3as_mep.w1rchi2_ep"
+    description: Reduced chi^2 of single-exposure profile-fit, band 1
+    datatype: float
+  - name: w2mpro_ep
+    "@id": "#allwise_p3as_mep.w2mpro_ep"
+    description: Single-exposure profile-fit  magnitude, band 2
+    datatype: double
+    ivoa:ucd: phot.mag
+    fits:tunit: mag
+  - name: w2sigmpro_ep
+    "@id": "#allwise_p3as_mep.w2sigmpro_ep"
+    description: Single-exposure profile-fit photometric measurement uncertainty,
+      band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2rchi2_ep
+    "@id": "#allwise_p3as_mep.w2rchi2_ep"
+    description: Reduced chi^2 of single-exposure profile-fit, band 2
+    datatype: float
+  - name: w3mpro_ep
+    "@id": "#allwise_p3as_mep.w3mpro_ep"
+    description: Single-exposure profile-fit  magnitude, band 3
+    datatype: double
+    ivoa:ucd: phot.mag
+    fits:tunit: mag
+  - name: w3sigmpro_ep
+    "@id": "#allwise_p3as_mep.w3sigmpro_ep"
+    description: Single-exposure profile-fit photometric measurement uncertainty,
+      band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3rchi2_ep
+    "@id": "#allwise_p3as_mep.w3rchi2_ep"
+    description: Reduced chi^2 of single-exposure profile-fit, band 3
+    datatype: float
+  - name: w4mpro_ep
+    "@id": "#allwise_p3as_mep.w4mpro_ep"
+    description: Single-exposure profile-fit  magnitude, band 4
+    datatype: double
+    ivoa:ucd: phot.mag
+    fits:tunit: mag
+  - name: w4sigmpro_ep
+    "@id": "#allwise_p3as_mep.w4sigmpro_ep"
+    description: Single-exposure profile-fit photometric measurement uncertainty,
+      band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4rchi2_ep
+    "@id": "#allwise_p3as_mep.w4rchi2_ep"
+    description: Reduced chi^2 of single-exposure profile-fit, band 4
+    datatype: float
+  - name: w1flux_ep
+    "@id": "#allwise_p3as_mep.w1flux_ep"
+    description: Single-exposure profile-fit photometry raw flux, band 1
+    datatype: float
+    fits:tunit: dn
+  - name: w1sigflux_ep
+    "@id": "#allwise_p3as_mep.w1sigflux_ep"
+    description: Single-exposure profile-fit photometry raw flux uncertainty, band
+      1
+    datatype: float
+    fits:tunit: dn
+  - name: w2flux_ep
+    "@id": "#allwise_p3as_mep.w2flux_ep"
+    description: Single-exposure profile-fit photometry raw flux, band 2
+    datatype: float
+    fits:tunit: dn
+  - name: w2sigflux_ep
+    "@id": "#allwise_p3as_mep.w2sigflux_ep"
+    description: Single-exposure profile-fit photometry raw flux uncertainty, band
+      2
+    datatype: float
+    fits:tunit: dn
+  - name: w3flux_ep
+    "@id": "#allwise_p3as_mep.w3flux_ep"
+    description: Single-exposure profile-fit photometry raw flux, band 3
+    datatype: float
+    fits:tunit: dn
+  - name: w3sigflux_ep
+    "@id": "#allwise_p3as_mep.w3sigflux_ep"
+    description: Single-exposure profile-fit photometry raw flux uncertainty, band
+      3
+    datatype: float
+    fits:tunit: dn
+  - name: w4flux_ep
+    "@id": "#allwise_p3as_mep.w4flux_ep"
+    description: Single-exposure profile-fit photometry raw flux, band 4
+    datatype: float
+    fits:tunit: dn
+  - name: w4sigflux_ep
+    "@id": "#allwise_p3as_mep.w4sigflux_ep"
+    description: Single-exposure profile-fit photometry raw flux uncertainty, band
+      4
+    datatype: float
+    fits:tunit: dn
+  - name: w1x_ep
+    "@id": "#allwise_p3as_mep.w1x_ep"
+    description: The x-pixel coordinate of this source on the W1 Single-Exposure Image
+    datatype: double
+    fits:tunit: pix
+  - name: w1y_ep
+    "@id": "#allwise_p3as_mep.w1y_ep"
+    description: The y-pixel coordinate of this source on the W1 Single-Exposure Image
+    datatype: double
+    fits:tunit: pix
+  - name: w2x_ep
+    "@id": "#allwise_p3as_mep.w2x_ep"
+    description: The x-pixel coordinate of this source on the W2 Single-Exposure Image
+    datatype: double
+    fits:tunit: pix
+  - name: w2y_ep
+    "@id": "#allwise_p3as_mep.w2y_ep"
+    description: The y-pixel coordinate of this source on the W2 Single-Exposure Image
+    datatype: double
+    fits:tunit: pix
+  - name: w3x_ep
+    "@id": "#allwise_p3as_mep.w3x_ep"
+    description: The x-pixel coordinate of this source on the W3 Single-Exposure Image
+    datatype: double
+    fits:tunit: pix
+  - name: w3y_ep
+    "@id": "#allwise_p3as_mep.w3y_ep"
+    description: The y-pixel coordinate of this source on the W3 Single-Exposure Image
+    datatype: double
+    fits:tunit: pix
+  - name: w4x_ep
+    "@id": "#allwise_p3as_mep.w4x_ep"
+    description: The x-pixel coordinate of this source on the W4 Single-Exposure Image
+    datatype: double
+    fits:tunit: pix
+  - name: w4y_ep
+    "@id": "#allwise_p3as_mep.w4y_ep"
+    description: The y-pixel coordinate of this source on the W4 Single-Exposure Image
+    datatype: double
+    fits:tunit: pix
+  - name: qi_fact
+    "@id": "#allwise_p3as_mep.qi_fact"
+    description: Frame image quality score
+    datatype: double
+  - name: saa_sep
+    "@id": "#allwise_p3as_mep.saa_sep"
+    description: SAA separation. Distance from frame center to SAA boundary
+    datatype: short
+    fits:tunit: deg
+    votable:arraysize: 1
+  - name: moon_masked
+    "@id": "#allwise_p3as_mep.moon_masked"
+    description: flag (0/1) indicating whether frame is within the moon-mask area
+      in each band
+    datatype: char
+    votable:arraysize: 4
+  - name: load_id
+    "@id": "#allwise_p3as_mep.load_id"
+    description: unique load ID number
+    datatype: int
+  - name: x
+    "@id": "#allwise_p3as_mep.x"
+    description: unit sphere (x,y,z) position x value
+    datatype: double
+  - name: y
+    "@id": "#allwise_p3as_mep.y"
+    description: unit sphere (x,y,z) position y value
+    datatype: double
+  - name: z
+    "@id": "#allwise_p3as_mep.z"
+    description: unit sphere (x,y,z) position z value
+    datatype: double
+  - name: spt_ind
+    "@id": "#allwise_p3as_mep.spt_ind"
+    description: spatial (x,y,z) index key
+    datatype: int
+  - name: htm20
+    "@id": "#allwise_p3as_mep.htm20"
+    description: spatial (x,y,z) index key
+    datatype: long
+- name: allwise_p3as_psd
+  "@id": "#allwise_p3as_psd"
+  description: AllWISE Source Catalog
+  columns:
+  - name: designation
+    "@id": "#allwise_p3as_psd.designation"
+    description: unique WISE source designation
+    datatype: char
+    votable:arraysize: 20
+  - name: ra
+    "@id": "#allwise_p3as_psd.ra"
+    description: right ascension (J2000)
+    datatype: double
+    ivoa:ucd: pos.eq.ra
+    fits:tunit: deg
+  - name: dec
+    "@id": "#allwise_p3as_psd.dec"
+    description: declination (J2000)
+    datatype: double
+    ivoa:ucd: pos.eq.dec
+    fits:tunit: deg
+  - name: sigra
+    "@id": "#allwise_p3as_psd.sigra"
+    description: uncertainty in RA
+    datatype: double
+    fits:tunit: arcsec
+  - name: sigdec
+    "@id": "#allwise_p3as_psd.sigdec"
+    description: uncertainty in DEC
+    datatype: double
+    fits:tunit: arcsec
+  - name: sigradec
+    "@id": "#allwise_p3as_psd.sigradec"
+    description: cross-term of RA and Dec uncertainties
+    datatype: double
+    fits:tunit: arcsec
+  - name: glon
+    "@id": "#allwise_p3as_psd.glon"
+    description: galactic longitude
+    datatype: double
+    ivoa:ucd: pos.galactic.lon
+    fits:tunit: deg
+  - name: glat
+    "@id": "#allwise_p3as_psd.glat"
+    description: galactic latitude
+    datatype: double
+    ivoa:ucd: pos.galactic.lat
+    fits:tunit: deg
+  - name: elon
+    "@id": "#allwise_p3as_psd.elon"
+    description: ecliptic longitude
+    datatype: double
+    ivoa:ucd: pos.ecliptic.lon
+    fits:tunit: deg
+  - name: elat
+    "@id": "#allwise_p3as_psd.elat"
+    description: ecliptic latitude
+    datatype: double
+    ivoa:ucd: pos.ecliptic.lat
+    fits:tunit: deg
+  - name: wx
+    "@id": "#allwise_p3as_psd.wx"
+    description: x-pixel coordinate, all bands
+    datatype: double
+    fits:tunit: pix
+  - name: wy
+    "@id": "#allwise_p3as_psd.wy"
+    description: y-pixel coordinate, all bands
+    datatype: double
+    fits:tunit: pix
+  - name: cntr
+    "@id": "#allwise_p3as_psd.cntr"
+    description: unique entry counter (key) number
+    datatype: long
+  - name: source_id
+    "@id": "#allwise_p3as_psd.source_id"
+    description: unique source ID (coadd ID and source number)
+    datatype: char
+    votable:arraysize: 28
+  - name: coadd_id
+    "@id": "#allwise_p3as_psd.coadd_id"
+    description: coadd ID
+    datatype: char
+    votable:arraysize: 20
+  - name: src
+    "@id": "#allwise_p3as_psd.src"
+    description: source number in coadd
+    datatype: int
+  - name: w1mpro
+    "@id": "#allwise_p3as_psd.w1mpro"
+    description: instrumental profile-fit photometry magnitude, band 1
+    datatype: double
+    ivoa:ucd: phot.mag
+    fits:tunit: mag
+  - name: w1sigmpro
+    "@id": "#allwise_p3as_psd.w1sigmpro"
+    description: instrumental profile-fit photometry flux uncertainty in mag units,
+      band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1snr
+    "@id": "#allwise_p3as_psd.w1snr"
+    description: instrumental profile-fit photometry S/N ratio, band 1
+    datatype: double
+  - name: w1rchi2
+    "@id": "#allwise_p3as_psd.w1rchi2"
+    description: instrumental profile-fit photometry reduced chi^2, band 1
+    datatype: float
+  - name: w2mpro
+    "@id": "#allwise_p3as_psd.w2mpro"
+    description: instrumental profile-fit photometry magnitude, band 2
+    datatype: double
+    ivoa:ucd: phot.mag
+    fits:tunit: mag
+  - name: w2sigmpro
+    "@id": "#allwise_p3as_psd.w2sigmpro"
+    description: instrumental profile-fit photometry flux uncertainty in mag units,
+      band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2snr
+    "@id": "#allwise_p3as_psd.w2snr"
+    description: instrumental profile-fit photometry S/N ratio, band 2
+    datatype: double
+  - name: w2rchi2
+    "@id": "#allwise_p3as_psd.w2rchi2"
+    description: instrumental profile-fit photometry reduced chi^2, band 2
+    datatype: float
+  - name: w3mpro
+    "@id": "#allwise_p3as_psd.w3mpro"
+    description: instrumental profile-fit photometry magnitude, band 3
+    datatype: double
+    ivoa:ucd: phot.mag
+    fits:tunit: mag
+  - name: w3sigmpro
+    "@id": "#allwise_p3as_psd.w3sigmpro"
+    description: instrumental profile-fit photometry flux uncertainty in mag units,
+      band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3snr
+    "@id": "#allwise_p3as_psd.w3snr"
+    description: instrumental profile-fit photometry S/N ratio, band 3
+    datatype: double
+  - name: w3rchi2
+    "@id": "#allwise_p3as_psd.w3rchi2"
+    description: instrumental profile-fit photometry reduced chi^2, band 3
+    datatype: float
+  - name: w4mpro
+    "@id": "#allwise_p3as_psd.w4mpro"
+    description: instrumental profile-fit photometry magnitude, band 4
+    datatype: double
+    ivoa:ucd: phot.mag
+    fits:tunit: mag
+  - name: w4sigmpro
+    "@id": "#allwise_p3as_psd.w4sigmpro"
+    description: instrumental profile-fit photometry flux uncertainty in mag units,
+      band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4snr
+    "@id": "#allwise_p3as_psd.w4snr"
+    description: instrumental profile-fit photometry S/N ratio, band 4
+    datatype: double
+  - name: w4rchi2
+    "@id": "#allwise_p3as_psd.w4rchi2"
+    description: instrumental profile-fit photometry reduced chi^2, band 4
+    datatype: float
+  - name: rchi2
+    "@id": "#allwise_p3as_psd.rchi2"
+    description: instrumental profile-fit photometry reduced chi squared, total
+    datatype: float
+  - name: nb
+    "@id": "#allwise_p3as_psd.nb"
+    description: number of blend components used in each fit
+    datatype: int
+  - name: na
+    "@id": "#allwise_p3as_psd.na"
+    description: active deblend flag (=1 if actively deblended)
+    datatype: int
+  - name: w1sat
+    "@id": "#allwise_p3as_psd.w1sat"
+    description: fraction of pixels affected by saturation, band 1
+    datatype: double
+  - name: w2sat
+    "@id": "#allwise_p3as_psd.w2sat"
+    description: fraction of pixels affected by saturation, band 2
+    datatype: double
+  - name: w3sat
+    "@id": "#allwise_p3as_psd.w3sat"
+    description: fraction of pixels affected by saturation, band 3
+    datatype: double
+  - name: w4sat
+    "@id": "#allwise_p3as_psd.w4sat"
+    description: fraction of pixels affected by saturation, band 4
+    datatype: double
+  - name: satnum
+    "@id": "#allwise_p3as_psd.satnum"
+    description: minimum sample at which saturation occurs in frame stack, 1 char
+      per band
+    datatype: char
+    votable:arraysize: 4
+  - name: ra_pm
+    "@id": "#allwise_p3as_psd.ra_pm"
+    description: Right ascension at epoch MJD=55400.0 (2010.5589) from pff model incl.
+      motion
+    datatype: double
+    fits:tunit: deg
+  - name: dec_pm
+    "@id": "#allwise_p3as_psd.dec_pm"
+    description: Declination at epoch MJD=55400.0 (2010.5589) from pff model incl.
+      motion
+    datatype: double
+    fits:tunit: deg
+  - name: sigra_pm
+    "@id": "#allwise_p3as_psd.sigra_pm"
+    description: One-sigma uncertainty in RA from pff model incl. motion
+    datatype: double
+    fits:tunit: arcsec
+  - name: sigdec_pm
+    "@id": "#allwise_p3as_psd.sigdec_pm"
+    description: One-sigma uncertainty in DEC  from pff model incl. motion
+    datatype: double
+    fits:tunit: arcsec
+  - name: sigradec_pm
+    "@id": "#allwise_p3as_psd.sigradec_pm"
+    description: The co-sigma of the equatorial position uncertainties from ppf model
+      incl motion
+    datatype: double
+    fits:tunit: arcsec
+  - name: pmra
+    "@id": "#allwise_p3as_psd.pmra"
+    description: Apparent motion in RA
+    datatype: int
+    fits:tunit: maspyr
+  - name: sigpmra
+    "@id": "#allwise_p3as_psd.sigpmra"
+    description: Uncertainty in the RA motion estimate
+    datatype: int
+    fits:tunit: maspyr
+  - name: pmdec
+    "@id": "#allwise_p3as_psd.pmdec"
+    description: Apparent motion in Dec
+    datatype: int
+    fits:tunit: maspyr
+  - name: sigpmdec
+    "@id": "#allwise_p3as_psd.sigpmdec"
+    description: Uncertainty in the Dec  motion estimate
+    datatype: int
+    fits:tunit: maspyr
+  - name: w1rchi2_pm
+    "@id": "#allwise_p3as_psd.w1rchi2_pm"
+    description: Reduced chi^2 of the W1 profile-fit photometry measurement including
+      motion est
+    datatype: float
+  - name: w2rchi2_pm
+    "@id": "#allwise_p3as_psd.w2rchi2_pm"
+    description: Reduced chi^2 of the W2 profile-fit photometry measurement including
+      motion est
+    datatype: float
+  - name: w3rchi2_pm
+    "@id": "#allwise_p3as_psd.w3rchi2_pm"
+    description: Reduced chi^2 of the W3 profile-fit photometry measurement including
+      motion est
+    datatype: float
+  - name: w4rchi2_pm
+    "@id": "#allwise_p3as_psd.w4rchi2_pm"
+    description: Reduced chi^2 of the W4 profile-fit photometry measurement including
+      motion est
+    datatype: float
+  - name: rchi2_pm
+    "@id": "#allwise_p3as_psd.rchi2_pm"
+    description: Combined Reduced chi^2 in all bands for the pff photometry includes
+      src motion
+    datatype: float
+  - name: pmcode
+    "@id": "#allwise_p3as_psd.pmcode"
+    description: Motion estimate quality code
+    datatype: char
+    votable:arraysize: 5
+  - name: cc_flags
+    "@id": "#allwise_p3as_psd.cc_flags"
+    description: prioritized artifacts affecting the source in each band
+    datatype: char
+    votable:arraysize: 4
+  - name: rel
+    "@id": "#allwise_p3as_psd.rel"
+    description: Small separation multiple detection flag
+    datatype: char
+    ivoa:ucd: meta.code.qual
+    votable:arraysize: 1
+  - name: ext_flg
+    "@id": "#allwise_p3as_psd.ext_flg"
+    description: probability that source morphology is not consistent with single
+      PSF
+    datatype: int
+  - name: var_flg
+    "@id": "#allwise_p3as_psd.var_flg"
+    description: probability that flux varied in any band greater than amount expected
+      from unc.s
+    datatype: char
+    votable:arraysize: 4
+  - name: ph_qual
+    "@id": "#allwise_p3as_psd.ph_qual"
+    description: photometric quality of each band (A=highest, U=upper limit)
+    datatype: char
+    ivoa:ucd: meta.code.qual
+    votable:arraysize: 4
+  - name: det_bit
+    "@id": "#allwise_p3as_psd.det_bit"
+    description: bit-encoded integer indicating detection for each band
+    datatype: int
+  - name: moon_lev
+    "@id": "#allwise_p3as_psd.moon_lev"
+    description: level of moon contamination in coadd (ceiling(#frmmoon/#frames*10)),
+      1 per band
+    datatype: char
+    votable:arraysize: 4
+  - name: w1nm
+    "@id": "#allwise_p3as_psd.w1nm"
+    description: number of profile-fit flux measurements for source with SNR >= 3,
+      band 1
+    datatype: int
+  - name: w1m
+    "@id": "#allwise_p3as_psd.w1m"
+    description: number of profile-fit flux measurements for source, band 1
+    datatype: int
+  - name: w2nm
+    "@id": "#allwise_p3as_psd.w2nm"
+    description: number of profile-fit flux measurements for source with SNR >= 3,
+      band 2
+    datatype: int
+  - name: w2m
+    "@id": "#allwise_p3as_psd.w2m"
+    description: number of profile-fit flux measurements for source, band 2
+    datatype: int
+  - name: w3nm
+    "@id": "#allwise_p3as_psd.w3nm"
+    description: number of profile-fit flux measurements for source with SNR >= 3,
+      band 3
+    datatype: int
+  - name: w3m
+    "@id": "#allwise_p3as_psd.w3m"
+    description: number of profile-fit flux measurements for source, band 3
+    datatype: int
+  - name: w4nm
+    "@id": "#allwise_p3as_psd.w4nm"
+    description: number of profile-fit flux measurements for source with SNR >= 3,
+      band 4
+    datatype: int
+  - name: w4m
+    "@id": "#allwise_p3as_psd.w4m"
+    description: number of profile-fit flux measurements for source, band 4
+    datatype: int
+  - name: w1cov
+    "@id": "#allwise_p3as_psd.w1cov"
+    description: mean coverage depth, band 1
+    datatype: double
+    ivoa:ucd: phys.absorption.opticalDepth
+  - name: w2cov
+    "@id": "#allwise_p3as_psd.w2cov"
+    description: mean coverage depth, band 2
+    datatype: double
+    ivoa:ucd: phys.absorption.opticalDepth
+  - name: w3cov
+    "@id": "#allwise_p3as_psd.w3cov"
+    description: mean coverage depth, band 3
+    datatype: double
+    ivoa:ucd: phys.absorption.opticalDepth
+  - name: w4cov
+    "@id": "#allwise_p3as_psd.w4cov"
+    description: mean coverage depth, band 4
+    datatype: double
+    ivoa:ucd: phys.absorption.opticalDepth
+  - name: w1cc_map
+    "@id": "#allwise_p3as_psd.w1cc_map"
+    description: contamination and confusion bit array for the source in band 1
+    datatype: int
+  - name: w1cc_map_str
+    "@id": "#allwise_p3as_psd.w1cc_map_str"
+    description: contamination and confusion character array for the source in band
+      1
+    datatype: char
+    votable:arraysize: 9
+  - name: w2cc_map
+    "@id": "#allwise_p3as_psd.w2cc_map"
+    description: contamination and confusion bit array for the source in band 2
+    datatype: int
+  - name: w2cc_map_str
+    "@id": "#allwise_p3as_psd.w2cc_map_str"
+    description: contamination and confusion character array for the source in band
+      2
+    datatype: char
+    votable:arraysize: 9
+  - name: w3cc_map
+    "@id": "#allwise_p3as_psd.w3cc_map"
+    description: contamination and confusion bit array for the source in band 3
+    datatype: int
+  - name: w3cc_map_str
+    "@id": "#allwise_p3as_psd.w3cc_map_str"
+    description: contamination and confusion character array for the source in band
+      3
+    datatype: char
+    votable:arraysize: 9
+  - name: w4cc_map
+    "@id": "#allwise_p3as_psd.w4cc_map"
+    description: contamination and confusion bit array for the source in band 4
+    datatype: int
+  - name: w4cc_map_str
+    "@id": "#allwise_p3as_psd.w4cc_map_str"
+    description: contamination and confusion character array for the source in band
+      4
+    datatype: char
+    votable:arraysize: 9
+  - name: best_use_cntr
+    "@id": "#allwise_p3as_psd.best_use_cntr"
+    description: "'cntr' of source to use from 'best' duplicate resolution group for
+      this source"
+    datatype: long
+  - name: ngrp
+    "@id": "#allwise_p3as_psd.ngrp"
+    description: number of additional duplicate resolution groups in which this source
+      resides
+    datatype: short
+    votable:arraysize: 1
+  - name: w1flux
+    "@id": "#allwise_p3as_psd.w1flux"
+    description: profile-fit photometry raw flux, band 1
+    datatype: float
+    fits:tunit: dn
+  - name: w1sigflux
+    "@id": "#allwise_p3as_psd.w1sigflux"
+    description: profile-fit photometry raw flux uncertainty, band 1
+    datatype: float
+    fits:tunit: dn
+  - name: w1sky
+    "@id": "#allwise_p3as_psd.w1sky"
+    description: sky background value, band 1
+    datatype: double
+    fits:tunit: dn
+  - name: w1sigsk
+    "@id": "#allwise_p3as_psd.w1sigsk"
+    description: sky background value uncertainty, band 1
+    datatype: double
+    fits:tunit: dn
+  - name: w1conf
+    "@id": "#allwise_p3as_psd.w1conf"
+    description: sky confusion based on the uncertainty images, band 1
+    datatype: double
+    fits:tunit: dn
+  - name: w2flux
+    "@id": "#allwise_p3as_psd.w2flux"
+    description: profile-fit photometry raw flux, band 2
+    datatype: float
+    fits:tunit: dn
+  - name: w2sigflux
+    "@id": "#allwise_p3as_psd.w2sigflux"
+    description: profile-fit photometry raw flux uncertainty, band 2
+    datatype: float
+    fits:tunit: dn
+  - name: w2sky
+    "@id": "#allwise_p3as_psd.w2sky"
+    description: sky background value, band 2
+    datatype: double
+    fits:tunit: dn
+  - name: w2sigsk
+    "@id": "#allwise_p3as_psd.w2sigsk"
+    description: sky background value uncertainty, band 2
+    datatype: double
+    fits:tunit: dn
+  - name: w2conf
+    "@id": "#allwise_p3as_psd.w2conf"
+    description: sky confusion based on the uncertainty images, band 2
+    datatype: double
+    fits:tunit: dn
+  - name: w3flux
+    "@id": "#allwise_p3as_psd.w3flux"
+    description: profile-fit photometry raw flux, band 3
+    datatype: float
+    fits:tunit: dn
+  - name: w3sigflux
+    "@id": "#allwise_p3as_psd.w3sigflux"
+    description: profile-fit photometry raw flux uncertainty, band 3
+    datatype: float
+    fits:tunit: dn
+  - name: w3sky
+    "@id": "#allwise_p3as_psd.w3sky"
+    description: sky background value, band 3
+    datatype: double
+    fits:tunit: dn
+  - name: w3sigsk
+    "@id": "#allwise_p3as_psd.w3sigsk"
+    description: sky background value uncertainty, band 3
+    datatype: double
+    fits:tunit: dn
+  - name: w3conf
+    "@id": "#allwise_p3as_psd.w3conf"
+    description: sky confusion based on the uncertainty images, band 3
+    datatype: double
+    fits:tunit: dn
+  - name: w4flux
+    "@id": "#allwise_p3as_psd.w4flux"
+    description: profile-fit photometry raw flux, band 4
+    datatype: float
+    fits:tunit: dn
+  - name: w4sigflux
+    "@id": "#allwise_p3as_psd.w4sigflux"
+    description: profile-fit photometry raw flux uncertainty, band 4
+    datatype: float
+    fits:tunit: dn
+  - name: w4sky
+    "@id": "#allwise_p3as_psd.w4sky"
+    description: sky background value, band 4
+    datatype: double
+    fits:tunit: dn
+  - name: w4sigsk
+    "@id": "#allwise_p3as_psd.w4sigsk"
+    description: sky background value uncertainty, band 4
+    datatype: double
+    fits:tunit: dn
+  - name: w4conf
+    "@id": "#allwise_p3as_psd.w4conf"
+    description: sky confusion based on the uncertainty images, band 4
+    datatype: double
+    fits:tunit: dn
+  - name: w1mag
+    "@id": "#allwise_p3as_psd.w1mag"
+    description: instrumental standard aperture mag w/ aperture correction applied,
+      band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1sigm
+    "@id": "#allwise_p3as_psd.w1sigm"
+    description: instrumental standard aperture mag uncertainty, band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1flg
+    "@id": "#allwise_p3as_psd.w1flg"
+    description: instrumental standard aperture flag, band 1
+    datatype: int
+  - name: w1mcor
+    "@id": "#allwise_p3as_psd.w1mcor"
+    description: instrumental aperture correction, band 1, standard aperture
+    datatype: double
+    fits:tunit: mag
+  - name: w2mag
+    "@id": "#allwise_p3as_psd.w2mag"
+    description: instrumental standard aperture mag w/ aperture correction applied,
+      band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2sigm
+    "@id": "#allwise_p3as_psd.w2sigm"
+    description: instrumental standard aperture mag uncertainty, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2flg
+    "@id": "#allwise_p3as_psd.w2flg"
+    description: instrumental standard aperture flag, band 2
+    datatype: int
+  - name: w2mcor
+    "@id": "#allwise_p3as_psd.w2mcor"
+    description: instrumental aperture correction, band 2, standard aperture
+    datatype: double
+    fits:tunit: mag
+  - name: w3mag
+    "@id": "#allwise_p3as_psd.w3mag"
+    description: instrumental standard aperture mag w/ aperture correction applied,
+      band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3sigm
+    "@id": "#allwise_p3as_psd.w3sigm"
+    description: instrumental standard aperture mag uncertainty, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3flg
+    "@id": "#allwise_p3as_psd.w3flg"
+    description: instrumental standard aperture flag, band 3
+    datatype: int
+  - name: w3mcor
+    "@id": "#allwise_p3as_psd.w3mcor"
+    description: instrumental aperture correction, band 3, standard aperture
+    datatype: double
+    fits:tunit: mag
+  - name: w4mag
+    "@id": "#allwise_p3as_psd.w4mag"
+    description: instrumental standard aperture mag w/ aperture correction applied,
+      band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4sigm
+    "@id": "#allwise_p3as_psd.w4sigm"
+    description: instrumental standard aperture mag uncertainty, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4flg
+    "@id": "#allwise_p3as_psd.w4flg"
+    description: instrumental standard aperture flag, band 4
+    datatype: int
+  - name: w4mcor
+    "@id": "#allwise_p3as_psd.w4mcor"
+    description: instrumental aperture correction, band 4, standard aperture
+    datatype: double
+    fits:tunit: mag
+  - name: w1mag_1
+    "@id": "#allwise_p3as_psd.w1mag_1"
+    description: aperture 1 instrumental aperture mag, band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1sigm_1
+    "@id": "#allwise_p3as_psd.w1sigm_1"
+    description: aperture 1 instrumental aperture mag uncertainty, band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1flg_1
+    "@id": "#allwise_p3as_psd.w1flg_1"
+    description: aperture 1 instrumental aperture flag, band 1
+    datatype: int
+  - name: w2mag_1
+    "@id": "#allwise_p3as_psd.w2mag_1"
+    description: aperture 1 instrumental aperture mag, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2sigm_1
+    "@id": "#allwise_p3as_psd.w2sigm_1"
+    description: aperture 1 instrumental aperture mag uncertainty, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2flg_1
+    "@id": "#allwise_p3as_psd.w2flg_1"
+    description: aperture 1 instrumental aperture flag, band 2
+    datatype: int
+  - name: w3mag_1
+    "@id": "#allwise_p3as_psd.w3mag_1"
+    description: aperture 1 instrumental aperture mag, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3sigm_1
+    "@id": "#allwise_p3as_psd.w3sigm_1"
+    description: aperture 1 instrumental aperture mag uncertainty, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3flg_1
+    "@id": "#allwise_p3as_psd.w3flg_1"
+    description: aperture 1 instrumental aperture flag, band 3
+    datatype: int
+  - name: w4mag_1
+    "@id": "#allwise_p3as_psd.w4mag_1"
+    description: aperture 1 instrumental aperture mag, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4sigm_1
+    "@id": "#allwise_p3as_psd.w4sigm_1"
+    description: aperture 1 instrumental aperture mag uncertainty, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4flg_1
+    "@id": "#allwise_p3as_psd.w4flg_1"
+    description: aperture 1 instrumental aperture flag, band 4
+    datatype: int
+  - name: w1mag_2
+    "@id": "#allwise_p3as_psd.w1mag_2"
+    description: aperture 2 instrumental aperture mag, band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1sigm_2
+    "@id": "#allwise_p3as_psd.w1sigm_2"
+    description: aperture 2 instrumental aperture mag uncertainty, band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1flg_2
+    "@id": "#allwise_p3as_psd.w1flg_2"
+    description: aperture 2 instrumental aperture flag, band 1
+    datatype: int
+  - name: w2mag_2
+    "@id": "#allwise_p3as_psd.w2mag_2"
+    description: aperture 2 instrumental aperture mag, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2sigm_2
+    "@id": "#allwise_p3as_psd.w2sigm_2"
+    description: aperture 2 instrumental aperture mag uncertainty, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2flg_2
+    "@id": "#allwise_p3as_psd.w2flg_2"
+    description: aperture 2 instrumental aperture flag, band 2
+    datatype: int
+  - name: w3mag_2
+    "@id": "#allwise_p3as_psd.w3mag_2"
+    description: aperture 2 instrumental aperture mag, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3sigm_2
+    "@id": "#allwise_p3as_psd.w3sigm_2"
+    description: aperture 2 instrumental aperture mag uncertainty, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3flg_2
+    "@id": "#allwise_p3as_psd.w3flg_2"
+    description: aperture 2 instrumental aperture flag, band 3
+    datatype: int
+  - name: w4mag_2
+    "@id": "#allwise_p3as_psd.w4mag_2"
+    description: aperture 2 instrumental aperture mag, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4sigm_2
+    "@id": "#allwise_p3as_psd.w4sigm_2"
+    description: aperture 2 instrumental aperture mag uncertainty, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4flg_2
+    "@id": "#allwise_p3as_psd.w4flg_2"
+    description: aperture 2 instrumental aperture flag, band 4
+    datatype: int
+  - name: w1mag_3
+    "@id": "#allwise_p3as_psd.w1mag_3"
+    description: aperture 3 instrumental aperture mag, band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1sigm_3
+    "@id": "#allwise_p3as_psd.w1sigm_3"
+    description: aperture 3 instrumental aperture mag uncertainty, band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1flg_3
+    "@id": "#allwise_p3as_psd.w1flg_3"
+    description: aperture 3 instrumental aperture flag, band 1
+    datatype: int
+  - name: w2mag_3
+    "@id": "#allwise_p3as_psd.w2mag_3"
+    description: aperture 3 instrumental aperture mag, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2sigm_3
+    "@id": "#allwise_p3as_psd.w2sigm_3"
+    description: aperture 3 instrumental aperture mag uncertainty, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2flg_3
+    "@id": "#allwise_p3as_psd.w2flg_3"
+    description: aperture 3 instrumental aperture flag, band 2
+    datatype: int
+  - name: w3mag_3
+    "@id": "#allwise_p3as_psd.w3mag_3"
+    description: aperture 3 instrumental aperture mag, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3sigm_3
+    "@id": "#allwise_p3as_psd.w3sigm_3"
+    description: aperture 3 instrumental aperture mag uncertainty, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3flg_3
+    "@id": "#allwise_p3as_psd.w3flg_3"
+    description: aperture 3 instrumental aperture flag, band 3
+    datatype: int
+  - name: w4mag_3
+    "@id": "#allwise_p3as_psd.w4mag_3"
+    description: aperture 3 instrumental aperture mag, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4sigm_3
+    "@id": "#allwise_p3as_psd.w4sigm_3"
+    description: aperture 3 instrumental aperture mag uncertainty, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4flg_3
+    "@id": "#allwise_p3as_psd.w4flg_3"
+    description: aperture 3 instrumental aperture flag, band 4
+    datatype: int
+  - name: w1mag_4
+    "@id": "#allwise_p3as_psd.w1mag_4"
+    description: aperture 4 instrumental aperture mag, band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1sigm_4
+    "@id": "#allwise_p3as_psd.w1sigm_4"
+    description: aperture 4 instrumental aperture mag uncertainty, band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1flg_4
+    "@id": "#allwise_p3as_psd.w1flg_4"
+    description: aperture 4 instrumental aperture flag, band 1
+    datatype: int
+  - name: w2mag_4
+    "@id": "#allwise_p3as_psd.w2mag_4"
+    description: aperture 4 instrumental aperture mag, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2sigm_4
+    "@id": "#allwise_p3as_psd.w2sigm_4"
+    description: aperture 4 instrumental aperture mag uncertainty, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2flg_4
+    "@id": "#allwise_p3as_psd.w2flg_4"
+    description: aperture 4 instrumental aperture flag, band 2
+    datatype: int
+  - name: w3mag_4
+    "@id": "#allwise_p3as_psd.w3mag_4"
+    description: aperture 4 instrumental aperture mag, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3sigm_4
+    "@id": "#allwise_p3as_psd.w3sigm_4"
+    description: aperture 4 instrumental aperture mag uncertainty, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3flg_4
+    "@id": "#allwise_p3as_psd.w3flg_4"
+    description: aperture 4 instrumental aperture flag, band 3
+    datatype: int
+  - name: w4mag_4
+    "@id": "#allwise_p3as_psd.w4mag_4"
+    description: aperture 4 instrumental aperture mag, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4sigm_4
+    "@id": "#allwise_p3as_psd.w4sigm_4"
+    description: aperture 4 instrumental aperture mag uncertainty, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4flg_4
+    "@id": "#allwise_p3as_psd.w4flg_4"
+    description: aperture 4 instrumental aperture flag, band 4
+    datatype: int
+  - name: w1mag_5
+    "@id": "#allwise_p3as_psd.w1mag_5"
+    description: aperture 5 instrumental aperture mag, band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1sigm_5
+    "@id": "#allwise_p3as_psd.w1sigm_5"
+    description: aperture 5 instrumental aperture mag uncertainty, band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1flg_5
+    "@id": "#allwise_p3as_psd.w1flg_5"
+    description: aperture 5 instrumental aperture flag, band 1
+    datatype: int
+  - name: w2mag_5
+    "@id": "#allwise_p3as_psd.w2mag_5"
+    description: aperture 5 instrumental aperture mag, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2sigm_5
+    "@id": "#allwise_p3as_psd.w2sigm_5"
+    description: aperture 5 instrumental aperture mag uncertainty, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2flg_5
+    "@id": "#allwise_p3as_psd.w2flg_5"
+    description: aperture 5 instrumental aperture flag, band 2
+    datatype: int
+  - name: w3mag_5
+    "@id": "#allwise_p3as_psd.w3mag_5"
+    description: aperture 5 instrumental aperture mag, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3sigm_5
+    "@id": "#allwise_p3as_psd.w3sigm_5"
+    description: aperture 5 instrumental aperture mag uncertainty, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3flg_5
+    "@id": "#allwise_p3as_psd.w3flg_5"
+    description: aperture 5 instrumental aperture flag, band 3
+    datatype: int
+  - name: w4mag_5
+    "@id": "#allwise_p3as_psd.w4mag_5"
+    description: aperture 5 instrumental aperture mag, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4sigm_5
+    "@id": "#allwise_p3as_psd.w4sigm_5"
+    description: aperture 5 instrumental aperture mag uncertainty, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4flg_5
+    "@id": "#allwise_p3as_psd.w4flg_5"
+    description: aperture 5 instrumental aperture flag, band 4
+    datatype: int
+  - name: w1mag_6
+    "@id": "#allwise_p3as_psd.w1mag_6"
+    description: aperture 6 instrumental aperture mag, band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1sigm_6
+    "@id": "#allwise_p3as_psd.w1sigm_6"
+    description: aperture 6 instrumental aperture mag uncertainty, band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1flg_6
+    "@id": "#allwise_p3as_psd.w1flg_6"
+    description: aperture 6 instrumental aperture flag, band 1
+    datatype: int
+  - name: w2mag_6
+    "@id": "#allwise_p3as_psd.w2mag_6"
+    description: aperture 6 instrumental aperture mag, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2sigm_6
+    "@id": "#allwise_p3as_psd.w2sigm_6"
+    description: aperture 6 instrumental aperture mag uncertainty, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2flg_6
+    "@id": "#allwise_p3as_psd.w2flg_6"
+    description: aperture 6 instrumental aperture flag, band 2
+    datatype: int
+  - name: w3mag_6
+    "@id": "#allwise_p3as_psd.w3mag_6"
+    description: aperture 6 instrumental aperture mag, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3sigm_6
+    "@id": "#allwise_p3as_psd.w3sigm_6"
+    description: aperture 6 instrumental aperture mag uncertainty, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3flg_6
+    "@id": "#allwise_p3as_psd.w3flg_6"
+    description: aperture 6 instrumental aperture flag, band 3
+    datatype: int
+  - name: w4mag_6
+    "@id": "#allwise_p3as_psd.w4mag_6"
+    description: aperture 6 instrumental aperture mag, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4sigm_6
+    "@id": "#allwise_p3as_psd.w4sigm_6"
+    description: aperture 6 instrumental aperture mag uncertainty, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4flg_6
+    "@id": "#allwise_p3as_psd.w4flg_6"
+    description: aperture 6 instrumental aperture flag, band 4
+    datatype: int
+  - name: w1mag_7
+    "@id": "#allwise_p3as_psd.w1mag_7"
+    description: aperture 7 instrumental aperture mag, band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1sigm_7
+    "@id": "#allwise_p3as_psd.w1sigm_7"
+    description: aperture 7 instrumental aperture mag uncertainty, band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1flg_7
+    "@id": "#allwise_p3as_psd.w1flg_7"
+    description: aperture 7 instrumental aperture flag, band 1
+    datatype: int
+  - name: w2mag_7
+    "@id": "#allwise_p3as_psd.w2mag_7"
+    description: aperture 7 instrumental aperture mag, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2sigm_7
+    "@id": "#allwise_p3as_psd.w2sigm_7"
+    description: aperture 7 instrumental aperture mag uncertainty, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2flg_7
+    "@id": "#allwise_p3as_psd.w2flg_7"
+    description: aperture 7 instrumental aperture flag, band 2
+    datatype: int
+  - name: w3mag_7
+    "@id": "#allwise_p3as_psd.w3mag_7"
+    description: aperture 7 instrumental aperture mag, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3sigm_7
+    "@id": "#allwise_p3as_psd.w3sigm_7"
+    description: aperture 7 instrumental aperture mag uncertainty, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3flg_7
+    "@id": "#allwise_p3as_psd.w3flg_7"
+    description: aperture 7 instrumental aperture flag, band 3
+    datatype: int
+  - name: w4mag_7
+    "@id": "#allwise_p3as_psd.w4mag_7"
+    description: aperture 7 instrumental aperture mag, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4sigm_7
+    "@id": "#allwise_p3as_psd.w4sigm_7"
+    description: aperture 7 instrumental aperture mag uncertainty, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4flg_7
+    "@id": "#allwise_p3as_psd.w4flg_7"
+    description: aperture 7 instrumental aperture flag, band 4
+    datatype: int
+  - name: w1mag_8
+    "@id": "#allwise_p3as_psd.w1mag_8"
+    description: aperture 8 instrumental aperture mag, band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1sigm_8
+    "@id": "#allwise_p3as_psd.w1sigm_8"
+    description: aperture 8 instrumental aperture mag uncertainty, band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1flg_8
+    "@id": "#allwise_p3as_psd.w1flg_8"
+    description: aperture 8 instrumental aperture flag, band 1
+    datatype: int
+  - name: w2mag_8
+    "@id": "#allwise_p3as_psd.w2mag_8"
+    description: aperture 8 instrumental aperture mag, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2sigm_8
+    "@id": "#allwise_p3as_psd.w2sigm_8"
+    description: aperture 8 instrumental aperture mag uncertainty, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2flg_8
+    "@id": "#allwise_p3as_psd.w2flg_8"
+    description: aperture 8 instrumental aperture flag, band 2
+    datatype: int
+  - name: w3mag_8
+    "@id": "#allwise_p3as_psd.w3mag_8"
+    description: aperture 8 instrumental aperture mag, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3sigm_8
+    "@id": "#allwise_p3as_psd.w3sigm_8"
+    description: aperture 8 instrumental aperture mag uncertainty, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3flg_8
+    "@id": "#allwise_p3as_psd.w3flg_8"
+    description: aperture 8 instrumental aperture flag, band 3
+    datatype: int
+  - name: w4mag_8
+    "@id": "#allwise_p3as_psd.w4mag_8"
+    description: aperture 8 instrumental aperture mag, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4sigm_8
+    "@id": "#allwise_p3as_psd.w4sigm_8"
+    description: aperture 8 instrumental aperture mag uncertainty, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4flg_8
+    "@id": "#allwise_p3as_psd.w4flg_8"
+    description: aperture 8 instrumental aperture flag, band 4
+    datatype: int
+  - name: w1magp
+    "@id": "#allwise_p3as_psd.w1magp"
+    description: profile-fit repeatability mag -- inverse-variance weighted mean mag,
+      band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1sigp1
+    "@id": "#allwise_p3as_psd.w1sigp1"
+    description: standard deviation of population of profile-fit repeatability mag,
+      band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1sigp2
+    "@id": "#allwise_p3as_psd.w1sigp2"
+    description: standard deviation of the mean of profile-fit repeatability mag,
+      band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1k
+    "@id": "#allwise_p3as_psd.w1k"
+    description: Stetson K variability index, band 1
+    datatype: double
+  - name: w1ndf
+    "@id": "#allwise_p3as_psd.w1ndf"
+    description: number degrees of freedom in variability chi^2, band 1
+    datatype: int
+  - name: w1mlq
+    "@id": "#allwise_p3as_psd.w1mlq"
+    description: "-ln(Q), where Q = 1 - P(chi^2), band 1"
+    datatype: double
+  - name: w1mjdmin
+    "@id": "#allwise_p3as_psd.w1mjdmin"
+    description: minimum modified Julian Date of frame extractions, band 1
+    datatype: double
+  - name: w1mjdmax
+    "@id": "#allwise_p3as_psd.w1mjdmax"
+    description: maximum modified Julian Date of frame extractions, band 1
+    datatype: double
+  - name: w1mjdmean
+    "@id": "#allwise_p3as_psd.w1mjdmean"
+    description: mean modified Julian Date of frame extractions, band 1
+    datatype: double
+  - name: w2magp
+    "@id": "#allwise_p3as_psd.w2magp"
+    description: profile-fit repeatability mag -- inverse-variance weighted mean mag,
+      band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2sigp1
+    "@id": "#allwise_p3as_psd.w2sigp1"
+    description: standard deviation of the population of profile-fit repeatability
+      mag, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2sigp2
+    "@id": "#allwise_p3as_psd.w2sigp2"
+    description: standard deviation of the mean of profile-fit repeatability mag,
+      band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2k
+    "@id": "#allwise_p3as_psd.w2k"
+    description: Stetson K variability index, band 2
+    datatype: double
+  - name: w2ndf
+    "@id": "#allwise_p3as_psd.w2ndf"
+    description: number degrees of freedom in variability chi^2, band 2
+    datatype: int
+  - name: w2mlq
+    "@id": "#allwise_p3as_psd.w2mlq"
+    description: "-ln(Q), where Q = 1 - P(chi^2), band 2"
+    datatype: double
+  - name: w2mjdmin
+    "@id": "#allwise_p3as_psd.w2mjdmin"
+    description: minimum modified Julian Date of frame extractions, band 2
+    datatype: double
+  - name: w2mjdmax
+    "@id": "#allwise_p3as_psd.w2mjdmax"
+    description: maximum modified Julian Date of frame extractions, band 2
+    datatype: double
+  - name: w2mjdmean
+    "@id": "#allwise_p3as_psd.w2mjdmean"
+    description: mean modified Julian Date of frame extractions, band 2
+    datatype: double
+  - name: w3magp
+    "@id": "#allwise_p3as_psd.w3magp"
+    description: profile-fit repeatability mag -- inverse-variance weighted mean mag,
+      band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3sigp1
+    "@id": "#allwise_p3as_psd.w3sigp1"
+    description: standard deviation of the population of profile-fit repeatability
+      mag, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3sigp2
+    "@id": "#allwise_p3as_psd.w3sigp2"
+    description: standard deviation of the mean of profile-fit repeatability mag,
+      band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3k
+    "@id": "#allwise_p3as_psd.w3k"
+    description: Stetson K variability index, band 3
+    datatype: double
+  - name: w3ndf
+    "@id": "#allwise_p3as_psd.w3ndf"
+    description: number degrees of freedom in variability chi^2, band 3
+    datatype: int
+  - name: w3mlq
+    "@id": "#allwise_p3as_psd.w3mlq"
+    description: "-ln(Q), where Q = 1 - P(chi^2), band 3"
+    datatype: double
+  - name: w3mjdmin
+    "@id": "#allwise_p3as_psd.w3mjdmin"
+    description: minimum modified Julian Date of frame extractions, band 3
+    datatype: double
+  - name: w3mjdmax
+    "@id": "#allwise_p3as_psd.w3mjdmax"
+    description: maximum modified Julian Date of frame extractions, band 3
+    datatype: double
+  - name: w3mjdmean
+    "@id": "#allwise_p3as_psd.w3mjdmean"
+    description: mean modified Julian Date of frame extractions, band 3
+    datatype: double
+  - name: w4magp
+    "@id": "#allwise_p3as_psd.w4magp"
+    description: profile-fit repeatability mag -- inverse-variance weighted mean mag,
+      band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4sigp1
+    "@id": "#allwise_p3as_psd.w4sigp1"
+    description: standard deviation of the population of profile-fit repeatability
+      mag, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4sigp2
+    "@id": "#allwise_p3as_psd.w4sigp2"
+    description: standard deviation of the mean of profile-fit repeatability mag,
+      band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4k
+    "@id": "#allwise_p3as_psd.w4k"
+    description: Stetson K variability index, band 4
+    datatype: double
+  - name: w4ndf
+    "@id": "#allwise_p3as_psd.w4ndf"
+    description: number degrees of freedom in variability chi^2, band 4
+    datatype: int
+  - name: w4mlq
+    "@id": "#allwise_p3as_psd.w4mlq"
+    description: "-ln(Q), where Q = 1 - P(chi^2), band 4"
+    datatype: double
+  - name: w4mjdmin
+    "@id": "#allwise_p3as_psd.w4mjdmin"
+    description: minimum modified Julian Date of frame extractions, band 4
+    datatype: double
+  - name: w4mjdmax
+    "@id": "#allwise_p3as_psd.w4mjdmax"
+    description: maximum modified Julian Date of frame extractions, band 4
+    datatype: double
+  - name: w4mjdmean
+    "@id": "#allwise_p3as_psd.w4mjdmean"
+    description: mean modified Julian Date of frame extractions, band 4
+    datatype: double
+  - name: rho12
+    "@id": "#allwise_p3as_psd.rho12"
+    description: band 1 - band 2 correlation coefficient
+    datatype: int
+    fits:tunit: percent
+  - name: rho23
+    "@id": "#allwise_p3as_psd.rho23"
+    description: band 2 - band 3 correlation coefficient
+    datatype: int
+    fits:tunit: percent
+  - name: rho34
+    "@id": "#allwise_p3as_psd.rho34"
+    description: band 3 - band 4 correlation coefficient
+    datatype: int
+    fits:tunit: percent
+  - name: q12
+    "@id": "#allwise_p3as_psd.q12"
+    description: "-log10(1 - P(rho12)), given no real correlation"
+    datatype: int
+  - name: q23
+    "@id": "#allwise_p3as_psd.q23"
+    description: "-log10(1 - P(rho23)), given no real correlation"
+    datatype: int
+  - name: q34
+    "@id": "#allwise_p3as_psd.q34"
+    description: "-log10(1 - P(rho34)), given no real correlation"
+    datatype: int
+  - name: xscprox
+    "@id": "#allwise_p3as_psd.xscprox"
+    description: distance between source center and XSC galaxy
+    datatype: double
+    fits:tunit: arcsec
+  - name: w1rsemi
+    "@id": "#allwise_p3as_psd.w1rsemi"
+    description: semi-major axis of galaxy from XSC, band 1
+    datatype: double
+    fits:tunit: arcsec
+  - name: w1ba
+    "@id": "#allwise_p3as_psd.w1ba"
+    description: axis ratio of galaxy from XSC, band 1
+    datatype: double
+  - name: w1pa
+    "@id": "#allwise_p3as_psd.w1pa"
+    description: position angle (E of N) of galaxy from XSC, band 1
+    datatype: double
+    fits:tunit: deg
+  - name: w1gmag
+    "@id": "#allwise_p3as_psd.w1gmag"
+    description: elliptical aperture mag of extracted galaxy, band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1gerr
+    "@id": "#allwise_p3as_psd.w1gerr"
+    description: elliptical aperture mag uncertainty of extracted galaxy, band 1
+    datatype: double
+    fits:tunit: mag
+  - name: w1gflg
+    "@id": "#allwise_p3as_psd.w1gflg"
+    description: elliptical aperture flag of extracted galaxy, band 1
+    datatype: int
+  - name: w2rsemi
+    "@id": "#allwise_p3as_psd.w2rsemi"
+    description: semi-major axis of galaxy from XSC, band 2
+    datatype: double
+    fits:tunit: arcsec
+  - name: w2ba
+    "@id": "#allwise_p3as_psd.w2ba"
+    description: axis ratio of galaxy from XSC, band 2
+    datatype: double
+  - name: w2pa
+    "@id": "#allwise_p3as_psd.w2pa"
+    description: position angle (E of N) of galaxy from XSC, band 2
+    datatype: double
+    fits:tunit: deg
+  - name: w2gmag
+    "@id": "#allwise_p3as_psd.w2gmag"
+    description: elliptical aperture mag of extracted galaxy, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2gerr
+    "@id": "#allwise_p3as_psd.w2gerr"
+    description: elliptical aperture mag uncertainty of extracted galaxy, band 2
+    datatype: double
+    fits:tunit: mag
+  - name: w2gflg
+    "@id": "#allwise_p3as_psd.w2gflg"
+    description: elliptical aperture flag of extracted galaxy, band 2
+    datatype: int
+  - name: w3rsemi
+    "@id": "#allwise_p3as_psd.w3rsemi"
+    description: semi-major axis of galaxy from XSC, band 3
+    datatype: double
+    fits:tunit: arcsec
+  - name: w3ba
+    "@id": "#allwise_p3as_psd.w3ba"
+    description: axis ratio of galaxy from XSC, band 3
+    datatype: double
+  - name: w3pa
+    "@id": "#allwise_p3as_psd.w3pa"
+    description: position angle (E of N) of galaxy from XSC, band 3
+    datatype: double
+    fits:tunit: deg
+  - name: w3gmag
+    "@id": "#allwise_p3as_psd.w3gmag"
+    description: elliptical aperture mag of extracted galaxy, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3gerr
+    "@id": "#allwise_p3as_psd.w3gerr"
+    description: elliptical aperture mag uncertainty of extracted galaxy, band 3
+    datatype: double
+    fits:tunit: mag
+  - name: w3gflg
+    "@id": "#allwise_p3as_psd.w3gflg"
+    description: elliptical aperture flag of extracted galaxy, band 3
+    datatype: int
+  - name: w4rsemi
+    "@id": "#allwise_p3as_psd.w4rsemi"
+    description: semi-major axis of galaxy from XSC, band 4
+    datatype: double
+    fits:tunit: arcsec
+  - name: w4ba
+    "@id": "#allwise_p3as_psd.w4ba"
+    description: axis ratio of galaxy from XSC, band 4
+    datatype: double
+  - name: w4pa
+    "@id": "#allwise_p3as_psd.w4pa"
+    description: position angle (E of N) of galaxy from XSC, band 4
+    datatype: double
+    fits:tunit: deg
+  - name: w4gmag
+    "@id": "#allwise_p3as_psd.w4gmag"
+    description: elliptical aperture mag of extracted galaxy, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4gerr
+    "@id": "#allwise_p3as_psd.w4gerr"
+    description: elliptical aperture mag uncertainty of extracted galaxy, band 4
+    datatype: double
+    fits:tunit: mag
+  - name: w4gflg
+    "@id": "#allwise_p3as_psd.w4gflg"
+    description: elliptical aperture flag of extracted galaxy, band 4
+    datatype: int
+  - name: tmass_key
+    "@id": "#allwise_p3as_psd.tmass_key"
+    description: closest associated 2MASS All-Sky Release PSC key
+    datatype: int
+  - name: r_2mass
+    "@id": "#allwise_p3as_psd.r_2mass"
+    description: radial offset between WISE src and associated 2MASS src
+    datatype: double
+    fits:tunit: arcsec
+  - name: pa_2mass
+    "@id": "#allwise_p3as_psd.pa_2mass"
+    description: position angle (E of N) of vector from WISE src to associated 2MASS
+      src
+    datatype: double
+    fits:tunit: deg
+  - name: n_2mass
+    "@id": "#allwise_p3as_psd.n_2mass"
+    description: number of 2MASS All-Sky PSC entries found within search radius of
+      WISE src
+    datatype: int
+  - name: j_m_2mass
+    "@id": "#allwise_p3as_psd.j_m_2mass"
+    description: J magnitude entry of the associated 2MASS All-Sky PSC source
+    datatype: double
+    ivoa:ucd: phot.mag
+    fits:tunit: mag
+  - name: j_msig_2mass
+    "@id": "#allwise_p3as_psd.j_msig_2mass"
+    description: J photometric uncertainty of the associated 2MASS All-Sky PSC source
+    datatype: double
+    fits:tunit: mag
+  - name: h_m_2mass
+    "@id": "#allwise_p3as_psd.h_m_2mass"
+    description: H magnitude entry of the associated 2MASS All-Sky PSC source
+    datatype: double
+    ivoa:ucd: phot.mag
+    fits:tunit: mag
+  - name: h_msig_2mass
+    "@id": "#allwise_p3as_psd.h_msig_2mass"
+    description: H photometric uncertainty of the associated 2MASS All-Sky PSC source
+    datatype: double
+    fits:tunit: mag
+  - name: k_m_2mass
+    "@id": "#allwise_p3as_psd.k_m_2mass"
+    description: Ks magnitude entry of the associated 2MASS All-Sky PSC source
+    datatype: double
+    ivoa:ucd: phot.mag
+    fits:tunit: mag
+  - name: k_msig_2mass
+    "@id": "#allwise_p3as_psd.k_msig_2mass"
+    description: Ks photometric uncertainty of the associated 2MASS All-Sky PSC source
+    datatype: double
+    fits:tunit: mag
+  - name: x
+    "@id": "#allwise_p3as_psd.x"
+    description: unit sphere (x,y,z) position x value
+    datatype: double
+  - name: y
+    "@id": "#allwise_p3as_psd.y"
+    description: unit sphere (x,y,z) position y value
+    datatype: double
+  - name: z
+    "@id": "#allwise_p3as_psd.z"
+    description: unit sphere (x,y,z) position z value
+    datatype: double
+  - name: spt_ind
+    "@id": "#allwise_p3as_psd.spt_ind"
+    description: spatial (x,y,z) index key
+    datatype: int
+  - name: htm20
+    "@id": "#allwise_p3as_psd.htm20"
+    description: HTM20 spatial index key
+    datatype: long
