@@ -92,10 +92,10 @@ tables:
     mysql:datatype: DOUBLE
   - name: refBand
     "@id": "#Object.refBand"
-    datatype: text
+    datatype: char
     length: 1
     description:
-    mysql:datatype: TEXT
+    mysql:datatype: CHAR(1)
   - name: refExtendedness
     "@id": "#Object.refExtendedness"
     datatype: double
