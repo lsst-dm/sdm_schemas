@@ -38,8 +38,8 @@ tables:
   - name: skymap
     "@id": "#Object.skymap"
     datatype: char
-    length: 6
-    mysql:datatype: CHAR(6)
+    length: 12
+    mysql:datatype: CHAR(12)
   - name: tractId
     "@id": "#Object.tractId"
     datatype: int
@@ -92,10 +92,10 @@ tables:
     mysql:datatype: DOUBLE
   - name: refBand
     "@id": "#Object.refBand"
-    datatype: text
+    datatype: char
     length: 1
     description:
-    mysql:datatype: TEXT
+    mysql:datatype: CHAR(1)
   - name: refExtendedness
     "@id": "#Object.refExtendedness"
     datatype: double
